@@ -1,0 +1,22 @@
+{
+  "name": "app_prueba",
+  "version": "1.0.0",
+  "description": "aplicacion de prueba",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ana Peraita",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "connect-multiparty": "^2.0.0",
+    "express": "^4.15.2",
+    "express-fileupload": "^0.1.2",
+    "file-upload": "0.0.0",
+    "jade": "^1.11.0",
+    "multer": "^1.3.0",
+    "neo4j": "^2.0.0-RC2",
+    "neo4j-driver": "^1.2.0"
+  }
+}

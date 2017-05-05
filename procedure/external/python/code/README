@@ -1,0 +1,22 @@
+Files:
+
+sec.py: Contains the main function, pred, which receives a string with
+        the sequences of the protein letters (one letter codes) and
+        returns a string composed of the letters "H" (Helix) "S"
+        (Sheet) "U" (coil) representing the secondary strucure.
+
+plib: Prediction library, is imported by sec.py and contains all the
+      functions necessary for the prediction
+
+probtable: table of probabilities used by the functions for
+           prediction. This file should be in the same directory as
+           the program.
+
+locf: directory with a bunch of proteins in a local file format. These
+      can be translated to a string represntation using the file fileconv
+
+fileonv: program that takes a file ".ale" in the locf directory,
+         converts it to a string of protein one-letter codes, and
+         prints it either on the screen or on a output file.
+
+

@@ -1,0 +1,47 @@
+extend layout
+
+block buttons
+  
+
+block content
+  form(name="searchScore", method="post", action="/searchScore",enctype="multipart/form-data",  class="pure-form pure-form-stacked", )
+    div.input
+      p.label Maximum score
+      input(type="text", name="score")
+    div.actions
+      input(type="submit", value="Search")
+  form(name="searchSequence", method="post", action="/searchSequence",enctype="multipart/form-data", class="pure-form pure-form-stacked")
+    div.input
+      p.label Sequence
+      input(type="text", name="sequence")
+    div.actions
+      input(type="submit", value="Add Sequence")
+  form(name="populateDB", method="post", action="/populate", enctype="multipart/form-data", class="pure-form pure-form-stacked")
+    div.input
+      p.label File 
+      input(type="file", name="fasta")
+    div.actions
+      input(type="submit", value="Upload")
+
+block action
+  .status
+    p=status
+
+block table
+  .table
+    if scores
+        table(class="pure-table")
+            thead
+              tr
+                th Sequence1
+                th Score
+                th Sequence2
+            tbody
+              each score in scores
+                tr
+                  td=score.sequence1 
+                  td=score.score
+                  td=score.sequence2 
+    
+    
+    

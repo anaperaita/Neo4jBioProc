@@ -1,0 +1,14 @@
+{
+  "name": "populate",
+  "version": "1.0.0",
+  "description": "Populates the Neo4j db",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ana Peraita",
+  "license": "ISC",
+  "dependencies": {
+    "neo4j-driver": "^1.1.1"
+  }
+}
