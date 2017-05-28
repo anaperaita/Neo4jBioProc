@@ -1,31 +1,118 @@
 extend layout
 
+block imports
+
+  // START SIGMA IMPORTS 
+  script(src="/node_modules/sigma/src/sigma.core.js")
+  script(src="/node_modules/sigma/src/conrad.js")
+  script(src="/node_modules/sigma/src/utils/sigma.utils.js")
+  script(src="/node_modules/sigma/src/utils/sigma.polyfills.js")
+  script(src="/node_modules/sigma/src/sigma.settings.js")
+  script(src="/node_modules/sigma/src/classes/sigma.classes.dispatcher.js")
+  script(src="/node_modules/sigma/src/classes/sigma.classes.configurable.js")
+  script(src="/node_modules/sigma/src/classes/sigma.classes.graph.js")
+  script(src="/node_modules/sigma/src/classes/sigma.classes.camera.js")
+  script(src="/node_modules/sigma/src/classes/sigma.classes.quad.js")
+  script(src="/node_modules/sigma/src/classes/sigma.classes.edgequad.js")
+  script(src="/node_modules/sigma/src/captors/sigma.captors.mouse.js")
+  script(src="/node_modules/sigma/src/captors/sigma.captors.touch.js")
+  script(src="/node_modules/sigma/src/renderers/sigma.renderers.canvas.js")
+  script(src="/node_modules/sigma/src/renderers/sigma.renderers.webgl.js")
+  script(src="/node_modules/sigma/src/renderers/sigma.renderers.svg.js")
+  script(src="/node_modules/sigma/src/renderers/sigma.renderers.def.js")
+  script(src="/node_modules/sigma/src/renderers/canvas/sigma.canvas.labels.def.js")
+  script(src="/node_modules/sigma/src/renderers/canvas/sigma.canvas.hovers.def.js")
+  script(src="/node_modules/sigma/src/renderers/canvas/sigma.canvas.nodes.def.js")
+  script(src="/node_modules/sigma/src/renderers/canvas/sigma.canvas.edges.def.js")
+  script(src="/node_modules/sigma/src/renderers/canvas/sigma.canvas.edges.curve.js")
+  script(src="/node_modules/sigma/src/renderers/canvas/sigma.canvas.edges.arrow.js")
+  script(src="/node_modules/sigma/src/renderers/canvas/sigma.canvas.edges.curvedArrow.js")
+  script(src="/node_modules/sigma/src/renderers/canvas/sigma.canvas.edgehovers.def.js")
+  script(src="/node_modules/sigma/src/renderers/canvas/sigma.canvas.edgehovers.curve.js")
+  script(src="/node_modules/sigma/src/renderers/canvas/sigma.canvas.edgehovers.arrow.js")
+  script(src="/node_modules/sigma/src/renderers/canvas/sigma.canvas.edgehovers.curvedArrow.js")
+  script(src="/node_modules/sigma/src/renderers/canvas/sigma.canvas.extremities.def.js")
+  script(src="/node_modules/sigma/src/middlewares/sigma.middlewares.rescale.js")
+  script(src="/node_modules/sigma/src/middlewares/sigma.middlewares.copy.js")
+  script(src="/node_modules/sigma/src/misc/sigma.misc.animation.js")
+  script(src="/node_modules/sigma/src/misc/sigma.misc.bindEvents.js")
+  script(src="/node_modules/sigma/src/misc/sigma.misc.bindDOMEvents.js")
+  script(src="/node_modules/sigma/src/misc/sigma.misc.drawHovers.js")
+  // END SIGMA IMPORTS 
+  script(src="/node_modules/sigma/plugins/sigma.plugins.dragNodes/sigma.plugins.dragNodes.js")
+  script(src="/node_modules/sigma/plugins/sigma.renderers.edgeLabels/sigma.canvas.edges.labels.curvedArrow.js")
+  script(src="/node_modules/sigma/plugins/sigma.renderers.edgeLabels/sigma.canvas.edges.labels.curve.js")
+  script(src="/node_modules/sigma/plugins/sigma.renderers.edgeLabels/sigma.canvas.edges.labels.def.js")
+  script(src="/node_modules/sigma/plugins/sigma.renderers.edgeLabels/settings.js")
+  //My js
+  script(src="/views/graph.js")
+  script(src="/views/forms.js")
+
+
+block graph
+  include graph.html
+
+
 block buttons
-  
+  div#selector(class="pure-menu pure-menu-scrollable custom-restricted")
+    - var elemList = {'searchScoreDNA': "Search score DNA", 'searchScoreProteins': "Search score proteins", 'addSequence': "Add DNA Sequence", 'addInfo' : "Add Info", 'populateDB': "Populate"}
+    ul(class="pure-menu-list") 
+      for i in Object.keys(elemList)
+        li(class="pure-menu-item")
+          a( href="#", class="pure-menu-link", onclick="return showForm('"+i+"');")= elemList[i]
+      
 
 block content
-  form(name="searchScore", method="post", action="/searchScore",enctype="multipart/form-data",  class="pure-form pure-form-stacked", )
-    div.input
-      p.label Maximum score
-      input(type="text", name="score")
-    div.actions
-      input(type="submit", value="Search")
-  form(name="searchSequence", method="post", action="/searchSequence",enctype="multipart/form-data", class="pure-form pure-form-stacked")
-    div.input
-      p.label Sequence
-      input(type="text", name="sequence")
-    div.actions
-      input(type="submit", value="Add Sequence")
-  form(name="populateDB", method="post", action="/populate", enctype="multipart/form-data", class="pure-form pure-form-stacked")
-    div.input
-      p.label File 
-      input(type="file", name="fasta")
-    div.actions
-      input(type="submit", value="Upload")
+  div#searchScoreDNA.formclass
+    form(name="searchScoreDNA", method="post", action="/searchScoreDNA",enctype="multipart/form-data",  class="pure-form pure-form-stacked", onsubmit="return submitForm(this);")
+      div.input
+        p.label Maximum score
+        input(type="text", name="score")
+      div.actions
+        input(type="submit", value="Search", class="pure-button pure-button-primary")
+  div#searchScoreProteins.formclass
+    form(name="searchScoreProteins", method="post", action="/searchScoreProteins",enctype="multipart/form-data",  class="pure-form pure-form-stacked", onsubmit="return submitForm(this);")
+      div.input
+        p.label Maximum score
+        input(type="text", name="score")
+      div.actions
+        input(type="submit", value="Search", class="pure-button pure-button-primary")
+  
+  div#addSequence.formclass
+    form(name="addSequence", method="post", action="/addSequence",enctype="multipart/form-data", class="pure-form pure-form-stacked", onsubmit="return submitForm(this);")
+      div.input
+        p.label Sequence
+        input(type="text", name="sequence")
+        p.label Info Id
+        input(type="text", name="info")
+      div.actions
+        input(type="submit", value="Add Sequence", class="pure-button pure-button-primary")
+
+  div#addInfo.formclass
+    form(name="addInfo", method="post", action="/addInfo",enctype="multipart/form-data", class="pure-form pure-form-stacked", onsubmit="return submitForm(this);")
+      div.input
+        p.label Name
+        input(type="text", name="name")
+        p.label Start Codons
+        input(type="text", name="startCodons")
+      div.actions
+        input(type="submit", value="Add Info", class="pure-button pure-button-primary")
+
+  div#populateDB.formclass
+    form(name="populateDB", method="post", action="/populate", enctype="multipart/form-data", class="pure-form pure-form-stacked", onsubmit="return submitForm(this);")
+      div.input
+        p.label Select a file
+        div.fileUpload(class="pure-button pure-button-secondary")
+          span File
+          input(type="file", name="fasta" )
+
+      div.actions
+        input(type="submit", value="Upload", class="pure-button pure-button-primary")
 
 block action
   .status
-    p=status
+    p#status
+    p#edge
 
 block table
   .table

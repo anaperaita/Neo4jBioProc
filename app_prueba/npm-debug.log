@@ -13,7 +13,7 @@
 4 verbose stack     at ReadFileContext.callback (/usr/lib/node_modules/npm/node_modules/graceful-fs/graceful-fs.js:78:16)
 4 verbose stack     at FSReqWrap.readFileAfterOpen [as oncomplete] (fs.js:366:13)
 5 verbose cwd /home/ana/Documentos/neo4j_project/blast-procedure/app_prueba
-6 error Linux 4.4.0-75-generic
+6 error Linux 4.4.0-78-generic
 7 error argv "/usr/bin/nodejs" "/usr/bin/npm" "start"
 8 error node v6.10.1
 9 error npm  v3.10.10

@@ -11,30 +11,46 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
 
 app.use('/stylesheets', express.static(__dirname + '/stylesheets'));
-
+app.use('/node_modules', express.static(__dirname + '/node_modules'));
+app.use('/views', express.static(__dirname + '/views'));
 // parse multipart 
 var multer  = require('multer')
 var upload = multer({ dest: 'uploads/' })
 
 app.set('view engine', 'jade');
 
+
+
 app.get('/', function (req, res) {
     res.render('index.jade', { title: 'Hey'});
 });
 
-app.post('/searchScore',upload.array(), function (req, res) {
+app.post('/searchScoreDNA',upload.array(), function (req, res) {
     console.log('post');
-    evaluateInstance.getNodesWithScoresLessThan(parseInt(req.body.score)).then(function (tabla){
-      var st = "Searched for alling with score" + req.body.score 
-      res.render('index.jade', { title: 'Hey', status: st, scores:tabla});
+    evaluateInstance.getNodesWithScoresDNAHigherThan(parseInt(req.body.score)).then(function (edges){
+        evaluateInstance.getAllNodesDNA().then(function (nodes){
+            var st = "Searched for DNA allign with score" + req.body.score 
+            res.send({status: st, scores:edges, nodes:nodes});
+        });
     })
 
 });
-app.post('/searchSequence',upload.array(), function (req, res) {
+
+app.post('/searchScoreProteins',upload.array(), function (req, res) {
+    console.log('post');
+    evaluateInstance.getNodesWithScoresProteinsHigherThan(parseInt(req.body.score)).then(function (edges){
+        evaluateInstance.getAllNodesProteins().then(function (nodes){
+            var st = "Searched for protein allign with score" + req.body.score 
+            res.send({status: st, scores:edges, nodes:nodes});
+        });
+    })
+
+});
+app.post('/addSequence',upload.array(), function (req, res) {
     console.log('post');
     evaluateInstance.addAndAllign(req.body.sequence)
     var st = "Adding " + req.body.sequence
-    res.render('index.jade', { title: 'Hey', status: st});
+    res.send({status: st});
 });
 
 app.post('/populate',upload.single('fasta'), function (req, res) {
@@ -43,7 +59,7 @@ app.post('/populate',upload.single('fasta'), function (req, res) {
         return res.status(400).send('No files were uploaded.');
     evaluateInstance.populate(req.file.path)
     var st = "Populating with file " + req.file.originalname
-    res.render('index.jade', { title: 'Hey', status: st});
+    res.send({status: st});
 });
 
 

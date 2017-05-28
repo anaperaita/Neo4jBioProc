@@ -3,17 +3,25 @@ html
   head
     title #{title} - Neo4j
     link(rel='stylesheet', href="https://unpkg.com/purecss@0.6.2/build/pure-min.css", integrity="sha384-UQiGfs9ICog+LwheBSRCt1o5cbyKIHbwjWscjemyBMT9YCUMZffs6UqUTd0hObXD", crossorigin="anonymous")
+    link(rel='stylesheet', href="/stylesheets/style.css")
+    block imports
+  
+  
   body
-    header
-      h1 Neo4j Project
-    .container
-      .menu
-        block buttons
-      .main-content
-        block content
-      .action
-        block action
-      .table
-        block table
+
+    .graph(class="pure-u-2-3 pure-u-md-2-3")
+      block graph
+    .control(class="pure-u-1-3 pure-u-md-1-3")
+      header
+        h1 Neo4j Project
+      .container
+        .menu
+          block buttons
+        .main-content
+          block content
+        .action
+          block action
+        .table
+          block table
     footer
       p Neo4j Ana Peraita

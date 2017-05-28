@@ -6,6 +6,27 @@ const fs = require('fs');
 var driver = neo4j.driver("bolt://localhost", neo4j.auth.basic("neo4j", "la1Reinona"));
 var session = driver.session();
 
+
+function edgeRecordsToListElem(records){
+
+   console.log("Edge" + records.get("Sequence1") + " , " + records.get("score") + ", " + records.get("Sequence2") )
+   return {Sequence1: records.get("Sequence1"),
+                NodeId1:records.get("NodeId1"),
+                score: records.get("score"),
+                EdgeId: records.get("EdgeId"),
+                Sequence2: records.get("Sequence2"),
+                NodeId2: records.get("NodeId2")}
+}
+
+function nodeRecordsToListElem(records){
+
+   console.log("Node " + records.get("Sequence1") )
+   return {Sequence: records.get("Sequence1"),
+                NodeId:records.get("NodeId1")
+                }
+}
+
+
 var evaluate = function (){ 
   var self = this;
   self.getAllign =function(cadena){
@@ -35,18 +56,16 @@ var evaluate = function (){
   }
 
 //Obtiene los nodos con scores menores que el argumento score
-  self.getNodesWithScoresLessThan = function(score){
+  self.getNodesWithScores = function(score, type,typeAttr, sign){
 
     var lista=session
-      .run( "MATCH (p1:DNASequence)-[r:ALLIGNS]->(p2:DNASequence) WHERE r.score < {val}"
-      +"return p1.nucleotides AS DNASequence1, r.score as score, p2.nucleotides as DNASequence2",{val:score} ).
+      .run( "MATCH (p1:"+type+")-[r:ALLIGNS]->(p2:"+type+") WHERE r.score "+sign+" {val} "
+      +"return ID(p1) AS NodeId1, p1."+typeAttr+" AS Sequence1,ID(r) AS EdgeId, r.score as score, ID(p2) AS NodeId2, p2."+typeAttr+" as Sequence2",{val:score} ).
       then( function( result ) {
           var lista=[]
     
           for(var i = 0; i < result.records.length; i ++) {
-            lista.push({DNASequence1: result.records[i].get("DNASequence1"),score: result.records[i].get("score"), DNASequence2: result.records[i].get("DNASequence2")})
-            console.log(result.records[i].get("DNASequence1") + " , " + result.records[i].get("score") + ", " + result.records[i].get("DNASequence2") )
-              
+             lista.push( edgeRecordsToListElem(result.records[i]))
           }
           session.close();
           driver.close();
@@ -55,19 +74,41 @@ var evaluate = function (){
         
         return lista
   }
+
+//Obtiene los nodos con scores menores que el argumento score
+  self.getNodesWithScoresDNALessThan = function(score){
+    return self.getNodesWithScores(score, "DNASequence","nucleotides", "<");
+    
+  }
+
 //Obtiene los nodos con scores mayores que el argumento score
-  self.getNodesWithScoresHigherThan = function(score){
+    self.getNodesWithScoresDNAHigherThan = function(score){
+    return self.getNodesWithScores(score, "DNASequence","nucleotides", ">");
+    
+  }
+
+  //Obtiene los nodos con scores menores que el argumento score
+  self.getNodesWithScoresProteinsLessThan = function(score){
+    return self.getNodesWithScores(score, "AminoacydSequence", "aminoacyds", "<");
+    
+  }
+
+//Obtiene los nodos con scores mayores que el argumento score
+    self.getNodesWithScoresProteinsHigherThan = function(score){
+    return self.getNodesWithScores(score, "AminoacydSequence","aminoacyds", ">");
+    
+  }
+
+  self.getAllNodes = function( type,typeAttr){
 
     var lista=session
-      .run( "MATCH (p1:DNASequence)-[r:ALLIGNS]->(p2:DNASequence) WHERE r.score > {val}"
-      +"return p1.nucleotides AS DNASequence1, r.score as score, p2.nucleotides as DNASequence2",{val:score} ).
+      .run( "MATCH (p1:"+type+")"
+      +"return ID(p1) AS NodeId1, p1."+typeAttr+" AS Sequence1" ).
       then( function( result ) {
           var lista=[]
     
           for(var i = 0; i < result.records.length; i ++) {
-            lista.push({DNASequence1: result.records[i].get("DNASequence1"),score: result.records[i].get("score"), DNASequence2: result.records[i].get("DNASequence2")})
-            console.log(result.records[i].get("DNASequence1") + " , " + result.records[i].get("score") + ", " + result.records[i].get("DNASequence2") )
-              
+            lista.push( nodeRecordsToListElem(result.records[i]))
           }
           session.close();
           driver.close();
@@ -75,6 +116,14 @@ var evaluate = function (){
         });
         
         return lista
+  }
+
+  self.getAllNodesDNA = function(){
+    return self.getAllNodes("DNASequence","nucleotides");
+  }
+
+  self.getAllNodesProteins = function(){
+    return self.getAllNodes("AminoacydSequence","aminoacyds");
   }
 
 self.generateProteins = function(){
