@@ -1,4 +1,23 @@
 
+h1 { color: #000;
+ font-family: 'Raleway',sans-serif;
+ font-size: 32px;
+ font-weight: 800; 
+ line-height: 40px; 
+ margin: 0; 
+ text-align: center;
+ text-transform: uppercase; 
+ }
+ footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  font-size: 10px;
+  color: #aaa;
+  text-align: center;
+}
+
 
 .fileUpload {
     position: relative;
@@ -19,4 +38,12 @@
 
 .formclass{
     display:none;
+    margin:20px;
+}
+
+#selector{  
+    height: 140px;
+
+    border: 1px solid gray;
+    border-radius: 4px;
 }

@@ -1,3 +1,5 @@
+
+
 function submitForm(oFormElement)
 {
   var xhr = new XMLHttpRequest();
@@ -5,8 +7,16 @@ function submitForm(oFormElement)
     if(xhr.readyState == 4 && xhr.status == 200) {
         var myResponse = JSON.parse(xhr.responseText);
         document.getElementById('status').innerHTML=myResponse['status'];
-        if(myResponse['scores']!= null && myResponse['nodes']!=null ){
-          populateGraph(myResponse['scores'], myResponse['nodes']);
+        var type = myResponse['type'];
+        if(type==GraphType.ALLIGN){
+          var nodes= myResponse['nodes']
+          var scores = myResponse['scores']
+          
+          populateGraphAllign(scores, nodes);
+
+        }else if (type==GraphType.DEPTH){
+
+          populateGraphDepth(myResponse['info'])
         }
     }
   }

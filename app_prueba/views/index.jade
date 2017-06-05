@@ -47,6 +47,7 @@ block imports
   //My js
   script(src="/views/graph.js")
   script(src="/views/forms.js")
+  script(src="/common/commonTypes.js")
 
 
 block graph
@@ -55,7 +56,7 @@ block graph
 
 block buttons
   div#selector(class="pure-menu pure-menu-scrollable custom-restricted")
-    - var elemList = {'searchScoreDNA': "Search score DNA", 'searchScoreProteins': "Search score proteins", 'addSequence': "Add DNA Sequence", 'addInfo' : "Add Info", 'populateDB': "Populate"}
+    - var elemList = {'searchScoreDNA': "Search score DNA", 'searchScoreProteins': "Search score proteins", 'addSequence': "Add DNA Sequence", 'addInfo' : "Add Info",'getInfo' : "Get Info", 'getAllInfo' : "Get All Info", 'populateDB': "Populate"}
     ul(class="pure-menu-list") 
       for i in Object.keys(elemList)
         li(class="pure-menu-item")
@@ -68,6 +69,8 @@ block content
       div.input
         p.label Maximum score
         input(type="text", name="score")
+        p.label DNA Pattern
+        input#dnaPattern(type="text", name="pattern")
       div.actions
         input(type="submit", value="Search", class="pure-button pure-button-primary")
   div#searchScoreProteins.formclass
@@ -75,6 +78,8 @@ block content
       div.input
         p.label Maximum score
         input(type="text", name="score")
+        p.label Protein Pattern
+        input#proteinPattern(type="text", name="pattern")
       div.actions
         input(type="submit", value="Search", class="pure-button pure-button-primary")
   
@@ -82,53 +87,55 @@ block content
     form(name="addSequence", method="post", action="/addSequence",enctype="multipart/form-data", class="pure-form pure-form-stacked", onsubmit="return submitForm(this);")
       div.input
         p.label Sequence
-        input(type="text", name="sequence")
+        input(type="text", name="sequence", required)
         p.label Info Id
-        input(type="text", name="info")
+        input(type="text", name="infoId", required)
       div.actions
         input(type="submit", value="Add Sequence", class="pure-button pure-button-primary")
 
   div#addInfo.formclass
     form(name="addInfo", method="post", action="/addInfo",enctype="multipart/form-data", class="pure-form pure-form-stacked", onsubmit="return submitForm(this);")
       div.input
+        p.label Id
+        input(type="text", name="infoId", required)
         p.label Name
-        input(type="text", name="name")
+        input(type="text", name="name", required)
+        p.label Scientific Name
+        input(type="text", name="sciname", required)
         p.label Start Codons
-        input(type="text", name="startCodons")
+        input(type="text", name="startCodons", required)
       div.actions
         input(type="submit", value="Add Info", class="pure-button pure-button-primary")
+  div#getInfo.formclass
+    form(name="getInfo", method="post", action="/getInfo",enctype="multipart/form-data", class="pure-form pure-form-stacked", onsubmit="return submitForm(this);")
+      div.input
+        p.label Id
+        input#getInfoId(type="text", name="infoId")
+      div.actions
+        input(type="submit", value="Get Info", class="pure-button pure-button-primary")
 
+  div#getAllInfo.formclass
+    form(name="getAllInfo", method="post", action="/getAllInfo",enctype="multipart/form-data", class="pure-form pure-form-stacked", onsubmit="return submitForm(this);")
+      div.actions
+        input(type="submit", value="Get All Info", class="pure-button pure-button-primary")
+  
   div#populateDB.formclass
     form(name="populateDB", method="post", action="/populate", enctype="multipart/form-data", class="pure-form pure-form-stacked", onsubmit="return submitForm(this);")
       div.input
         p.label Select a file
         div.fileUpload(class="pure-button pure-button-secondary")
           span File
-          input(type="file", name="fasta" )
-
+          input(type="file", name="fasta" , required)
+        p.label Info Id
+          input(type="text", name="infoId", required)
       div.actions
         input(type="submit", value="Upload", class="pure-button pure-button-primary")
 
 block action
   .status
     p#status
-    p#edge
+    p#elem
 
-block table
-  .table
-    if scores
-        table(class="pure-table")
-            thead
-              tr
-                th Sequence1
-                th Score
-                th Sequence2
-            tbody
-              each score in scores
-                tr
-                  td=score.sequence1 
-                  td=score.score
-                  td=score.sequence2 
-    
+
     
     

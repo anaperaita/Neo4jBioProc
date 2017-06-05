@@ -1,6 +1,6 @@
 
-
-var evaluate = require('./evaluate.js')
+var GraphType = require('./common/commonTypes.js')
+var evaluate = require('./server/evaluate.js')
 var express = require('express');
 var multer  = require('multer')
 var app = express();
@@ -13,12 +13,13 @@ app.set('view engine', 'jade');
 app.use('/stylesheets', express.static(__dirname + '/stylesheets'));
 app.use('/node_modules', express.static(__dirname + '/node_modules'));
 app.use('/views', express.static(__dirname + '/views'));
+app.use('/common', express.static(__dirname + '/common'));
 // parse multipart 
 var multer  = require('multer')
 var upload = multer({ dest: 'uploads/' })
 
-app.set('view engine', 'jade');
 
+app.set('view engine', 'jade');
 
 
 app.get('/', function (req, res) {
@@ -27,10 +28,18 @@ app.get('/', function (req, res) {
 
 app.post('/searchScoreDNA',upload.array(), function (req, res) {
     console.log('post');
-    evaluateInstance.getNodesWithScoresDNAHigherThan(parseInt(req.body.score)).then(function (edges){
-        evaluateInstance.getAllNodesDNA().then(function (nodes){
+    score=parseInt(req.body.score)
+    if(score==null){
+        score=-1
+    }
+    pattern=req.body.pattern
+    if(pattern==null || pattern.match('( *)')){
+        pattern='.*'
+    }
+    evaluateInstance.getNodesWithScoresDNAHigherThan(score, pattern).then(function (edges){
+        evaluateInstance.getAllNodesDNA(pattern).then(function (nodes){
             var st = "Searched for DNA allign with score" + req.body.score 
-            res.send({status: st, scores:edges, nodes:nodes});
+            res.send({type: GraphType.ALLIGN , status: st, scores:edges, nodes:nodes});
         });
     })
 
@@ -38,31 +47,85 @@ app.post('/searchScoreDNA',upload.array(), function (req, res) {
 
 app.post('/searchScoreProteins',upload.array(), function (req, res) {
     console.log('post');
-    evaluateInstance.getNodesWithScoresProteinsHigherThan(parseInt(req.body.score)).then(function (edges){
-        evaluateInstance.getAllNodesProteins().then(function (nodes){
+    score=parseInt(req.body.score)
+    if(score==null){
+        score=-1
+    }
+    pattern=req.body.pattern
+    if(pattern==null || pattern.match('( *)')){
+        pattern='.*'
+    }
+    evaluateInstance.getNodesWithScoresProteinsHigherThan(score, pattern).then(function (edges){
+        evaluateInstance.getAllNodesProteins(pattern).then(function (nodes){
             var st = "Searched for protein allign with score" + req.body.score 
-            res.send({status: st, scores:edges, nodes:nodes});
+            res.send({type: GraphType.ALLIGN  , status: st, scores:edges, nodes:nodes});
         });
     })
 
 });
 app.post('/addSequence',upload.array(), function (req, res) {
     console.log('post');
-    evaluateInstance.addAndAllign(req.body.sequence)
+    if(req.body.sequence==null || req.body.infoId==null){
+        var st = "Error adding sequence"
+        res.send({type: GraphType.NONE  , status: st});
+        return;
+    }
+    evaluateInstance.addAndAllign(req.body.sequence, req.body.infoId)
+    
     var st = "Adding " + req.body.sequence
-    res.send({status: st});
+    res.send({type: GraphType.NONE  , status: st});
 });
 
 app.post('/populate',upload.single('fasta'), function (req, res) {
     console.log('post');
     if (!req.file)
-        return res.status(400).send('No files were uploaded.');
-    evaluateInstance.populate(req.file.path)
+        return res.status(400).send({type: GraphType.NONE  ,status:'No files were uploaded.'});
+    if(req.body.info == null)
+        return res.status(400).send({type: GraphType.NONE  ,status:'Info not defined'});
+
+    evaluateInstance.populate(req.file.path, req.body.info)
+   
     var st = "Populating with file " + req.file.originalname
-    res.send({status: st});
+    res.send({type: GraphType.NONE  , status: st});
 });
 
 
+
+app.post('/addInfo',upload.array(), function (req, res) {
+    console.log('post');
+    if(req.body.infoId==null || req.body.startCodons==null){
+        var st = "Error adding info " + req.body.infoId
+        res.send({type: GraphType.NONE  , status: st});
+    }else{
+        listCodons = evaluateInstance.parseStartCodons(req.body.startCodons);
+        if(listCodons.length <=0){
+            var st = "Error adding info " + req.body.infoId
+            res.send({type: GraphType.NONE  , status: st});
+        }else{
+            evaluateInstance.createInfoNode(req.body.infoId, req.body.name, req.body.sciname, listCodons)
+            var st = "Adding info " + req.body.infoId
+            res.send({type: GraphType.NONE  , status: st});
+        }
+    }
+});
+
+app.post('/getInfo',upload.array(), function (req, res) {
+    console.log('post');
+    evaluateInstance.getDataFromInfo(req.body.infoId).then(function (lista){
+        var st = "Getting Info";
+        res.send({type: GraphType.DEPTH , status: st, info: lista});
+    });
+
+});
+
+app.post('/getAllInfo',upload.array(), function (req, res) {
+    console.log('post');
+    evaluateInstance.getAllInfo(req.body.infoId).then(function (lista){
+        var st = "Getting Info";
+        res.send({type: GraphType.DEPTH , status: st, info: lista});
+    });
+
+});
 
 
 app.listen(3000, function () {
