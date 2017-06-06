@@ -7,7 +7,14 @@ const GraphType = {
     NONE:2
 }
 
+//Type of graph enum
+const AllignType = {
+    DNA: 0,
+    AMINO: 1
+}
+
 
 if(typeof module != 'undefined' ){
-    module.exports = GraphType;
+    module.exports.GraphType = GraphType;
+    module.exports.AllignType = AllignType;
 }

@@ -1,5 +1,7 @@
 
-var GraphType = require('./common/commonTypes.js')
+var types = require('./common/commonTypes.js')
+var GraphType= types.GraphType;
+var AllignType = types.AllignType;
 var evaluate = require('./server/evaluate.js')
 var express = require('express');
 var multer  = require('multer')
@@ -39,7 +41,7 @@ app.post('/searchScoreDNA',upload.array(), function (req, res) {
     evaluateInstance.getNodesWithScoresDNAHigherThan(score, pattern).then(function (edges){
         evaluateInstance.getAllNodesDNA(pattern).then(function (nodes){
             var st = "Searched for DNA allign with score" + req.body.score 
-            res.send({type: GraphType.ALLIGN , status: st, scores:edges, nodes:nodes});
+            res.send({type: GraphType.ALLIGN , status: st, scores:edges, nodes:nodes, allignType:AllignType.DNA});
         });
     })
 
@@ -58,7 +60,7 @@ app.post('/searchScoreProteins',upload.array(), function (req, res) {
     evaluateInstance.getNodesWithScoresProteinsHigherThan(score, pattern).then(function (edges){
         evaluateInstance.getAllNodesProteins(pattern).then(function (nodes){
             var st = "Searched for protein allign with score" + req.body.score 
-            res.send({type: GraphType.ALLIGN  , status: st, scores:edges, nodes:nodes});
+            res.send({type: GraphType.ALLIGN  , status: st, scores:edges, nodes:nodes, allignType:AllignType.AMINO});
         });
     })
 
@@ -112,6 +114,24 @@ app.post('/addInfo',upload.array(), function (req, res) {
 app.post('/getInfo',upload.array(), function (req, res) {
     console.log('post');
     evaluateInstance.getDataFromInfo(req.body.infoId).then(function (lista){
+        var st = "Getting Info";
+        res.send({type: GraphType.DEPTH , status: st, info: lista});
+    });
+
+});
+
+app.post('/getInfoDNA',upload.array(), function (req, res) {
+    console.log('post');
+    evaluateInstance.getDataFromInfoDNA(req.body.infoDNA).then(function (lista){
+        var st = "Getting Info";
+        res.send({type: GraphType.DEPTH , status: st, info: lista});
+    });
+
+});
+
+app.post('/getInfoProtein',upload.array(), function (req, res) {
+    console.log('post');
+    evaluateInstance.getDataFromInfoProtein(req.body.infoProtein).then(function (lista){
         var st = "Getting Info";
         res.send({type: GraphType.DEPTH , status: st, info: lista});
     });

@@ -12,7 +12,7 @@ function submitForm(oFormElement)
           var nodes= myResponse['nodes']
           var scores = myResponse['scores']
           
-          populateGraphAllign(scores, nodes);
+          populateGraphAllign(scores, nodes, myResponse['allignType']);
 
         }else if (type==GraphType.DEPTH){
 

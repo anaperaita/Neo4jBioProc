@@ -90,7 +90,7 @@ var evaluate = function (){
 
     var lista=session
       .run( "MATCH (p1:"+type+")-[r:ALLIGNS]->(p2:"+type+") "
-      + "WHERE r.score "+sign+" {val} AND p1."+typeAttr+" =~ {pattern} AND p2."+typeAttr+" =~ {pattern} "
+      + "WHERE r.score "+sign+" {val} AND p1."+typeAttr+" =~ {pattern} "
       +"return ID(p1) AS NodeId1, p1."+typeAttr+" AS Sequence1,"
       +"ID(r) AS EdgeId, r.score as score, ID(p2) AS NodeId2,"
       +" p2."+typeAttr+" as Sequence2",{val:score, pattern:pattern} ).
@@ -217,6 +217,52 @@ self.generateProteins = function(){
       +"OPTIONAL MATCH (i1)-[r:INFO]->(p1:DNASequence)-[:TRANSLATES]->(a1:AminoacydSequence)-[:STRUCTURES]->(s1:Structure) "
       +"return i1.name AS InfoName, i1.sciname AS InfoSciName, i1.startCodons As InfoStartCodons, ID(i1) As InfoId, "
       +" p1.nucleotides AS DNASequence, ID(p1) as DNAId, a1.aminoacyds as AminoacydSequence, ID(a1) as AminoacydId, s1.structure as Structure , ID(s1) as StructureId",{val:infoId} ).
+      then( function( result ) {
+          var lista=[]
+    
+          for(var i = 0; i < result.records.length; i ++) {
+            lista.push(infoRecordToGraph(result.records[i]))
+            //console.log(result.records[i].get("DNASequence") + " , " + result.records[i].get("AminoacydSequence") )
+              
+          }
+          session.close();
+          driver.close();
+          return lista
+        });
+        
+        return lista
+  }
+
+   //Obtiene los datos a partir de adn
+  self.getDataFromInfoDNA=function(pattern){
+     var lista=session
+      .run("MATCH (i1:Info)-[r:INFO]->(p1:DNASequence)-[:TRANSLATES]->(a1:AminoacydSequence)-[:STRUCTURES]->(s1:Structure) "
+      +"WHERE p1.nucleotides =~ {val}"
+      +"return i1.name AS InfoName, i1.sciname AS InfoSciName, i1.startCodons As InfoStartCodons, ID(i1) As InfoId, "
+      +" p1.nucleotides AS DNASequence, ID(p1) as DNAId, a1.aminoacyds as AminoacydSequence, ID(a1) as AminoacydId, s1.structure as Structure , ID(s1) as StructureId",{val:pattern} ).
+      then( function( result ) {
+          var lista=[]
+    
+          for(var i = 0; i < result.records.length; i ++) {
+            lista.push(infoRecordToGraph(result.records[i]))
+            //console.log(result.records[i].get("DNASequence") + " , " + result.records[i].get("AminoacydSequence") )
+              
+          }
+          session.close();
+          driver.close();
+          return lista
+        });
+        
+        return lista
+  }
+
+  self.getDataFromInfoProtein=function(pattern){
+     var lista=session
+      .run(
+        "MATCH (i1:Info)-[r:INFO]->(p1:DNASequence)-[:TRANSLATES]->(a1:AminoacydSequence)-[:STRUCTURES]->(s1:Structure) "
+      +" WHERE a1.aminoacyds =~ {val}"
+      +"return i1.name AS InfoName, i1.sciname AS InfoSciName, i1.startCodons As InfoStartCodons, ID(i1) As InfoId, "
+      +" p1.nucleotides AS DNASequence, ID(p1) as DNAId, a1.aminoacyds as AminoacydSequence, ID(a1) as AminoacydId, s1.structure as Structure , ID(s1) as StructureId",{val:pattern} ).
       then( function( result ) {
           var lista=[]
     
