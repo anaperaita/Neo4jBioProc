@@ -16,6 +16,7 @@ function nodeInfoToHTML(nodeId){
     let htmlVal = "<p>Selected node with id" + nodeId +"</p>"
     htmlVal +=  "<p> Data value " + graphNode.data +"</p>"
     htmlVal += "<p> Info Name " + graphNode.infoName +"</p>"
+    htmlVal += "<p> Info Scientific Name " + graphNode.infoSciName +"</p>"
     return htmlVal
 }
 //Populates the graph for the aligns
@@ -87,8 +88,9 @@ function populateGraphAllign(relaciones, nodos, nodeT){
 
     s.bind('overNode outNode clickNode rightClickNode', function(e) {
         console.log("overNode " + e.data.node.label );
-        
-        htmlVal=nodeInfoToHTML(e.data.node.id)
+        var htmlVal = "<div class='nodeInfoDisplay'> <h2> Nodo </h2>"
+        htmlVal+=nodeInfoToHTML(e.data.node.id)
+        htmlVal+="</div>"
 
         document.getElementById('elem').innerHTML= htmlVal
     });
@@ -112,10 +114,11 @@ function populateGraphAllign(relaciones, nodos, nodeT){
         console.log("overEdge " + e.data.edge.label + " " +
           e.data.edge.source);
         var htmlVal = "<p>Selected edge with score" + e.data.edge.label+"</p>"
-        htmlVal+= "<p> Source</p>"
+        htmlVal+= "<div class='nodeInfoDisplay pure-u-1-2'><h2> Source</h2>"
         htmlVal+=nodeInfoToHTML(e.data.edge.source)
-        htmlVal+= "<p> Target</p>"
+        htmlVal+= "</div><div class='nodeInfoDisplay pure-u-1-2'><h2> Target</h2>"
         htmlVal+=nodeInfoToHTML(e.data.edge.target)
+        htmlVal+="</div>"
         document.getElementById('elem').innerHTML = htmlVal
     });
 
@@ -282,7 +285,10 @@ function populateGraphDepth(info){
 
     s.bind('overNode outNode clickNode rightClickNode', function(e) {
         console.log("overNode " + e.data.node.label );
-        document.getElementById('elem').innerHTML = "Selected node with " + e.data.node.id
+        var htmlVal = "<p>Selected node with " + e.data.node.id+"</p>"
+        let graphNode = g.nodes.find(x => x.id ==e.data.node.id)
+        htmlVal+="<p> Datos : " +graphNode.data +"</p>"
+        document.getElementById('elem').innerHTML = htmlVal
     });
 
     s.bind('doubleClickNode', function(e) {

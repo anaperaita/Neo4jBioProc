@@ -9,7 +9,7 @@ h1 { color: #000;
  text-transform: uppercase; 
  }
  footer {
-  position: fixed;
+  position: relative;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -41,6 +41,15 @@ h1 { color: #000;
     margin:20px;
 }
 
+h2 { color: #111;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 32px; 
+    margin: 0px; 
+    text-align: center; 
+}
+
 #selector{  
     height: 140px;
 
@@ -49,5 +58,17 @@ h1 { color: #000;
 }
 
 .status{
-    margin:20px;
+    margin:10px;
+}
+
+.status p{
+    margin:5px
+}
+.nodeInfoDisplay{
+    overflow: scroll;
+    word-wrap: break-word;
+    
+}
+.nodeInfoDisplay p{
+    margin: 5px;
 }

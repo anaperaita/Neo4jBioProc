@@ -30,7 +30,7 @@ public class ProteinStructureTest {
 			
 			String sequence=scanner.next();
 			
-			assertEquals(ProteinStructure.pred(sequence), scanner.next());
+			assertEquals(scanner.next(), ProteinStructure.pred(sequence));
 			    
 
 		} catch (IOException e) {

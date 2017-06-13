@@ -1,7 +1,7 @@
 var neo4j = require('neo4j-driver').v1;
 const fs = require('fs');
-
-var driver = neo4j.driver("bolt://localhost", neo4j.auth.basic("neo4j", "la1Reinona"));
+const config = require('./config.js');
+var driver = neo4j.driver(config.database.host, neo4j.auth.basic(config.database.user, config.database.pass ));
 var session = driver.session();
 
 
@@ -22,6 +22,7 @@ function nodeRecordsToListElem(records){
    return {Sequence: records.get("Sequence1"),
                 NodeId:records.get("NodeId1"),
                 Name:records.get("Name"),
+                SciName:records.get("SciName"),
                 InfoId:records.get("InfoId") 
                 }
 }
@@ -133,9 +134,9 @@ var evaluate = function (){
   }
 
   //Obtiene todos los nodos que siguen un patrón
-  self.getAllNodes = function(pattern, query){
+  self.getAllNodes = function(score, pattern,  query){
     var lista=session
-      .run(query ,{ pattern:pattern} ).
+      .run(query ,{ pattern:pattern, score:score} ).
       then( function( result ) {
           var lista=[]
     
@@ -151,21 +152,28 @@ var evaluate = function (){
   }
 
 //Obtiene todos los nodos de tipo adn y sus alineaciones
-  self.getAllNodesDNA = function(pattern){
-    query = "MATCH (p1:DNASequence)-[:INFO]->(i:Info) WHERE p1.nucleotides =~ {pattern} "
-      +"return ID(p1) AS NodeId1, p1.nucleotides AS Sequence1, i.name AS Name,"
-      +" i.startCodons AS StartCodons, ID(i) AS InfoId"
-    return self.getAllNodes(pattern,query);
+  self.getAllNodesDNA = function(score,pattern){
+    query = " MATCH (p1:DNASequence) -[r:ALLIGNS]-> (p2:DNASequence) "
+            +"WHERE p1.nucleotides =~ {pattern} AND r.score > {score} "
+            +"WITH collect(p1) + collect(p2) as p "
+            +"UNWIND p as dna " 
+            +"MATCH (i:Info) WHERE (dna)-[:INFO]-> (i) "
+            +"RETURN distinct ID(dna) AS NodeId1, dna.nucleotides AS Sequence1,"
+            +" i.name AS Name, i.sciName as SciName,"
+            +" i.startCodons AS StartCodons, ID(i) AS InfoId"
+    return self.getAllNodes(score,pattern,query);
   }
 
 //Obtiene todos los nodos de tipo proteina y sus alineaciones
-  self.getAllNodesProteins = function(pattern){
-      query = "MATCH (p1:AminoacydSequence)<-[:TRANSLATES]-(:DNASequence)-[:INFO]->(i:Info)"
-      +" WHERE p1.aminoacyds =~ {pattern} "
-      +" WITH distinct p1,i "
-      +"return ID(p1) AS NodeId1, p1.aminoacyds AS Sequence1, i.name AS Name,"
-      +" i.startCodons AS StartCodons, i.sciname AS SciName, ID(i) AS InfoId"
-    return self.getAllNodes(pattern,query);
+  self.getAllNodesProteins = function(score,pattern){
+      query = "MATCH (p1:AminoacydSequence) -[r:ALLIGNS]-> (p2:AminoacydSequence) "
+            +"WHERE p1.aminoacyds =~ {pattern} AND r.score > {score} "
+            +"WITH collect(p1) + collect(p2) as p "
+            +"UNWIND p as amino " 
+            +"MATCH (i:Info) WHERE (amino:AminoacydSequence)<-[:TRANSLATES]-(:DNASequence)-[:INFO]->(i)"
+            +" RETURN distinct ID(amino) AS NodeId1, amino.aminoacyds AS Sequence1, i.name AS Name, i.sciName as SciName,"
+            +" i.startCodons AS StartCodons, ID(i) AS InfoId"
+    return self.getAllNodes(score,pattern,query);
   }
 
 //Genera proteinas a partir del adn y aminoacidos a partir de las proteinas
