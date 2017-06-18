@@ -113,7 +113,7 @@ function populateGraphAllign(relaciones, nodos, nodeT){
     s.bind('overEdge outEdge clickEdge doubleClickEdge rightClickEdge', function(e) {
         console.log("overEdge " + e.data.edge.label + " " +
           e.data.edge.source);
-        var htmlVal = "<p>Selected edge with score" + e.data.edge.label+"</p>"
+        var htmlVal = "<p>Selected edge with score " + e.data.edge.label+"</p>"
         htmlVal+= "<div class='nodeInfoDisplay pure-u-1-2'><h2> Source</h2>"
         htmlVal+=nodeInfoToHTML(e.data.edge.source)
         htmlVal+= "</div><div class='nodeInfoDisplay pure-u-1-2'><h2> Target</h2>"
@@ -162,7 +162,7 @@ function populateGraphDepth(info){
             g.nodes.push({
                 id: idInfo,
                 label:  "Name " +info[i]['InfoName'],
-                data:idInfo,
+                data:"Name " +info[i]['InfoName'],
                 type: NodeType.INFO,
                 x: 0.90,
                 y: Math.random(),
@@ -228,6 +228,7 @@ function populateGraphDepth(info){
                         g.nodes.push({
                             id:  idstr,
                             label:  "Structure " + structureseq ,
+                            data: structureseq,
                             type: NodeType.STRUCTURE,
                             x: 0.30,
                             y: Math.random(),
@@ -287,6 +288,21 @@ function populateGraphDepth(info){
         console.log("overNode " + e.data.node.label );
         var htmlVal = "<p>Selected node with " + e.data.node.id+"</p>"
         let graphNode = g.nodes.find(x => x.id ==e.data.node.id)
+
+        switch(graphNode.type){
+            case NodeType.INFO:
+                htmlVal+=graphNode.data;
+                break;
+            case NodeType.DNA:
+                htmlVal+=graphNode.data;
+                htmlVal+=graphNode.data;
+                break;
+            case NodeType.AMINO:
+                htmlVal+=graphNode.data
+                htmlVal+=graphNode.data
+                break;
+
+        }
         htmlVal+="<p> Datos : " +graphNode.data +"</p>"
         document.getElementById('elem').innerHTML = htmlVal
     });

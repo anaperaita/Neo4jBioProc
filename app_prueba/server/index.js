@@ -43,10 +43,16 @@ app.post('/searchScoreDNA',upload.array(), function (req, res) {
         pattern='.*'
     }
     evaluateInstance.getNodesWithScoresDNAHigherThan(score, pattern).then(function (edges){
-        evaluateInstance.getAllNodesDNA(score, pattern).then(function (nodes){
-            var st = "Searched for DNA allign with score " + req.body.score 
-            res.send({type: GraphType.ALLIGN , status: st, scores:edges, nodes:nodes, allignType:AllignType.DNA});
-        });
+        if(edges.length > 100){
+             var st = "Searched for protein allign with score " + req.body.score +
+             ". Too many elements returned (max 100)"
+            res.send({type: GraphType.NONE , status: st});
+        }else{
+            evaluateInstance.getAllNodesDNA(score, pattern).then(function (nodes){
+                var st = "Searched for DNA allign with score " + req.body.score 
+                res.send({type: GraphType.ALLIGN , status: st, scores:edges, nodes:nodes, allignType:AllignType.DNA});
+            });
+        }
     })
 
 });
@@ -65,10 +71,16 @@ app.post('/searchScoreProteins',upload.array(), function (req, res) {
         pattern='.*'
     }
     evaluateInstance.getNodesWithScoresProteinsHigherThan(score, pattern).then(function (edges){
-        evaluateInstance.getAllNodesProteins(score, pattern).then(function (nodes){
-            var st = "Searched for protein allign with score " + req.body.score 
-            res.send({type: GraphType.ALLIGN  , status: st, scores:edges, nodes:nodes, allignType:AllignType.AMINO});
-        });
+        if(edges.length > 100){
+             var st = "Searched for protein allign with score " + req.body.score +
+             ". Too many elements returned (max 100)"
+            res.send({type: GraphType.NONE , status: st});
+        }else{
+            evaluateInstance.getAllNodesProteins(score, pattern).then(function (nodes){
+                var st = "Searched for protein allign with score " + req.body.score 
+                res.send({type: GraphType.ALLIGN  , status: st, scores:edges, nodes:nodes, allignType:AllignType.AMINO});
+            });
+        }
     })
 
 });
@@ -110,18 +122,21 @@ app.post('/populate',upload.single('fasta'), function (req, res) {
  */
 app.post('/addInfo',upload.array(), function (req, res) {
     console.log('post');
-    if(req.body.infoId==null || req.body.startCodons==null){
-        var st = "Error adding info " + req.body.infoId
+    if(req.body.startCodons==null){
+        var st = "Error adding info " 
         res.send({type: GraphType.NONE  , status: st});
     }else{
         listCodons = evaluateInstance.parseStartCodons(req.body.startCodons);
         if(listCodons.length <=0){
-            var st = "Error adding info " + req.body.infoId
+            var st = "Error adding info "
             res.send({type: GraphType.NONE  , status: st});
         }else{
-            evaluateInstance.createInfoNode(req.body.infoId, req.body.name, req.body.sciname, listCodons)
-            var st = "Adding info " + req.body.infoId
-            res.send({type: GraphType.NONE  , status: st});
+            var infoId = evaluateInstance.createInfoNode(req.body.name, req.body.sciname, listCodons)
+            infoId.then(function(id){
+                var st = "Adding info " + id
+                res.send({type: GraphType.NONE  , status: st});
+            });
+            
         }
     }
 });

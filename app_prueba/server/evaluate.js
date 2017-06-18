@@ -3,7 +3,7 @@ const fs = require('fs');
 const config = require('./config.js');
 var driver = neo4j.driver(config.database.host, neo4j.auth.basic(config.database.user, config.database.pass ));
 var session = driver.session();
-
+var limit = "102";
 
 //Transforma un record de la base de datos a una estructura enviable de arista
 function edgeRecordsToListElem(records){
@@ -59,7 +59,7 @@ var evaluate = function (){
   self.getAllign =function(cadena){
 
     session 
-      .run( "MATCH (p1:DNASequence), (p2:DNASequence) WHERE p1<>p2 CALL blast.swexec(p1, p2) return p1",{seq:x}).then( function( result ) {
+      .run( "MATCH (p1:DNASequence), (p2:DNASequence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1)",{seq:x}).then( function( result ) {
         session.close();
         driver.close();
       }).catch(function(error) {
@@ -75,7 +75,7 @@ var evaluate = function (){
     session 
       .run( "CREATE(p1:DNASequence{nucleotides:{seq}}) WITH p1 "+
             "MATCH (p2:DNASequence) WHERE p1<>p2 "+
-            "CALL blast.swexec(p1, p2) return p1",{seq:cadena})
+            "CALL bio.swexec(p1, p2) return count(p1)",{seq:cadena})
       .then( function( result ) {
         
         session.close();
@@ -94,7 +94,7 @@ var evaluate = function (){
       + "WHERE r.score "+sign+" {val} AND p1."+typeAttr+" =~ {pattern} "
       +"return ID(p1) AS NodeId1, p1."+typeAttr+" AS Sequence1,"
       +"ID(r) AS EdgeId, r.score as score, ID(p2) AS NodeId2,"
-      +" p2."+typeAttr+" as Sequence2",{val:score, pattern:pattern} ).
+      +" p2."+typeAttr+" as Sequence2 LIMIT " + limit,{val:score, pattern:pattern} ).
       then( function( result ) {
           var lista=[]
     
@@ -159,7 +159,7 @@ var evaluate = function (){
             +"UNWIND p as dna " 
             +"MATCH (i:Info) WHERE (dna)-[:INFO]-> (i) "
             +"RETURN distinct ID(dna) AS NodeId1, dna.nucleotides AS Sequence1,"
-            +" i.name AS Name, i.sciName as SciName,"
+            +" i.name AS Name, i.sciname as SciName,"
             +" i.startCodons AS StartCodons, ID(i) AS InfoId"
     return self.getAllNodes(score,pattern,query);
   }
@@ -171,7 +171,7 @@ var evaluate = function (){
             +"WITH collect(p1) + collect(p2) as p "
             +"UNWIND p as amino " 
             +"MATCH (i:Info) WHERE (amino:AminoacydSequence)<-[:TRANSLATES]-(:DNASequence)-[:INFO]->(i)"
-            +" RETURN distinct ID(amino) AS NodeId1, amino.aminoacyds AS Sequence1, i.name AS Name, i.sciName as SciName,"
+            +" RETURN distinct ID(amino) AS NodeId1, amino.aminoacyds AS Sequence1, i.name AS Name, i.sciname as SciName,"
             +" i.startCodons AS StartCodons, ID(i) AS InfoId"
     return self.getAllNodes(score,pattern,query);
   }
@@ -180,19 +180,18 @@ var evaluate = function (){
 self.generateProteins = function(){
   
   session 
-      .run( "MATCH (p1:DNASequence) WHERE NOT (p1:DNASequence) -[:TRANSLATES] -> () CALL blast.proteinTranslation(p1) return p1")
+      .run( "MATCH (p1:DNASequence) WHERE NOT (p1:DNASequence) -[:TRANSLATES] -> () CALL bio.proteinTranslation(p1) return count(p1)")
       .then( function( result ) {
           session.close();
           driver.close();
-          session.run("MATCH(p1:AminoacydSequence) WITH p1 "+
-              "MATCH (p2:AminoacydSequence) WHERE p1<>p2 "+
-              "AND NOT (p1:AminoacydSequence) -[:ALLIGNS] -> (p2:AminoacydSequence) "+
-              "CALL blast.swexec(p1, p2) return p1").then(function( result ) {
+          session.run("MATCH(p1:AminoacydSequence), (p2:AminoacydSequence) WHERE p1<>p2 "+
+              "AND NOT (p1:AminoacydSequence) -[:ALLIGNS] -> () "+
+              "CALL bio.swexec(p1, p2) return count(p1)").then(function( result ) {
               session.close();
               driver.close();
               session.run("MATCH(p1:AminoacydSequence) "+
                 "WHERE NOT (p1:AminoacydSequence) -[:STRUCTURES] -> () "+
-                "CALL blast.proteinStructure(p1) return p1")
+                "CALL bio.proteinStructure(p1) return count(p1)")
                 .then(function( result ) {
                   session.close();
                   driver.close();
@@ -208,7 +207,7 @@ self.generateProteins = function(){
 //Setea el nodo de info para todos los nodos 
   self.setDataOfADN=function(adn, infoId){
     session 
-      .run( "MATCH (p1:DNASequence), (i1:Info) WHERE p1.nucleotides in {seq} AND i1.infoId = {infoId}" +
+      .run( "MATCH (p1:DNASequence), (i1:Info) WHERE p1.nucleotides in {seq} AND ID(i1) = {infoId}" +
             "CREATE UNIQUE (p1) -[:INFO]-> (i1),(i1) -[:INFO]-> (p1) ",{seq:adn, infoId:infoId})
       .then( function( result ) {
         session.close();
@@ -221,10 +220,11 @@ self.generateProteins = function(){
  //Obtiene los datos a partir de adn
   self.getDataFromInfo=function(infoId){
      var lista=session
-      .run( "START i1=NODE("+infoId+") MATCH(i1) WITH i1 "
+      .run( "START i1= node("+infoId+")  MATCH(i1) WITH i1 "
       +"OPTIONAL MATCH (i1)-[r:INFO]->(p1:DNASequence)-[:TRANSLATES]->(a1:AminoacydSequence)-[:STRUCTURES]->(s1:Structure) "
       +"return i1.name AS InfoName, i1.sciname AS InfoSciName, i1.startCodons As InfoStartCodons, ID(i1) As InfoId, "
-      +" p1.nucleotides AS DNASequence, ID(p1) as DNAId, a1.aminoacyds as AminoacydSequence, ID(a1) as AminoacydId, s1.structure as Structure , ID(s1) as StructureId",{val:infoId} ).
+      +" p1.nucleotides AS DNASequence, ID(p1) as DNAId, a1.aminoacyds as AminoacydSequence, ID(a1) as AminoacydId,"
+      +" s1.structure as Structure , ID(s1) as StructureId LIMIT 20"  ,{val:infoId} ).
       then( function( result ) {
           var lista=[]
     
@@ -247,7 +247,8 @@ self.generateProteins = function(){
       .run("MATCH (i1:Info)-[r:INFO]->(p1:DNASequence)-[:TRANSLATES]->(a1:AminoacydSequence)-[:STRUCTURES]->(s1:Structure) "
       +"WHERE p1.nucleotides =~ {val}"
       +"return i1.name AS InfoName, i1.sciname AS InfoSciName, i1.startCodons As InfoStartCodons, ID(i1) As InfoId, "
-      +" p1.nucleotides AS DNASequence, ID(p1) as DNAId, a1.aminoacyds as AminoacydSequence, ID(a1) as AminoacydId, s1.structure as Structure , ID(s1) as StructureId",{val:pattern} ).
+      +" p1.nucleotides AS DNASequence, ID(p1) as DNAId, a1.aminoacyds as AminoacydSequence, ID(a1) as AminoacydId, "
+      +"s1.structure as Structure , ID(s1) as StructureId LIMIT 20" ,{val:pattern} ).
       then( function( result ) {
           var lista=[]
     
@@ -270,7 +271,8 @@ self.generateProteins = function(){
         "MATCH (i1:Info)-[r:INFO]->(p1:DNASequence)-[:TRANSLATES]->(a1:AminoacydSequence)-[:STRUCTURES]->(s1:Structure) "
       +" WHERE a1.aminoacyds =~ {val}"
       +"return i1.name AS InfoName, i1.sciname AS InfoSciName, i1.startCodons As InfoStartCodons, ID(i1) As InfoId, "
-      +" p1.nucleotides AS DNASequence, ID(p1) as DNAId, a1.aminoacyds as AminoacydSequence, ID(a1) as AminoacydId, s1.structure as Structure , ID(s1) as StructureId",{val:pattern} ).
+      +" p1.nucleotides AS DNASequence, ID(p1) as DNAId, a1.aminoacyds as AminoacydSequence, ID(a1) as AminoacydId,"
+      +" s1.structure as Structure , ID(s1) as StructureId LIMIT 20" ,{val:pattern} ).
       then( function( result ) {
           var lista=[]
     
@@ -309,9 +311,9 @@ self.generateProteins = function(){
   }
 
   //Crea el nodo de informacion
-  self.createInfoNode=function(infoId, name,sciname, startCodons){
-    query = "CREATE (i1:Info{infoId:{infoId}, startCodons:{startCodons}";
-    queryData={infoId:infoId,startCodons:startCodons}
+  self.createInfoNode=function( name,sciname, startCodons){
+    var query = "CREATE (i1:Info{startCodons:{startCodons}";
+    var queryData={startCodons:startCodons}
     if(name!=null){
       query+=", name:{name}";
       queryData.name= name;
@@ -321,19 +323,22 @@ self.generateProteins = function(){
       queryData.sciname= sciname;
     }
     
-    query+="})";
-    session 
+    query+="}) return ID(i1) as Id";
+    var result=session 
       .run( query, queryData)
       .then( function( result ) {
+        
         session.close();
         driver.close();
+        return result.records[0].get("Id")
       })
+    return result
      
   }
 
 // Parsea los codones de inicio
   self.parseStartCodons=function(startCodons){
-    regExp = new RegExp('^([T,G,C,A]{3})(,[T,G,C,A]{3})*$');
+    var regExp = new RegExp('^([T,G,C,A]{3})(,[T,G,C,A]{3})*$');
     if(!regExp.test(startCodons)){
       return [];
     }
