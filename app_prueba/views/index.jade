@@ -68,7 +68,7 @@ block content
     p.label Search score DNA
     form(name="searchScoreDNA", method="post", action="/searchScoreDNA",enctype="multipart/form-data",  class="pure-form pure-form-stacked", onsubmit="return submitForm(this);")
       div.input
-        p.label Maximum score
+        p.label Minimum score
         input(type="text", name="score")
         p.label DNA Pattern
         input#dnaPattern(type="text", name="pattern")
@@ -79,7 +79,7 @@ block content
     p.label Search score Proteins
     form(name="searchScoreProteins", method="post", action="/searchScoreProteins",enctype="multipart/form-data",  class="pure-form pure-form-stacked", onsubmit="return submitForm(this);")
       div.input
-        p.label Maximum score
+        p.label Minimum score
         input(type="text", name="score")
         p.label Protein Pattern
         input#proteinPattern(type="text", name="pattern")
@@ -93,7 +93,7 @@ block content
         p.label Sequence
         input(type="text", name="sequence", required)
         p.label Info Id
-        input(type="text", name="infoId", required)
+        input#infoIdSequence(type="text", name="infoId", required)
       div.actions
         input(type="submit", value="Add Sequence", class="pure-button pure-button-primary")
   
@@ -152,7 +152,7 @@ block content
           span File
           input(type="file", name="fasta" , required)
         p.label Info Id
-          input(type="text", name="infoId", required)
+          input#infoIdPopulate(type="text", name="infoId", required)
       div.actions
         input(type="submit", value="Upload", class="pure-button pure-button-primary")
 

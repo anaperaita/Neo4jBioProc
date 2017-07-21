@@ -106,11 +106,12 @@ app.post('/addSequence',upload.array(), function (req, res) {
 app.post('/populate',upload.single('fasta'), function (req, res) {
     console.log('post');
     if (!req.file)
-        return res.status(400).send({type: GraphType.NONE  ,status:'No files were uploaded.'});
-    if(req.body.info == null)
-        return res.status(400).send({type: GraphType.NONE  ,status:'Info not defined'});
+        return res.send({type: GraphType.NONE  ,status:'No files were uploaded.'});
+    infoId =req.body.infoId;
+    if(infoId == null)
+        return res.send({type: GraphType.NONE  ,status:'Info not defined'});
 
-    evaluateInstance.populate(req.file.path, req.body.info)
+    evaluateInstance.populate(req.file.path, infoId)
    
     var st = "Populating with file " + req.file.originalname
     res.send({type: GraphType.NONE  , status: st});

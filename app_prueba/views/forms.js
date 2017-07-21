@@ -7,6 +7,7 @@ function submitForm(oFormElement)
     if(xhr.readyState == 4 && xhr.status == 200) {
         var myResponse = JSON.parse(xhr.responseText);
         document.getElementById('status').innerHTML=myResponse['status'];
+        document.getElementById('elem').innerHTML = '';
         var type = myResponse['type'];
         if(type==GraphType.ALLIGN){
           var nodes= myResponse['nodes']
@@ -16,7 +17,9 @@ function submitForm(oFormElement)
 
         }else if (type==GraphType.DEPTH){
 
-          populateGraphDepth(myResponse['info'])
+          populateGraphDepth(myResponse['info']);
+        }else{
+          populateGraphDepth([]);
         }
     }
   }

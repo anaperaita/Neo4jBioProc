@@ -99,7 +99,8 @@ function populateGraphAllign(relaciones, nodos, nodeT){
         let graphNode = g.nodes.find(x => x.id ==e.data.node.id)
 
         document.getElementById('infoId').value=graphNode.infoId
-
+        document.getElementById('infoIdPopulate').value = graphNode.infoId
+        document.getElementById('infoIdSequence').value = graphNode.infoId
         if(nodeType==AllignType.DNA){
             document.getElementById('infoDNA').value=graphNode.data
             document.getElementById('dnaPattern').value=graphNode.data
@@ -162,7 +163,7 @@ function populateGraphDepth(info){
             g.nodes.push({
                 id: idInfo,
                 label:  "Name " +info[i]['InfoName'],
-                data:"Name " +info[i]['InfoName'],
+                data: info[i]['InfoName'],
                 type: NodeType.INFO,
                 x: 0.90,
                 y: Math.random(),
@@ -312,7 +313,9 @@ function populateGraphDepth(info){
 
         switch(graphNode.type){
             case NodeType.INFO:
-                document.getElementById('infoId').value=graphNode.data;
+                document.getElementById('infoId').value=graphNode.id;
+                document.getElementById('infoIdPopulate').value = graphNode.id;
+                document.getElementById('infoIdSequence').value = graphNode.id;
                 break;
             case NodeType.DNA:
                 document.getElementById('infoDNA').value=graphNode.data;
@@ -347,3 +350,5 @@ function populateGraphDepth(info){
         console.log(event);
     });
 }
+
+

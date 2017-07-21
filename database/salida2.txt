@@ -1,4404 +1,0 @@
-Welcome to the Neo4j Shell! Enter 'help' for a list of commands
-NOTE: Remote Neo4j graph database service 'shell' at port 1337
-
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CACTAATAGCACTCAGTAACCGATACCCCGG CTTCTCCATACCGCCAACCAGATCATGCAGTTCGTAGCATATATACAGCGGATCAAGGTCGTAATCGCGTGGAGGGCTTA ACAACACAACACATCAATGTCAGACGCGTAATAATACGAGCAGC'}) WITH p1 MATCH (p2:DNASequence) W HERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 400       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-200 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TTGACTTGATCAAGTGAAAAGGGCGTTAGTC GAGTTGCTTCGGCGTGTTGCTAGTAATTGTACTCACGATTACCTGATCGTCTACAAGCGGCTCGGGCAGTGCCCATCCAG TCGAGGACCGGGTCCTCAGTGGGAGACCCGACAGTAACTTCAACCCGTGGT'}) WITH p1 MATCH (p2:DNASequ ence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 401       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-129 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TGTTTCCAAATCTGATAAGCTAAGTCAAACG CTAAACTGATAACGATCAACCCATTGGAGAGGGGAATCGGGACTTGTTTACGGCAATGCGACCGGTGTAGCAGGGAATGC GCAGCCGCCACGCTACGTGGTGCTACCGAGCGAATCTAGGCTCATTCCAGCTAGCT'}) WITH p1 MATCH (p2:DN ASequence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 402       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-146 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GCCATATCAAGGACTTTAACCACGCCATTGT AAAAAACGTGCAAGGATCACAGTCTGCCCTCCCCTAGGTACTCTTTAATTAAATTGAGGCCCGTTATCGGGAATGTCGCC GTTGGGTTCACTATTAATAACTCCCTCTCGCTCTACCTACGCAGTGAGGCC'}) WITH p1 MATCH (p2:DNASequ ence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 403       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-149 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CTCAGACTTATTCGCCATGCTATGATACGAC TACGAGATCGAGGATACGCGACTCTGATCTTAATTTAGTTGAGGCCGCGCAAACTAGTCATCGCCTTCTGCTCTCGGTAG CAGCGAGAAGCCTACATCTAGCGCCAAGGCATAGCTACATCCCGCAAGGAATCG'}) WITH p1 MATCH (p2:DNAS equence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 404       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-118 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'AAGATGAGGCTCATCTGATTCCAGCCATGAT GGGTCGCCGTTCGTCATGCGATACGAATGTTTCAATCCGTCTCACGGCTAACTAACTCTATATCTGGAAGTAGACTCTAT ACAGGTGGCGGTTTCTTCTTGGCTTTAACATTCCCACATCACGCACC'}) WITH p1 MATCH (p2:DNASequence ) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 405       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-101 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GTAGGGCTTGCCTGTAGAACGGGTTTAGGCG TATTGTCGGCAGGCCCATCTCCAGCGACTTCTTGACTGCGCAAGGTATAAAGGCGATCGAGTAATCCTGTTATTGCGGAA AAGCTACATGGAGTGTACGATTAGTTGTTTACAG'}) WITH p1 MATCH (p2:DNASequence) WHERE p1<>p 2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 406       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-110 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TGCGTCCTTCTAATGCAACCTACGCGTCTTG AATATTGTAAACTCCGCATGTGATTGAAAAGGTTATTGCGCACGAGCATAACTAGCTTCAACACTTACTATTTAAATAGA GATCTCGACGGGTCTGCCCCTTCCGTTCTCCCGCCAAATCGGGCATCGCCGACATGTTAG'}) WITH p1 MATCH (p 2:DNASequence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 407       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-103 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CGCCGCCCCCTCACATTAATGGTCGGACAGC ATGCTCCGGAGAAATGTATGTGACGTGTGCGCGTGGTCGCTAGCTGCGTTAACTATGGCCTTTGCCGGATTGCAAATTAT GCCCGTCACGTAGATGGACATCAACAACCGACGGACCCGACAGTGGACTTTT'}) WITH p1 MATCH (p2:DNASeq uence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 408       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-110 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CCCCGCAACGTAGCAACATGACGGACGAAGC AATGGGGAGACTTTCTTAATCACGATGTATGGACTTTTCTTGGTGGGCGGATCGCGCTTCGTATAGTGAGTTCCTACAAA CCGACTACTTAGTTAATTGATACTCCGATCTTTGTTCCAATACGGGCTT'}) WITH p1 MATCH (p2:DNASequen ce) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 409       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-115 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TGTGGTACGGTTGAGCTGCAGCCAGAGAGCG TTAAGATTCTAAGAGAAGTACCGAAAAGATGGGGGTCTCCTAACCAAGTGGGACGGCTTTACATACAGACTGGCGAATAA CGACACAAAACCATGAAGACTCGTCTCCCAGTCTGACTACTCTCATCCTCTAGAATTAC'}) WITH p1 MATCH (p2 :DNASequence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 410       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-97 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CAGATGCAGGGTCCAAGGGCCATTCAGTTGG CTTAAGCGTAGACAGTCGGAGATTAACTAGGGAAAATTAGTCAATGTCCCCAGTCGCCACCCTAGGCGGTATCCATACGT ACCCATAACGGTTGCCCTGGGACAGTCACTATTCATAATTGTAAC'}) WITH p1 MATCH (p2:DNASequence)  WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 411       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-95 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CATAGCATGACCGCAGCCCGCAACTGAGGCA ATTAGAGCGTGTGCGGGGACTCTTGGTAACTCCACTGAATGGCCCGCCGTAAGGTTCTTGCCACATCGAGGGAGTCATAC CCTCCTGTCGGCACTAGAGGAGACGACTAGCCAGCT'}) WITH p1 MATCH (p2:DNASequence) WHERE p1< >p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 412       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-103 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TACGTGCACGTCGATGCAACGCTCCGGTTAC CTGCACCGTCCACTCTCATATTAGGCACACACGCTGATGGATAATACGCCCAACGGACGCTAACGTGAACGAATTCCGGG AAAATCCGGAGCCAACAGACATTTGATGCTTCATTTGAGATCGTAGAACCCA'}) WITH p1 MATCH (p2:DNASeq uence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 413       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-107 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TTATGCCGGAGCAGCCGCTTGAGCGAATATC GACCGTGGGAAAGACCGCAAGAATCGTAGGAGCTATATGTTACAGTCGTCAAACTTGCTCCGTCGAAAGTGCATTCCTAC CTGTGCGTGTCGTGCCACCTAAGCTCGACGGTCTTAGAACCTGATTTACACCGCTTC'}) WITH p1 MATCH (p2:D NASequence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 414       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-117 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'ACTCAAGCAATTGTTTACTAGACGCGAGATT ACGAGTGAGATGATACTCGCTCCGTAGTGCCCGAGCAGCATTTATGGTCGGTTCATGAGGGCTCGCATGATGATTCCTCT CATACATCCATTACGCGTTTTGGCCTCCCGTATGTAGTATT'}) WITH p1 MATCH (p2:DNASequence) WHER E p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 415       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-122 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TTTACCGGATGATTTGTGCCAGTCGAATGTA AGAATTCGATATGACGAGAAAGGCACGACAGAAACGGTGGATAATTAACATCTGAATCGTCCCCTGGGCGCTTAGTAATG GTGAAGAGCCTGACATAAGATCATACGAGAAGCTTAGCCGAGAGGCGGCC'}) WITH p1 MATCH (p2:DNASeque nce) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 416       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-88 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GTACGGTTTTTTCGCAAACCGTAACTGGGCA CTGGAGAATTGGAACGACTCACGGCTTGTCCTAAACGACCGATTCATCTGTGGTGTACATGGCAACCAGCAGCGTGACAG TTCTCCAATACCCAGCATTAACCTTTAGCGTAAACATGTTA'}) WITH p1 MATCH (p2:DNASequence) WHER E p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 417       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-111 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GAGCGTGCGCGCCAGAAAGTCATGGTGTGCT GACGTACTCATTACCTTGATGGGTAACACTGTCCGACAGAGCTCTGACGTTCTGTTCGAGGAAGACAAATGAGAGGGGTC CAATGGCCTTATGTGACAAAAAATACAGGGAGCTCGGCTAATGACGACCGTACGG'}) WITH p1 MATCH (p2:DNA Sequence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 418       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-120 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GATTTTGCTAACTTCGCTAACACCGGGACGT GACTCCATGAGAGCGGAGGCTGTAAATATAACGAACACGACACGTGCCCTTATACTCTTTACGAGGTCACCTGCGCCCAG CTTGCCCGCGTTACGACTATGGGTAGGGGGAAACTGGGCTACACGGCCGG'}) WITH p1 MATCH (p2:DNASeque nce) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 419       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-88 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CTGTTGAGCCTGACCGGCGCCACGTATCTTT CCCAGTTAATTAGACGGAGTTGTAAATGACGATATAAAGGAACCGCATGACAGCCATATCGTAGACCCAGTAAGCACCAC TTAGCTACAATTTATGCTTAAGCACTCCTTGCCAGTTAGCTGTC'}) WITH p1 MATCH (p2:DNASequence) W HERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 420       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-94 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'ACTATGTGTCGCTAGTTGAGTTTATTGATCC AAATTCCGCGGCGGTTTCGATACGCACGGGGGTTGCATTAGCTGAATCGTACTCTCCGATGAGAGGTGGAAGGCATTACT GGAGGCTCAAATAAGATTCGCGGGTTGCGAGTATCTATGTCTT'}) WITH p1 MATCH (p2:DNASequence) WH ERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 421       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-101 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GAATACGTCAGGTCGGGTCAGGAAGACTAGG ACCTGTCCTACGGTGCGTGTTGCTATGCTATGTCGATATTTTCCGCCGTGTGCGGGTATGATTATATGGAGCCTTGCCAA AGCCTTTATTTTCACTTTCGGAAGAAGATCTTAAACGCGGCGTGACA'}) WITH p1 MATCH (p2:DNASequence ) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 422       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-92 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CTGCACGTAGACTTTCCTTTGTTAGGAAAAC ACAATACAGAAACTAACAGACTCTCCTCACCCCCAGAGTTCCCGCACCCACAGTCGCACCCTAGAAGAAAGTCATTCATA GTAATAACACACGGTCGCCTTTCGAGCGAGGTGATTCTCAGTTAGGCCAATGAC'}) WITH p1 MATCH (p2:DNAS equence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 423       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-88 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'AGCCTTTTCCTCTAAGCACTGGACACCCCCC ACGCAACACATGTGGTCGGTACCAAGCTCTAGGGCAGCCCTTTACAAAGAAAAGTCCTTAGGTACGGAATTAGATAAACC GTCCATCTCGATCTGGACTCCGGACCGGTCGTCTTGACTGAACTGTGCG'}) WITH p1 MATCH (p2:DNASequen ce) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 424       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-96 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CCGACCTTGGATATGGCACTCATAAACTTCG CGGGACGTCGATAGAGGTCACGGTGCTCGCTGGTAATGAGCGCGTCTGTGATGAATCGTGGCAGCTAAGGAAGCTGAGCG CATCACCATATACACCAGATTCAATTGGGCCAATATTTGCAAGGTGTGCATT'}) WITH p1 MATCH (p2:DNASeq uence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 425       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-97 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CATCGGGCCCTGCGGTTCAATACAACCCACT AGGAACGAGTAGGCGACGTTCAAGTGGCCTTCGGGTTGGCCCACAACCGAACGTGGGGTTGGTCATGCATCACGGGCAGT CAATTGTTATTCGATATCTGATAGTGTCGAGCTTGGTGTTCTAACGGGCGGATAA'}) WITH p1 MATCH (p2:DNA Sequence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 426       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-97 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TAATATCACTTGATCCTGGGCCACAAATGTT GTGGCTTACCCGTGAACAAGTTAGAGTGGGTAGTGCTGATGAACCTTTTCTGATGACACTTGTCTAGAAGGGGGTTCCTT CTAGGTGCCGGTCATCAGTTTTGGTGCGGGGTAAAGCTGGGGCTTAC'}) WITH p1 MATCH (p2:DNASequence ) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 427       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-129 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TTCTACAGGGAAGCGGGAGACTAATCTTAAA GCTAATGGTCTACTCTTTGCCGCAATATACACCGGGAGTTGTTCGCAACCGATCGACTACTCGAACGTGGTTTGGAGCTA GCGTTATAAAAGACACAGACTGTCGTCAACACAATATATCCACACTCC'}) WITH p1 MATCH (p2:DNASequenc e) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 428       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-129 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GATCAACAAGGCCCCAGACCCCAATAACCAT AAGCATGGAATTAGAGCCAGCATGATAAATTTCTCGTGGAACCGATAACACAGGCGAACTTGCCTGTGGAGACTAGTATG ACGCTCGCAAAGCACTTATGAATCCAGCAACTGGTGATCCGCGACAAGCTTTCGGAAGC'}) WITH p1 MATCH (p2 :DNASequence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 429       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-135 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'ATACAGCAGGCACGTCTGCACGGACAAAAAC CAGAACACGGGATTCCCTTTTCTCAACGACGCAATGTGTCCACTCAGTTGACATACAGTTCCTTAAGGTTTTTGTCGGAA GATTCTGGGCATACAAATCGCTACTCCCTTTACAAATGAAG'}) WITH p1 MATCH (p2:DNASequence) WHER E p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 430       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-111 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CTAAAAAATTGTGGATGGTTCTGCCGCCCGC GTTTGCTCCAAGAGGCATGTGGGGCCGCGCCGTGTTGCTCGCTCAGGCCCTTTTCGGAGCTCGCATGTGGTATCTTCGCA ACTAGAAGTATAGTGCCTCTCACAGCCAAAAGTAAATGATGTTCCATGGGAATCTT'}) WITH p1 MATCH (p2:DN ASequence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 431       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-98 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'ACCAAGAGGCTAGGCCACCGAAGCAGGCTAA TGGCACCCGTTCTTCAATTTATTACGTTCACTCCTACGCTATCGAATTTTATTTATGCGCATTTGAGGCTGTACGAATCA ATTAGCTAAACTGCTGATCGGATATTCCACTAGTATGAAAGGTGTACT'}) WITH p1 MATCH (p2:DNASequenc e) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 432       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-131 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'ATTATAACGAATTCCACAAGCACGGCGCGTT TTAGTAAATACCTTGACAAGCGACCGCATCACTGCGCTGACATAGGGAGAAGTGACTCACTTCCGCTCGAGCTAGCGTCA CATTCGCGTACATTCATAATGTAAAACGGTAGTCGAAAATCTATGCATACGG'}) WITH p1 MATCH (p2:DNASeq uence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 433       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-99 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GCATACCTATACCGCCAACCATAATTTCAAC CTGCGCTGGTAGGGGCATTCGCGGTACCGTAGGGCACTATACACACGATCAGTTCACCAGTCCTGAGTTGATAACAAATC AGCCATCTCGGTGGTGATATGCTCGCGTCGCGCAACCGACATAAGAGACT'}) WITH p1 MATCH (p2:DNASeque nce) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 434       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-106 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TAATCACCAAGCTTAAATGATATCCTGTACC AGTGAGTCTTCCGTTAGTAGTCAACCTTTCTTGCCGTGCTCCACCGGATCCTTCGCGTGGCAAGATCGCCACCACGTTAT CGGGAGTCCCAGGTGCTCGAGCTATCCGGAGCAGATAGTCTAGTGAAGT'}) WITH p1 MATCH (p2:DNASequen ce) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 435       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-98 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CCCGAGTCCAGGCTCATCTCTGAGATGGTAG ACACCCTATCACGTCTTGGGTCGATTCCCCCAATCATATGCAGCTGCGCTGTAACGCGCTCGTTCAGATACATTGTGCTT GAGTAGAGCCTCGTGGGCCCTATTGTGTAAAGTATTACCTACCCGT'}) WITH p1 MATCH (p2:DNASequence)  WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 436       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-110 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CAACTACCAGTGCTTTAGCTGCAGATCACAA GAAGTGAGGGCAATAAATTAAAATAGCATTGTGGGCGAATATCTATAGGAGACCAACTCCGCATCGACCTCGCTTGCTAC GCCTTCACTTTGAGCCCTTGCGTCTCAATCATATGAGGGGGACAATGTCTG'}) WITH p1 MATCH (p2:DNASequ ence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 437       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-139 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GTCCATGCTAGGTTCGGGGGTGCTTAATCAC GTTGATGAGAGCGGGTTAAGGCGTACACAGAGAAACGAAGTCGGCCCCTCTCAAAGTACACATGGTCTTTGCCCCCGAGG CTTGAGAAAGCCACGAATCAGATCTCTGAACTAAGAAATCTGTGCAG'}) WITH p1 MATCH (p2:DNASequence ) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 438       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-121 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CCTTGAGATTAATCTTTGTTGTATTCCCGTA CCGTTTCCGTAAACACGTCATTCGAGGACGTGCATTGTGACCGACTACCCAATATCCACTTCCTCTAGGAGGTATGCGGT GGGTGGACTCTATATTCTGGCGTCGATCGTGTCGCGCAAGCCACGGATGTGG'}) WITH p1 MATCH (p2:DNASeq uence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 439       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-119 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GGACTTAATATACTTAAACCGTGTCAACGGT TTTCTATACTGAAAAAGACCGAGCTACTAAGACTCGCAGAGCTCGACCGATCGAAGTGAGGCGCTATCCCAGCCTCACGT TCGAATACGCGACCCCTCACCGACATCCCTGGCTTCAGAAGTGCGACGCTTTTC'}) WITH p1 MATCH (p2:DNAS equence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 440       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-123 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'AGGAATTGGCGCCATGGGCTCTGTAGTCTTG GATTCGAGTAATAGGCCTCAGCACCGTTCGGATTCTCCACTTTATGAGACAACAGCAGAATCTTTCATTACCGGGTTGGG GAAGAATTCACGGTAACGCCAAGCTGCTCTCCAACTTCGTGCGTTAGGGGAAGCGAGT'}) WITH p1 MATCH (p2: DNASequence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 441       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-137 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'AAATTGTCCCCACTCTTCCCGGCAATTACGC GAAACCTTGACGAGGCTGATCCACTGTTGAGTTGGAGAAGCACCTGCGCACATAACTGCTAAGTCCTGGGCGCGTGGTGC TACATTTCTCGCAAGCGACCCAATCTGACGAATTTTCGCTCAGTTGGG'}) WITH p1 MATCH (p2:DNASequenc e) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 442       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-113 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GAGTTTCGCATTCAGTGCGTCTCGGACACGG TGAAGGTGCAAAGCCATCACACTGGAACATGTGCCACCACACCCGTGTGACTACGGACAATTGATGAGGTGCAGATTCTA AATCAACGTAATGTAAGTAAAGGAAGCGTGCAACGATCGGAAGGGGCACA'}) WITH p1 MATCH (p2:DNASeque nce) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 443       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-111 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'ACTGGCAAGTTAAGAGGTGGAATACGCCAGG CGTAGATGGCCCAGTGCTATGCGTAATGTTATCATAGAGTTCCGGCCTTCTCGAGCTCCTGAGCATTGACGGCTCCCGTT TGTCCTAACACCTGTACAACAAAGCCATGAGTAAGTGTATACCATGGGT'}) WITH p1 MATCH (p2:DNASequen ce) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 444       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-109 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CCCTCCCGTCCAGGCGGACCGCGACGCCTTG GGTCTGTTGTCCTCAACGCTAGAAGACCAATCATTCAAGGATGCATTACGTACTAGAGGTTTGATGGGGCGTAGCTGGGA GACTGGATTTTCATAGACTCACAACTTGAACGCGTTCGCTGTGTAAGG'}) WITH p1 MATCH (p2:DNASequenc e) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 445       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-104 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'ACGAGGTGACTAGCCCTTTTTCTCACTACAC AAGCTTATCGCCGCACCGACTGACGGTGGCTCCTACAATCCAGCAAAACTACTCCGTTCTCATGAGCGCCACTAACATCC ACCTATAGGACGTAGACGTTTTGGACATGACCAGTACATGTTCAAGCAT'}) WITH p1 MATCH (p2:DNASequen ce) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 446       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-107 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GGGCGCGCCAAAAAGAGCGTTTGGCGGGCGA GTTCAGTTCGTAGGGCCAAGGACACACGGGAGGCACGGAAGGTCCGCCAAGGTCTCTCAAAAAAATGTTGCGAGTCGGCA ATAGTACACTCGGACAAAAAACACATAACACCCCCAACCCTGAATCTCTCTCTG'}) WITH p1 MATCH (p2:DNAS equence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 447       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-89 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GATAGCTGAACTATTAGCCTTGCTAGTCGAC CTATACGAGGGACGACAACACTAGGACATGAGGACTTGTAGAGCTGATGAGTCAGAGATCATTAGCCAGCTAGCCACATA CCTGGAGAATGATAACCGACAATTCATGGTGGCAGTCTACCTACCACT'}) WITH p1 MATCH (p2:DNASequenc e) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 448       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-119 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CAAGCCAAGCAGGCCCAAGTGGAGTGCCGGA TGTCATATACGATATCTTACGTTGGGAGCGGTCCTTGCAGATAACCATGATGTCGCGTGGACCGGACAGCTGAGTACGAG ACCGCATGCTATATTTTACGAATCTGTGCGGGTGGATCCATGTCGCATGA'}) WITH p1 MATCH (p2:DNASeque nce) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 449       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-141 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GGATATCAGCCTAGTACCGAAATAGCACTCG CAAACGGGCAAAGGTACACCAGGCCTCGACATCACCTGCTTCATTACGATTTACGCAATCACTAGCGTATGATAAAAAGG GATATATATTCCCTATGACCCCCGCTCATGGCTGTGCCATTAAG'}) WITH p1 MATCH (p2:DNASequence) W HERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 450       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-101 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TAAGAAGACAAGGGATTACGGGGAGATTAAC CGATCTGCTTGCTCTTCCAACGGAGGTAGTACTTGTGAAAGAGTATCTCAGATAGATTCTTAATTCTGGAGTAAGTCTCC AAAGGCAACTCACTGCAGTCACGTTACATGTGATAGCGAAGCTCACA'}) WITH p1 MATCH (p2:DNASequence ) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 451       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-100 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'ACTCGTAACAGGAAATCTAGACTCGTTGGAG AGCGCGTCCACTTTTAACGTATAGAGGTGCTGCCCGCAACATAAACATCCTCCCGCATTACGATTGTGCATTATTCATTT CTACATCTTCGGTAGGATACGAAACTAACGAGGGATTCAGGTCTT'}) WITH p1 MATCH (p2:DNASequence)  WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 452       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-122 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TTTTCGCGACAGATGTGGGAAGAGATAACAG TCGTGCCACACAACGAACAATCCCGGCCGCAGCCAGGATCTCGCTGCATTTCTCTTCGTTGCGGATAACGTGGATCTTAT CTAGGCTGCGTTTTCGCCAAAGTTGATAACCTTCACCTT'}) WITH p1 MATCH (p2:DNASequence) WHERE  p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 453       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-115 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TCTTGCCGGTCATGATACTGGATGAGTTTAT ACCACGGGTCCATAGGATCGGTGTACGTGGAGGGCAAGAGCTGCTGTTTAGCGAATGGTTTCGTCCTTTGGCTTTGCGGT CTGAACCTACCAAGACTGTACGCCATGAGGTTGAAGCGTCGTGTGT'}) WITH p1 MATCH (p2:DNASequence)  WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 454       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-103 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TCGGCAATGTAAGGTCCATGTCTACTAGGCG GAGCCCATTCTAGTCAGAGTGACTAACGTGCTCAGTTCAGCCTTACAATAAAGACATCCCACTTTTGGTATGAATGACGT TTGAGCTGCTGGTAGTTCAAGAGTGCCCATTATAGGTTGGAGGCATAACCTT'}) WITH p1 MATCH (p2:DNASeq uence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 455       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-124 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'AGAGGGAGGGTGCAGATGCTAGGATTCCCAT GACCGTAGGGTTCATCAGCAGTTTCTATCATCGTATCTTGCGGGACAAAACACCTAGCAAGTAGAGGCCAAAATGTCCTA CGAGATTACCTGTTAGTTGCATTGTCCTACTTCCGGTACATACCTTAATTGC'}) WITH p1 MATCH (p2:DNASeq uence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 456       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-115 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TACCGACTTGGGTCAATCTCCAAACTGTCTC AATTCAGAATCGTCCCTGGCAGGGACGGTAGCAATGGTCCCTAAAGAAGAAGTATATGTCCTCACCAATTGACGCCGTAA TGGTGTCCGCCTGCGTCTCCTAATATTCCGTCCGTGTGCGCGATGGCCGTTGAC'}) WITH p1 MATCH (p2:DNAS equence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 457       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-104 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CGTAAAGGCAGGTGCTTATTTGAGGATACTA GTACCAATACACATGGAAGCAGCAGGTGTGGTTATAATCACGCCGCTGTCCCGGCCAGATTTAGTAGTAATTCTAAAAGT TCGTACCAGATTCGCACAACCATCCCTAAGCTAGCTTAGGACGTA'}) WITH p1 MATCH (p2:DNASequence)  WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 458       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-104 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CTTGGCAGGTGTTACGGACTGCGACTGCCAA AGCAATGATCCAAGTCATAACCCTCATTGACGCCTAAATTGGCATCCTCCGCCGGCCCTGGTGATAATTCGTACGCCCAC CGTGCACGCTTTCCTTGTACTTCAGTACTGAACAAGGTAGAG'}) WITH p1 MATCH (p2:DNASequence) WHE RE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 459       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-98 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TTTATTGCCCTGATTACCGGAGGCCCCTTCC GCCAGGTGCGACCAACTTGGGGGGAGCGTATAGAGAGCATCAAATGATACATAGCCCGTTGATAGTTTAGACCCACTACC TTTTATCCTCTCAGATGCAAGGTAGCACTAACCAGTTGCTCCGAAA'}) WITH p1 MATCH (p2:DNASequence)  WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 460       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-107 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GAGGTTCAAATTGATTGCACTCCACTCGCCA TGAATTTTATTCCATACGCAATGATTCTCCAAAACACTATCCGTCCATACCAGTATAGAGCGCTCATAATGAGGAATCGT AGACTCCTAAATCGATTACCACTCACGAGCTCCGTAACCAGTTAACACACCT'}) WITH p1 MATCH (p2:DNASeq uence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 461       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-110 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GCATTCGGTGCAGTACTTAGATCGGAGCAGA CTTGATCTGTATAAGGGTCACACTGACAGTCCCGAACGAAGATGCGTGCAGTCAGGGACGCGAAGGATTGTAGTCACAGC CCAACTCCAAATGCGTGACAGCGCCAGTTTAAACAATTGAATGCTTGGT'}) WITH p1 MATCH (p2:DNASequen ce) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 462       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-144 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'ACTTTATGCTGGAAAACTGATTCAGGGTCTC TCCTCCGGTTACAACCCCGAGTTTCCCCTCTGGCGAGCGGTTGATTACCGTCGCCAGGGAAGCCACCCCTATACAGAAAG GCCATAAGATGCCATTCTTTAGGTACGATTACCTGGTTTATTCGTTGC'}) WITH p1 MATCH (p2:DNASequenc e) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 463       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-110 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TAAGCTGGCAACTACGGTAGGAGAAGGAATT GGCTGAGTGCGTCGAATACCGGAGAATTAATTTTATCCGTAAACAGGTATTTCCATTAAATAGGCTTCCATAGAGGCTAA TGAGCATCGTTTAAATCACCGGAAAATCTATTAAGACCTGGCG'}) WITH p1 MATCH (p2:DNASequence) WH ERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 464       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-109 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TGTTCAAGGGATACACGTGGCTGTTGCATGA GCTATTCGTAGGTAATCCCGATCTAGAGAAGAACCGCTCTGTCGGTCGGGTAATGACCGAAGGATGGCCTCCGTGACGGG AGTGTATGCATGCCAATCACTAAAAAGGATGGCGGGTTATCCCAAG'}) WITH p1 MATCH (p2:DNASequence)  WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 465       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-115 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CCAGAAGCATGAGCTTGCGGTTACTTGTTTA TTGCTGGGCAAAGTGTACCGTACGCGTGGAAATGACGCACTGCTAGGCGAGCTGCGCCAATGTCAATGCCATTCCACAAA ATAGCTGCCACTTACTAACAAGAAACAACTTCAGCGGCCAACGCGTAGCC'}) WITH p1 MATCH (p2:DNASeque nce) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 466       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-118 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'ACACCCATTCGGATCGCGCAGAATGCTTGGT CATAACGCTGGGGTTGATTTTCGGGTCCAGTAGTAAGTCGTCGTCGGACGACGTGCCACGGGTAGTTGACGGGTGAACTA GCATGGATATGCACTAGTTACAAGCTAACCGTTTCGCCACTAAATGAAATCACATC'}) WITH p1 MATCH (p2:DN ASequence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 467       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-132 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TGGGAGGGCACGTCGGCTGCGAGGACCGTCG CCAACGGATTCTGCTGCTGAGAAAGCGATACTTGATTGGAGCGGCCGACTCTAGCGCTTATGCTCTTACTTGTTTAGTCT AACCTATCGACGCCGCTTCGATAGCCAAGCTTCTCTCGGCCTGGCTGATAA'}) WITH p1 MATCH (p2:DNASequ ence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 468       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-118 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CACGGTGGTCCGACTAGCGCAGTAAGCGCAC CTGCAACGCTAGAGCATTACTACAATGGCGTATGGGTATCTAGCTGGGTAGACCTGAGCTGTATGTAACGGGCGCAGCTT CGTGTTTGGGTTGAACATCTACTTGGTGCCGAGGCAGTAAAACAAC'}) WITH p1 MATCH (p2:DNASequence)  WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 469       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-168 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'ATCCATAGGCACATTGCGTAACGAATCCCAG AATCAGGTTAACGCTTACATTGCGAGGAGGCGTACCACTTTAGAACTTTGTGGGAAGTAACTGCCCCTGTAGTAACCGTG CATCATACCATAAAGTCGTTCCCTCAAACATGCCAGAATGCTTTTCGT'}) WITH p1 MATCH (p2:DNASequenc e) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 470       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-139 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GGGGTATCTACCAGATGGTATCCCTTTTTGT AGACCTTTTAGCATATAAGCGCCGCCATAAATGTGGATGGTTCCGACAGGTATTACCAACGCTGGCTGAAGAGAGTCTAC ACTGGGGATTCTGGTAGGGCCCAGGTATAATGAGGTGATGCGGAG'}) WITH p1 MATCH (p2:DNASequence)  WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 471       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-129 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GTTGCCGGGATTTGTTCTCTTATTTGTTGAG GCTCAGTGCTTTGGACGTAGACGTGTATTCCGTGTGATCCTGAGTACCAACGTCTCCTCCGGGCTGGCGGGGTTCAAGAT CGAAGCGCCGGGCAGGCGCTATCCTTCTTGACTTAGCCACA'}) WITH p1 MATCH (p2:DNASequence) WHER E p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 472       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-110 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TATAGAACTGGATCTAGTTTCACGGCAAACT GCCCGACCGGTCTGGTAAATTTCATCTCGCAAGCACAAGGACAAGGCCTTGACTGCTGCTGATGTTTTATAAAAGTCACG ATCTAAACAGAATTGAGTCTAAGATCGTAGATAAATCTGATCC'}) WITH p1 MATCH (p2:DNASequence) WH ERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 473       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-109 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'ATGAACACTTGCGTGAGTCCAGATGTTTGTC CTTTGGACTCATCTTCTAGACCATATGCTAAGAGCACCCTTACTCTGCCCGTTCGCGTAACCGTCCACACCGTAGTTTAC GTATATCGATCGAAAGTTTACCATTCCAATGTATAATGCTTTCCCA'}) WITH p1 MATCH (p2:DNASequence)  WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 474       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-100 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CGTGTCTACAATCGCACGCTCGCTCTCCCGA TGATTGGGCGCCCAGGGCACATTAACTTGACGACAGTACGTCAGTCCTATATAGGGTCCCGCAGACAGGCAGTGCAAATC CCTAGCACCCAGGCAGGGTTGCTCGCGACTTTCTATGCAAACTAACCCGA'}) WITH p1 MATCH (p2:DNASeque nce) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 475       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-121 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'AACCTAGATCACATGCGCGCGGGGTGTACGC CTGCCCGTGACTCGCCAGACGCGTGTTGACTATCTTTAGCGGTTGACATTCGCGTACATGTCAGCTCCATCCAACAGGAG TATGGCAAGATGGGGATGCGAGCAGCGACAGTGTTGGATCTCTTACCTAAAATTT'}) WITH p1 MATCH (p2:DNA Sequence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 476       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-106 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'ACACAAGTCTTAACTTCCATTGTTGCTCATT TCTTGCGCTCATTAATACGACGTGTTCAGCAACGCGTACGGATTATTAAATAGTCTGGCAAGATTCGCGTAGTCAGACGT GACGCCCAGCCCCGAATCTTCGTCCATATTGAAATTAAAACCTGGAT'}) WITH p1 MATCH (p2:DNASequence ) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 477       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-122 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CCCCAAGCGCTGACGGGAAGCGCATAGTGCA CAAGTCCGCAGCACATTAAACAGTACCACCGACGGGCGCTGTCCGCGCGTGGGTACAGCGCCAACGAGCGCTAAATGGCA GTCAAGCGGTTTGTGGAAAGAGGTAAACTGGGTTAATCGGCCC'}) WITH p1 MATCH (p2:DNASequence) WH ERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 478       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-104 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CCGATTGTCATTTCCCTCATCCGGCGAAGTT ACCCGAAAGGCAAATTATTTCAGTCAGATTTATCAAAGTCTAAAGTCGGCCATGTGGACAAAGCGTCACACACGACAATA GTAGCTCAACAGTAATACAAGAGTCATTATGAGTTAGCAGCCTGGGCCTAAG'}) WITH p1 MATCH (p2:DNASeq uence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 479       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-105 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'ACTAAACGCATGGCGGTGGCGGCAGCTACCC ATCTATCGGGCGGGGATGTGCTCTCCCCATTTCCCCGGGTCGCATGTTGACACCCAAGTTGCCCCACTAATACAATGTAT GCTGCTAACCGGTTATGGATACTTTAACTAAAAAAAAGACTCAGA'}) WITH p1 MATCH (p2:DNASequence)  WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 480       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-116 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TTTTACGTCTGGGAGTTGAAGTTCGGATCAG CACGGCTTCCGCGGCATCACTCCGTGTTGGTTGTTGCCGAACCCATACGGGGTTGAACAAAATCACGATGTCATGCAGGA GTACATTCTTCTACCTTGGAACTACTGATTCGCAAACGTCATTTTGACT'}) WITH p1 MATCH (p2:DNASequen ce) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 481       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-148 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CGCGGCTAATATGCCGACGAGCAGGAGCGAT AGTTATCGACCATGGCAGTTACACGCTGAGCAGTCATGCGCACCTATTGTGTAAATACATCGCCCCCGAGCCTTACGGAT ACCCACGAGTGACGGGCAATGAGGGGTCAGTCTTAATTATCGAATGAAG'}) WITH p1 MATCH (p2:DNASequen ce) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 482       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-150 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CGATACCGTAGCACGAATATGAAGGGGGCAT CACGTACAATCCTTGCAGCGTAGACTCACTAAAGGACGAATACAATCGTGCACGCCCAAGCCGGTTACCTTACAATGCCC GGAAGACCTTCCAATGATCATTCAGAATTAAGATGCTATTTTCC'}) WITH p1 MATCH (p2:DNASequence) W HERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 483       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-118 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GGGGGGCGTATATTTGCGACCGAGTCAACAC AGAAAGGTATGTTAACTAATCGGTCTACGTCTGTTTGCAGATTTTGTCGATATGGGATGTAAATCAGTGATTCGAAGCAC TGAGCGAATGTGCTTGTCGGGGGGGGTGGGGGTGTGTGACTCGAAGCTC'}) WITH p1 MATCH (p2:DNASequen ce) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 484       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-111 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TTATTTGACGCGTATGTTTGAGAATTAGTTC GAGTCGCATAGTTAACGGGACCTCTAACTGCGCACGCACGCCAGGGTTGCGTTAACTATCGGTCAGAATGAGAGCGAAGA CGTCTATTAACCATTGAATCAAGCGCGAACGTACACATTCACACCGCTT'}) WITH p1 MATCH (p2:DNASequen ce) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 485       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-137 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GATTGCCCCGTATGCCCCGACCCCGTCCATC TTTCAATTGGATCCCCCTTACCGCAACGATCTAAGCCGGGCGGAGCTTTGTTTATGCCTCGTTTCGTGACCGTCGCAACA ACTAACCACCGTCGGCGCCGCCGAACCCTGCGGCGCATTTGCCTTGCCCACCGGA'}) WITH p1 MATCH (p2:DNA Sequence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 486       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-109 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CTATACAATTCTGGCTGCTGTTACGTCCGGC CGACACGCGGGCGTACTGTTGGAATGAGAGGAGATAGTGATGCTACACGTGCGCATCCCGCTGTCCGATAAGGACTCAGC GTTATCTGACGCGCGTGCCCGGGAGGGCGCTATAATGAGATAGAGA'}) WITH p1 MATCH (p2:DNASequence)  WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 487       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-112 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'ATCGCTGAGAGCGGTCCCCCCGGATCACTGA TAGTTTCATAAACGATAGTCGCGGCTGTCCCAACAGAGGAATTTTGTCAGGGTCCACATAGTTAACTTCGGGTTTTGTAC AAGATATCTAAGAGAAAGTAGCATTGGTAAAACCACCGCATATTTGCAAACATCTATT'}) WITH p1 MATCH (p2: DNASequence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 488       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-113 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TGATCGGCGGCTTTATCTGTGCCCGCTACCA GGTGTCATGGCAGCTGCGGCACATTCTTGGCGGGTACATTTAGGGAATGAATTTCGCCGCTACGACCATGATGCCCTCAC TTAAATCGTTCTGGAACCGGTCCCGTGCACCATTCTAATC'}) WITH p1 MATCH (p2:DNASequence) WHERE  p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 489       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-118 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GAGGTCCGTCGACCAAATTTCGTTTCCAGAA TTGACCCCACCTAGGTATACAAAGGAGATCAATTCCCTACCGAGCACAGATCGCCGACCTAGCTACTTGAATCCTTATCC AACGACGTAATCGACCGATACCGCCCTGACAAAGCGTATATTTTTCACCTCGCC'}) WITH p1 MATCH (p2:DNAS equence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 490       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-114 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CGATGAACTACGAAATAAAGGGATAACGTAA CGCGCGGCTGATAGTAGACTGGATGGGCTATGACCGAAGGACATGCCTGCTCAATTGGTGGTCCCTAATACAAGTAGGCA CCCGCTTCAGAAAATTTATGGGGTCTGTCATTGACCGACTTGAGCTATACTG'}) WITH p1 MATCH (p2:DNASeq uence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 491       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-114 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CGAGAACACTTACGGTAATACCGTACGGACC TGTATAAACCTTCAATCAGGGTTTCACTATCATGTGTCGAGGCGTAATAATCTAACTGTAACGTTCCCCTAACCGAGTGA GCGTTAGAAAGCCTGCCACGCACCAAGTACCCCTGGACAGAGCGTGAGCATACCA'}) WITH p1 MATCH (p2:DNA Sequence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 492       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-140 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TTTCGCTCGGAGAAATAGAGCGCGGACATCG CGAGTTCAAGGTACTCACATCCATGTAGGAACTCCGTCGCCTTTTGCACTGGCGTAATGCCTATGTTCACCGAGAAGGGC GTAGTATTGAGTCCCCCATAGGGGCACCGTTTTACTAGAGTCAATAGTTACT'}) WITH p1 MATCH (p2:DNASeq uence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 493       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-123 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'ATTCAGTCTCACAACTTAGCTGTGTTTATTA CACACAAGCTCGGCCTGGATGATACTAGCCGATAGGCACGACCCGTTTGCCCTAAATTTGAGAAGGTTTACAGCTCAGAC GAGATAGACTTCGCTCATTTTATCAACGCAATTGTAGCGCCATCAAGGT'}) WITH p1 MATCH (p2:DNASequen ce) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 494       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-134 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GCGGAGGCTCTGCCACCTTAACGTACGCCTG TAGTGTTAAACCACGTGACTACAAGATGGGACTGTCTCTTGCGGGAGTGTCAGAGCATCTGGCACTGTACCCACTATACA ATTCCATATGAGCGGTCTTTTTCTGCCGCTTCAATTCGTCTGTGCC'}) WITH p1 MATCH (p2:DNASequence)  WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 495       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-113 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'ACGGCTGGATAATTCGAGCACAAACCGACCT GTCCGCCCTTTGCGACAGGTATCCGAAGCGATGCATCTTAGCGTACCATTCATAGGGGCTCTACTCTTCTCCGAGTGCAC TCGTCGGTGCCGCTAGGCTGTTGAGGAAACAGTGTAGGAAACATTCGGA'}) WITH p1 MATCH (p2:DNASequen ce) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 496       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-130 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CTTGCTGAAAGGGAGAGTACGTCCGATACCA TAGGACCGATTGAGATTGAATACACCTACCGGCGTATAGCCTTAAGTACTACACTGGGACTCTAGACCTCCCTCGCACGT TAGCCTTAGGGATGGCTGCTTTGGTCGTCGGAGTCCCGATGTTTGCGGCTTGTTTA'}) WITH p1 MATCH (p2:DN ASequence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 497       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-114 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CATCTTGCAGCAGTCGGGGGACGCAAGCTTA AGTGTCCACTTTTGAAGAACGGCGACATCTGGTGGTCACGGCTGTCCTTGCTATCTATTTGCATCTCACCTCCTAGGCGC GTATAACAAAGACCCCAATCCTTAGGGTTTTCGTATGTTAGGACTCACTGT'}) WITH p1 MATCH (p2:DNASequ ence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 498       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-118 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CACTGGGGAGCCACCCACACGGTCAGACTGT CGAAGACAAAAGTGAGGCAAGATAAATTCACGTAGTTTCAGGGAGTTACCTTCAGGGTCATGTGGTTCCGAAGTGAGTCA CAGTTACGCCTCTAACCTTATCCCCACCTTCGCCCTTTTCATCAACGCC'}) WITH p1 MATCH (p2:DNASequen ce) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 499       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-145 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'AGGCTTCAATTCTAAAGACCCCTGAGTTGTT TGGCCGGTCTGCAGGGTGGTTTATATTGTATCTGTTGAGTTTCTGGAGCGGTTAGGTCGCGAATTGTGCCGGCTACTTTC CCCCGACGTGGAGTATCCCGATAACGCGGCATATAACATAAGAAATCCATA'}) WITH p1 MATCH (p2:DNASequ ence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 500       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-172 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'ACTACCCCCAGGGTGTCGCTTACGGATCGCG GCCCCACGTGTGCCCTGGAGATTTCTATTTCAACCTTCGACATAGCCCTGCAGTCATGGTTCGGAGGGAACGAGTGGCGG GTACGAACGTGCGTCCGACAATTTCCAAACAGCAAAGCAGCGAGTCCC'}) WITH p1 MATCH (p2:DNASequenc e) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 501       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-127 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TCCACGCCAGGCCTCAAATGTGTCAGGAACA GGATACTGCGACTTTGAGGACTAAATTTGTCCGCGGCTCTTGGTATAAGGATGCCCAATGCGAAAATAAAAGAATAAATA CCGCCACTTATACCTGCGTATGTCCGAAGCTTGTCTATAAGGCTTGGATATCG'}) WITH p1 MATCH (p2:DNASe quence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 502       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-143 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GAACCAACCTCTTTGCAAAACATGCTTGCCA CATTTAGCTTGGAGCGAGCGTTTGGAAGAAATTTGGGTGCTAACCAGGAAGGGTCGTAGAGGTTTCAGAGAAGCGGCCAT TCGATAGCCTTATGACACTCATACTGGAACCACTGACCAGACCCTGCAGGATGTGACTGACC'}) WITH p1 MATCH  (p2:DNASequence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 503       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-133 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TATAAAAATCCCCGCTTATTTTACCCCAGTA TAGTGCTTGATGCCAAGGGCTCAAAATTTACCAGTAGTGTCATGACTTGCGAGTTCTAGTCGACTGCCGTACTCTAAGGT GTCAGTCCGACCATCGAATACTAACAAGTCGCGTGCTCAATCAGTACG'}) WITH p1 MATCH (p2:DNASequenc e) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 504       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-121 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CGATGTGGAGGTACGTCTCCAGTTCAAAATA GAAGCCGTAATCTAAATATCCAGCTTAGCTCAGTCTTCGGTCTCCGACACTGGGGTATGCGCTTGATCTTACGTTGAGAG TGGTATAGGCTCGAAATCATTCCGGGCTAGACATTACCTCTAAGGGGT'}) WITH p1 MATCH (p2:DNASequenc e) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 505       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-173 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TGGTCCGTTATAGAGGTGGACTCTTTCCCTA GAGCGCCAGTTCGTCGCTACATTGCTACTAAGAGAAATCACCTTACTTAATGACCCAGTAGACGGATTTCTTTAATTTTT AGCATAAGAGGTCGGTGACCAAAGTCCGTAACTGCCTCCTCGCCGATCGCGTC'}) WITH p1 MATCH (p2:DNASe quence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 506       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-176 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GTATAGATCAACTACGAACTAACTGTCCACT CGGCTATACGTATAGGGATACCGCAGGGAATATTGACCCTATTAAATTGGGCGCTCACGCGCTAAAAGGCCTTCAACATA GTAGCTTGTGAACTTAAGAGCGGGTGCAACTGCAGAATCTG'}) WITH p1 MATCH (p2:DNASequence) WHER E p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 507       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-147 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TCTAATAAATAGACGTGATGACGCCAGGTAA TGTCATTGTTGAGGGATGACTAGGTCCGCCCTTGGTAGGGAAAAAGCTACACTGCATTTGACGCCCGTGCGCTTTAAGCA GCAATCTCCTAGTTCTGAGGGTACTGATGGTGCTAGGGAAAAACAA'}) WITH p1 MATCH (p2:DNASequence)  WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 508       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-168 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GCTTGGACTAGCTCACATCCTCTGAGTTGAA CTTCAGGTGCGTACATTACAAGCTGCTGACTACCGCGACGCACGCTTTGGTTACGAGAGGTGTTAGGTTTCTCAGCAGCA CGACAAGGCTAGTCTTTCTTAGTGAGTAGACGGTATCTTATAATGTGTTCGAAGT'}) WITH p1 MATCH (p2:DNA Sequence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 509       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-142 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'ATTAACAGCATCTTGAGCATACGGGGCAAAG ATAGAGCTAGTTTGAGCAGCCGCGTACGAGACGGAATGTCAAAAGTTAGACCGCTCAGTATGTGAAAGGAAAAACAGTGC TTAGAACAAGAACAGACATGCCAAATTGCGCACGAATAATGAGGTCCAGC'}) WITH p1 MATCH (p2:DNASeque nce) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 510       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-120 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TCCCTCCACCTTGCAGGTGCTGGGGACTTTG GTTTTCACACCTCTTAGCACACATGGCACGTTTGATCCCCGGGTACCTAAAGCAACACCGCCGACGAGGTACAAGTGGAC AGTTCGGGTAGACTGTAGGCGATCCGCGACAGCCATACGTGACCACAGAG'}) WITH p1 MATCH (p2:DNASeque nce) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 511       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-128 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TTGTCTGGTCAAGCTCGATCAGGTCACTACT GTAAGCGTGGGTTGACAGATTAAGTTAATGACGGGGCTACTATGGGGCAAATCTGGTTTTCTGCCAAGTGGGTCTCGTAT AAACCCCCTCACTAGGCTGAGACAAAACGCTTTGTGGCCATGAG'}) WITH p1 MATCH (p2:DNASequence) W HERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 512       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-135 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CACCGTTTATTCTCGAACCCGGTAGCACGTC GTGCCCTCGTTCGCGCGAGCCGTCGCACGAGTTTTCGACAGCCAATTAGCCGTTTCTCTCACACCGCAGATTGCCGCCCG CCGAAAGACCAGCAGGGTGTTAACATAGTGTTGTGGGTTTGCAAGGAGTATCATGA'}) WITH p1 MATCH (p2:DN ASequence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 513       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-120 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GCGATGGGCGTCCATGCTGAGTTGGTGTATG CCAACTGATCTTCTGCACGTTGATGACCACTCACTTGCGTATTATGACTGACTGGTATTGTGACGGTCCGCCCCAGCTAT GCACCGTCCCTGCCTCAGCGAAAGGACCCAGTCCGGCG'}) WITH p1 MATCH (p2:DNASequence) WHERE p 1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 514       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-126 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GCAAGATACGCAGTTTGTGGACAAGTTAACA TTAGCCTAGAATTGTGCCTTCAGTCAGACACCAGCAGGAGGTGGAATCGTCCAGCGGGGGCAATCCATGATAAACGTTCC AACCCGGACGCTGAGCCAAACAGAATACGCTTCGGTTTTTATGATGC'}) WITH p1 MATCH (p2:DNASequence ) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 515       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-124 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TTCCACAGCGGGTGTTATAAAATCCATCCAT TATAGGCCGCCAGCGCGTACTGCACATAGGGAGTATACCTAACGGGATCTCTCTGTCGGGTCTGAAGATTGGAAATAACC GGGGCGAAGCCAGCCTGGCACGCTTTTGGGCGGGGGATTAAAGTCCCACGCCTCG'}) WITH p1 MATCH (p2:DNA Sequence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 516       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-127 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GGCTAGCGCTTTTCCGGACGACTGAGGCTAT ATACCCCTATAACCGAAACCGATCAGCCATCCTCAGCCCGCGACTGCTTGAAAGTGGCGCCTTCTATGGAATAGCCATTA GCGCCACAGCTAGATAGACGGGACGAAAGCGATCATAGCGATCT'}) WITH p1 MATCH (p2:DNASequence) W HERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 517       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-122 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'ATCAGGTGATTTAAGTACTTAAAATCTTAAC TTGGACTGCTCGGCAGTACAAATGTAGTATAACGTTTGTAGTTCCCGTCGGACCTAAAGAAAGTAGGCCTCGCGATATCA ACGAGTAGACGTTAGTGGCCTGACGATAGATTAGATTAACACGTT'}) WITH p1 MATCH (p2:DNASequence)  WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 518       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-134 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TCATTACGAGTCGGATAAGCAAGGTAAGAAA GGAGGTCATTACAGCGAGATAGAAACTTCATATGGGCCGAAATGAGTATAACGATGCGTGCGTAAAGTTAGATCGAAGCA CGGGGCGACCGTTCCGACACCAGGGTCTCAGGTGTGCCTCGCTATGAC'}) WITH p1 MATCH (p2:DNASequenc e) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 519       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-119 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'ACCTCCGGCTCAGGTGTGAATATATGGAGGG AGGCTAGCACAAGGTATCGAAGTTGGCACATTGAGCCGAATGTTGCGCCATAGTCGCAGTGTTATGTTGAAAAGGGCCGA CCAGCAGGAGGGTCTTCCACACCAATATGCCATCGTGCGCCGGATATAGAAGCGACATA'}) WITH p1 MATCH (p2 :DNASequence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 520       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-129 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TACGTCGCTTGCATGCTACTGGCACGCACGA CCTCGATTCGGGGAGACGACCCGCGAATTCCCATTGACTTCAGCGCCGATCGGCGCACGTGTAGAGAAAAGTGAATTCAA GTGCTGGTTAATGAGTGATAGTCCATCGGACCGGCATGTTCTGTACGTCGTATGCCGGA'}) WITH p1 MATCH (p2 :DNASequence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 521       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-148 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TAGAGCTATTAGCAGAGGCATCTAGCCCGAA GGAGGGATTTTTCGTTAGGTGTAGGCTAAACCCACGGTAGACGACAATATACTGCAGTAACTACATTATCGCTCGTTTTC GGCCATAGTGACTGTAAACGTCACTGTCTCACTCGCTGACGTACGAG'}) WITH p1 MATCH (p2:DNASequence ) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 522       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-126 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GCAAATTCCCCAAATTTTCTGGCCCAATGCT CACAAGGCTAAGAGCTCACGCGTCCCGTCGAGGTAGTGCGATCTCTCCGCCTTTTCCCCCGTAAAGTAACCGCTAATGGG ACGGATCAACTGGGAAGGGAGCTTGACTCAGGTTCAAAGAGGTCAGGGGCT'}) WITH p1 MATCH (p2:DNASequ ence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 523       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-119 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'ATGTTAGAAATGCTGCCGTGTTTAAATCGTC GGTTTTGTTTCGCCGGATGTTTGGGATAGCCATACACACAGACAGTACTCTGATAGCGCTATACTTATTCATGTCAGAGA GCTAACTATGCTCACAACGACTACGATAAACTACGTTAGTCACGTG'}) WITH p1 MATCH (p2:DNASequence)  WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 524       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-160 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TGCGCCTTAGGACTGCCAGTTAATAACGAGA CCCTGACGCACAGAACTTACATAGACAAGCGACATATGGACAACATCCGCTGCCATAAAATAGGGAACAGTGTCTGTAAT CGAACTATAGGACTGATTCCATTAGCGCAGCCAATGTTAGCCGGGCCCAT'}) WITH p1 MATCH (p2:DNASeque nce) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 525       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-133 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TAGAGACCGGCACTGGGGTTGTTGTGACGAC CGATAATGTTCCGTTTATAATCGTCGATGGGACGGTAAGTAGCCTCCTTTTCGTGTAGCGGTGCGTCAGGGGTAACGTCT TATACTGTCTCCGTAGATTTCGCATCCGCGTGTTGCGCAGCCCGCGTCGAAC'}) WITH p1 MATCH (p2:DNASeq uence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 526       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-130 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TCTGTGATAATCTGCTGCACTTGTCTAAGTG GATAAGGGCTCAGCTTGTCCTATCGCATACTTTGCCAGCAGGTCGGGTAGAAGAAACTGGGAATAAACTTGCGGCCAAAG GTAGTGGGACGTCTGAACCCGCGCGCATCCGTTACCTATGTTCGATTCCTATCCTTTGA'}) WITH p1 MATCH (p2 :DNASequence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 527       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-167 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TCACGAGGAGAGGGGTCAACTTGGCTATGAC TATTCGGGGATCCGGAGACTTTTCGGAAAAGGAGTTACTGATATACCAGAACTTGCTTTTAGAATACGACTTAGAAGCCT CTGCGAGTTGTCGATGGAAAACGAGAACAGAAGCGTCCTTAGCCACTACCTGTTGAATCT'}) WITH p1 MATCH (p 2:DNASequence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 528       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-158 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CCCTGAGGAAACCTGTAAAATCTTCGTCCAG GAGTATGGGATTCATGGTTGAAACTTTTGTCCCGGGGGCGCACTACAACCGACATGCTCTGCTCCCGGGATACTACAGCA GCAGATAGCTGAACTGGGAGCAAAGTAGAACGACGATCCTGAACTAGTATT'}) WITH p1 MATCH (p2:DNASequ ence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 529       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-147 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CTTGCACCACGCCACTCTCAGCACTTTCTAT CGAGGACCCGGAAGCACCAAACTTTCGTCTGCCGATGGGAACGCCGAACACAGTCTCACGTGGACGTATGGTGAGGAAGC TAGGGGGCCCTTGTGTAAGCGAAGTTTGGCCTGCGATTATAC'}) WITH p1 MATCH (p2:DNASequence) WHE RE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 530       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-149 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'ATTCTACTTATAACCTAGCCTCCGGTCCCGC CAGGACAGGAAAAGAGAAATCACTCGACCCGCGTTACGTGCATGTCTAGACAACGTGGTAAGAACTAGTGCACGATGTCC TTAGGATAACCGATGTCCGAGTGCGTTTGGCTCCAAGCTCGTGTCTACGGGTA'}) WITH p1 MATCH (p2:DNASe quence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 531       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-141 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TGTGATTTAGCGGGGCCAAAGATAAGCAAGT GACGTATTAGAAAGTACGTGGCTTGCGTATCACAAAAGGTGTAGCGCCAGAACCGCTGATGCTATTCGTGCATTGGTACG CAGGGACTTCTATTTATCCCTTTGACCTAAAGATAGTTGAGGAGTACGTCCTTCCA'}) WITH p1 MATCH (p2:DN ASequence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 532       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-157 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TAACTGGAAAGACAACGGCAGCGCACCTTAA CCGTTGACAGACCACGCGCATAGTTACTCCTGTAACGGGCGCTGAGAGGCTTCCTAGCACTGTCCGCTTAAGCTCACAGT TATTCGGTTCCCTAAGGATGTCGCGCCACCTGCCTTCAAGCTCGCT'}) WITH p1 MATCH (p2:DNASequence)  WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 533       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-145 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GGCAGGGGCTAGATACGGGTCCGATTCACCA TTGATGCTTCAAGACAATTCTACTCATCGTAGAAACGTGGATATAAATTCTCGGGGAAGATGCACAAAACGAGAAATTAT TATCCTACAAATAGTTTCTACTCCTCGACTCCATAGGGTGGTC'}) WITH p1 MATCH (p2:DNASequence) WH ERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 534       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-111 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CGCCGGCAACGGGAGTGCAGGGCTAGCTCTA AGTTGCTCGCGAATTCAGAATAGATCATACACATGCGTAGATTACTCCCGCGATAAGCTACGTTGAAAAGAAAAAAGTAG CGCGGGTCCCTGTTTCGCATAGCGGAGACCTACCATATGCAGTT'}) WITH p1 MATCH (p2:DNASequence) W HERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 535       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-122 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GTTCAGAATCTTCCACTTCCAAAGCTGACAG GACGGTTAAATCGTAGAAGATTCTACTTAGTCCATATCCCCCGCTCCGCCACGGGGAGTTCAGGAGTTTGATGACCATGT AATGCCGCACTTCTATCAAGGCAATTCGACCGGCTCGAACGGAGTTCTAGT'}) WITH p1 MATCH (p2:DNASequ ence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 536       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-122 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TATTTTCATGGCTAGTGGCCAGCGCCTTCTA CAATCTGTGGCTCTACCGATCTTAATTTTGAAATTCGCGCACACAAGACGGATATATATTGCTCCTACGCAACTTGCATA CTCCATCCTTGCTACGGTGGCTTTCTCACGTTCTCCTAAGCCCCTT'}) WITH p1 MATCH (p2:DNASequence)  WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 537       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-125 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CGATTGTCTACACATCAGGTCCTTACACAAT TCGATGTTTGTTCGCTCCAACACTGTGCAGGTGGGGATATGGTATAATGTTATGGCGTAGACGCTAATATATAGATGTAC TTGCGCCGTAGAGCCAGCGCTCGGGTCATGAAAATTGTGTATTCGTTTTCTGCGACTTAAGG'}) WITH p1 MATCH  (p2:DNASequence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 538       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-159 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CCAGAAGCGTGAATCCCCGCAGGCCTCGGAG CTAGATGGAACACAGGCGACGAGAGGAGACTAGAAATGCAACCTGTTTGGAAGTATTCGTGTCTCGTCATGACGTTAGTC GTCGTGTTTTTTTATTATTCAACAGTGCCCTTTGTTCTGCGTGCAATA'}) WITH p1 MATCH (p2:DNASequenc e) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 539       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-148 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CGTCTGCTCACTGGCTAATCTCGCCAAGCAG GACTAACGGAACGACCTCCATACTGAGGTCGGCGTACGTTCGGCTTGAATCTTGAAATCTTTTCGGTTTACCCAGGGCTC AACACTGTACTGTGCAGCGTATAGATTATAGGCATACGCT'}) WITH p1 MATCH (p2:DNASequence) WHERE  p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 540       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-138 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TCGTAGGGTTATAGAGGACATGTCATATCTC GCGCTTTCGTAGCTCTCGCCAGAGCGACACCTTAAAAGCTTAGGATGCCTACTGCGGGAGCAGCTAAAACTATAAACTCG CTCCACCTTTATATTTCAACTATTCTAAAGAGACGGCTTATCCCAGTGTCTCT'}) WITH p1 MATCH (p2:DNASe quence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 541       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-123 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'ACGACGGTTACTCGCAGCCTGTGAGAGTTAT CCATCCGGGACTGGGATTGCGAAAACAATCCTGGATAAGTCACCCGCACACGAAGTTGAGGATGGTCGAACCGTGACGCC TCGGGGAACAGTACAATGCCACCGACTTTTCGGCGGCTACTGA'}) WITH p1 MATCH (p2:DNASequence) WH ERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 542       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-137 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'ACCGTATTAAATATAATCTCACTAACTCGCC TTTAACGCAATACTGTAGCTTGGAGATTGACTGTAGGTGGATGACGATGGAAGTTAACATTCCGATCTGCTTGGTAAAAC GTATGGGGATTCCAACTCGAAATTGCTTTTACCGGGATACT'}) WITH p1 MATCH (p2:DNASequence) WHER E p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 543       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-135 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TCAGCCGCAATTCAGCTTTTGGTGGGTAATT CTCTACTCGTGGGTCACCCCTACTAACTTGTTTTTTCGAGGGTCACGATATCAATCAGGAGTTTCTCAGCGGTAGTATGG CAACTTAGCCGGCAGCCCACGTGCGCGTGATACGGACCAAAGGGCT'}) WITH p1 MATCH (p2:DNASequence)  WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 544       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-114 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TTGCTTGGAGAAGGTTATAGCGTTCTAGCAA TGACGATTGACTCTCAAACCTGCCGCTCAAATTTACATCCTCGCGTATACGTTTTGGTGATCAATTACCATCCTAGGTGG CAAACAAGTGGGCCTCGCGTATCTTTATATCAAAACCAAGCCTGACAGCTAGCGG'}) WITH p1 MATCH (p2:DNA Sequence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 545       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-170 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GGCATGCACCTAACCTCCAGAAATTGGCACA TACCTGATATGTCCCGCCGCCCTGCTCCCGTGCAATCTGCACATTGCTGACGTCCGTGCCCGATCTCCGCCAGGCTCACA TTATACTAATAGGAGGATCCAGAACGACCAGATTTGGCTCTGGGGCGGTGCTT'}) WITH p1 MATCH (p2:DNASe quence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 546       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-121 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'ATTTACCGATCGCGGTCAATGCTCGAGGCCG TTGTAAACGTCGACGTAAGTACGTCGCGTCCGACGGGGCCGGCTCAGTATGGAAGGAAAACTTCCGGAATGTAAGGCCTC GTCAACTATTAGATAACCAATAGTCCTTTGGGCAATAGCCGAACACTCA'}) WITH p1 MATCH (p2:DNASequen ce) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 547       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-141 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GTGGAGCGAGAACGCAGGTCCCATTACCGTC ACCTCGCCCACTGTGGTAGGATTGAGGACCTCGATTTCGGTGAGTCATCGGAAGCCACCGACTGGGGCTCCCAGGATGGT CGATACCTTGACGTTATCATGACTAACTCCCCGATGCCAATCTTTTTCCGGTA'}) WITH p1 MATCH (p2:DNASe quence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 548       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-170 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'AGCTTGGAGGTGCTAGTACTTTAGAAAATGG AGTACGACCATTTTTACATTAGTCTGGTACCCCAGCAGTGTACTATAGGTTCGTTGAGCGCTTTTTAAGATACTTAGACA TATGCCTTCGCGGCGTTACGAAAGACGCTTGCCAAAACCCTCGCCGTAGTT'}) WITH p1 MATCH (p2:DNASequ ence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 549       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-121 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GTACGACTGAAAGTGTCAAGCTGCCGGTGAT CTCATAGCGGTCGCAGATTCCATTAAGCGCTATCGCAAAAGCTGAGTGTTTCGACTTCGATGTCGGTACCTCAGCACCCT CAGAGTGACACATTGGGCCGATCTAGGCCGCGCCGATATCCGGAGGGA'}) WITH p1 MATCH (p2:DNASequenc e) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 550       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-132 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TATTTCACCGCCGGATGAATACTGTTAGCGA CGAAGCGCAAAGCTGTAATGGGACCAATCGCTCTAGTTGAGCACTACCTAGTGGCAGGTAATAAATATTGGGGTGATATA GACGTATGCGTAAATTGATAGCCGGGCTCCCGTTATGGAAGCTAAACTC'}) WITH p1 MATCH (p2:DNASequen ce) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 551       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-160 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'ATAATAACTTCCATCTGAAGCCTCTTATTCA CGCGAGCAGTGCTGCGTGGGAATAAAGCCCATTCGGTCACGTCATGTAGCAAGCGACTTGTACACCGCCCGCAGAATTAA ACTTGTGGGGCGCGTGACAGGCAAGAGCTAGTAGAAGTTCA'}) WITH p1 MATCH (p2:DNASequence) WHER E p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 552       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-147 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TATGGGCCGCAATGTGCGGGGTAATGACGGT TATCCAAGTCGGGAATCAGAGTGGAGGGTGCACTAGCTCCCGGCGGGTACGAGTAGTTGGTCCGAGGGTTGACCAATCTT GCGATACGAGATATGTCCTGCGATTCATATCACAATTAATTGGTAC'}) WITH p1 MATCH (p2:DNASequence)  WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 553       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-166 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TCCAGATGGTGCTGCGAGCATTCCGTATTGC AAATTACCTAGGATGCGACCGACGCGCAACATAACTTGGTGGAACAAGCACTAATAAGAAGTGACATCTCTCTCTACGTA ACAGACGAGAGTATGGCATTTGGGGCATAAAGGTAGATAATA'}) WITH p1 MATCH (p2:DNASequence) WHE RE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 554       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-117 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GCAAGGGGGGAGTACTGCCGTAATCTGTATT GAGTGGCAACACGCCGCAACTTGTTACCAGCTAAGTAGATTTCAATCCTAGCCCGCCAAAATCAAGGACCCATATTTATA GAGCGCACTGTACTAGAGATCCTTCCCTGAATAGCGAGCTTGTACTCAAACTCGTTAC'}) WITH p1 MATCH (p2: DNASequence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 555       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-143 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'ATCCCCAGAGCTGGAAGGTACTCGAAAGCGC CCCACACGCCCACTTATGACTGGGTGCGCCAGGGACCGCCTAGCCGCCCCTCGCGAGACTTGCCCTGTAGTGAGCGATGG AGCCGAATAGTACCCAAGAGGTGAGTGGGCTCAACTGCACGACCCG'}) WITH p1 MATCH (p2:DNASequence)  WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 556       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-133 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'AAATGAGATTTCGTTAAAATTATGAGTCTAG GACCAGAGCAGGTATCTTGTAATGCTTAGGATGAACACATCTGGTATGAGCAGGTAGCGCCAAAAAAGTTACTTATTAGC CCGATAGCCCCCAGCATACATATCAAAGGCTATTCCAAAG'}) WITH p1 MATCH (p2:DNASequence) WHERE  p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 557       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-155 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'AGGCACGTTCAACTTGAGCGTCGCAAAGAAG ACGTACCATGGGCACATGGTCCAACTATGTCGTGTTGGAACGAATATGATACTGCACGCTGCGAACTCGCTCGCTTGGCT CTACCTGGTCGTAAGTCCTCGCCCTTCGCGTCCAATCCGTGGGGGCACAC'}) WITH p1 MATCH (p2:DNASeque nce) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 558       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-159 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GAGGATTCTACCCGGATGGTGACTAAGATTT CAAAGCTTTAGTCTGATGTGTGGGACACCGATCGCGGGAATAATGAATTGGGTATACTCCGCGTGTCGGATTACACACTG AAATCATATGTTAGGAGTGTGAACTGACTGAGAAAGCAGTATCTTTACCTGGATGTATC'}) WITH p1 MATCH (p2 :DNASequence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 559       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-140 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TCCCGAAACGACAACCGTTCTAGACTGTTAT CTTGTCTATATTATTGACAATAGGCCTATTCCACATCTACGGCTCATTATCTTATCGGAGATAGCATAGAAATTGCAATG ATCTTCGTCCGAAGAAAGTATGACCACCACATATGGCTCGTCGAG'}) WITH p1 MATCH (p2:DNASequence)  WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 560       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-137 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CAAGCTTGTGATCAAACTCTCCTACAGGATC TGTGTAGGGTCATGACCCGCCTCGCCACTGCTAGCCACCTCCTATTGGATAGTTTCTGCGGAAGGGACATACAGCCTAGA GCGAACCCCGTCGTATAGCACTTTATGACCTTCAATCCTTAGGTCCCCT'}) WITH p1 MATCH (p2:DNASequen ce) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 561       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-166 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GGAGAAATAACGCATACCGTAGTAGTGGAAG AGCCCATTCGCGATGGCGTCGCGAAGCGCGACGGGTAGTCAGAGAACATGTTTGAACCACGCGACTGCTCTTGTGTACCA GCAACGCTTTGACAGAGTCTGTAGAGTCGCATTCCGCTCCCTGAGCGCCCGT'}) WITH p1 MATCH (p2:DNASeq uence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 562       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-142 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TGCCACACACTCGCGATTTACTGATTTGTAC TAGATCACCCTGTTGTGGTATGCTATTTCTTATACTGTCGCGCTGGCATTTTTCGTTAACTGGTTCCCCATACGGCTCCG TAGCCTCAACTGGGTGAGAATAAGAACCTAAACTGTCATATCTCGCCCAGTGGT'}) WITH p1 MATCH (p2:DNAS equence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 563       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-167 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GCCCTAAGGAGAAAGACCTTATGGCACCTCC TCAAATCCATCGAGTCTCTTTTCTCAGCGGAGTCTACACTCATGCACCCGGATAGGTATATTGGCACCAGTTAGAAAGGC TGACAGGGACCCCAGAATGATTCCGGTCCCATATGTTGGCTAGTCTGTACCAG'}) WITH p1 MATCH (p2:DNASe quence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 564       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-140 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GGGTCCAGGTGGTAGCACGTCCCGTATAACC TTGTACGTTTGTTGCCGAACTATTGCGGGGAAATGCGCACCATCAAGGTGGGAGCGCCCAAATAAATGCCAAAGTACTGC ATCACATGTCTCCTTATGACGTGGGAGACGATCAGATGTGGTGAGCACA'}) WITH p1 MATCH (p2:DNASequen ce) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 565       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-122 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'ATCCATCAAAGATGCGATTTTGTTGAGTGAA GTTCGTAATGATCGCAAGGTCCCTATGATGGCTAGAATCTCTATAGTATGACTACTGTCGACCAGTTGCCTGAAGTACAC GGAAGGTGGCGCGATAAGTTTAAGAATAGATTAGATACGGAGGTACGCG'}) WITH p1 MATCH (p2:DNASequen ce) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 566       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-167 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GTCGTGGTACAGGGATACTGCATACACCGCG GTACAAAGGTATCACCTGCTGAGATGAAATGTAGCTTTACCGAGGGCCTAAGAAACTCGCCAGGGAGTGAGCTGGTCTGT GATGAACAGAGTATGCTCCAATATGGGAGACGTTCCCTA'}) WITH p1 MATCH (p2:DNASequence) WHERE  p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 567       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-147 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TAATGCCCTCGCGCTTAAGTTACTTTCAGTT ATCGATGGTTGCTGAGGCACTTCGTAGACTGGGGTCTGGCTTCGAGATCGCGGAGGCATCTGAAGGATTCCATTCCTAGA TATGCTATACGTATTATATGACAACGGCACCTTTTAAATCGACA'}) WITH p1 MATCH (p2:DNASequence) W HERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 568       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-129 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CGCCCGCCAGTTGGCTAGAGCCTGTAAAATT TCTATAAGGTTCAGTCACGGCTGTCGCGGCGCACGAGAAAGGGTAACATTGCATTTTTGACTAACTGCTCATGTGTAAAT GCGGAACCCCCGAGGTGAGAAAGAAACAGGGATTAAGGCCTCA'}) WITH p1 MATCH (p2:DNASequence) WH ERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 569       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-149 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GGCGTTGTCAAAGGGTGCGACTCAGCTGGCT TCATGAAGGAAATTATGCTGCAGAGGGGATTGGTGTGCCACCCGATTACTGCGAACTGGACGTGTACAAAAAAATGGCCA GTTGATAAGTTCTACGTATGTTAGCGCCCCGGCGAGTTAGTCTAGGATTTGTAG'}) WITH p1 MATCH (p2:DNAS equence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 570       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-151 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TCTTCCGCCGTTATGGACGTTCCTGCGACTT TCAGTCTCTCCGCCACGTCACGTTTTAGCGATGTCAAGTCGTGATGTTGGGGTCCGGGTTTCTGAATAGCCGGATACTTT AGGAGGCCCCAATGTACGGCGTCCATCCTCCGTGTCGTGAGCGTTGATTGAATGCTTAA'}) WITH p1 MATCH (p2 :DNASequence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 571       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-135 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CAACCACGTCTCGTTGATTTCTAAACATGCG GCACTTGTAAGTGCAAATAAATTAGCGCACTGTTACCCTTGGTAAGCGCGAAGCTCGATGGGATGTGCGGCTGCCGAGTC TCGCGGTCTAAATTCGTACTATGCCACGTGCGCCTATAAGAAAGGTC'}) WITH p1 MATCH (p2:DNASequence ) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 572       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-173 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GAATCGCGTGTCCTGGGTCAAAGGTTATCCA TGCTATTGACTTGGGCAATTCGACCTGCATGGGTCCTGCCCGACGGCTCCCTGTCCCTGCATTTCATCTAGTTGCAATAG TGTCCCACTCTTGGACTGGGGAGAGGGGTCAGGGTTTGTGAGTGACCGAGTAA'}) WITH p1 MATCH (p2:DNASe quence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 573       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-159 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CGCTACAACCTTGGAGTAGGCTGGGGTAACA AGGGACTGACCCGAGCACGGTGCTTGATTTTCCCATCGCACACACACGACCGATATAATCAGTTGCTATTATGGCGCAAA TCCAAGCAGCAGGGAAGCATGAGGAGAACCGACCTGTAAAGG'}) WITH p1 MATCH (p2:DNASequence) WHE RE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 574       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-125 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TACCATCGGTCCGCTCCAGCTTTTGCTGTCC GATACAGACAACTAAAGCAGGTTTCCCACTACATTGACTGATTTTTCTGTATACTGTCGCACGGTCTTTCTCGTGCGCCC TTATGTAGTTCGCACACCACTCTTGCGGTCTCCTAAGTCTATATCAATAAG'}) WITH p1 MATCH (p2:DNASequ ence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 575       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-143 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CAAGGTTATGTATCTGAAATTGCGCTCGTTG TACGACAAGAGCCCTACGACCCTTTACGCACCTAACGGCTGACAAAACAGAGTTACGAGCCGCTCGCGTCAATCGAATTC TGTAATCTGTATAGAATATTCTTAGTGGGGAGTAGGATAGCTTCGATGC'}) WITH p1 MATCH (p2:DNASequen ce) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 576       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-138 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GTGCCAAAATGCGGACATATGCTAATGGTCG TGCCGGGTCTACTAGGTGCTCACGCGGATCAATAAATCAAGGTCTCCTAAGCTGCTCGCCTGAAAGTATTAATCGGATTG CCTGCTAAGCTAGTTGCGGAAGTGGGCAGTACAGTGAAGCAATATACGAGCTCGC'}) WITH p1 MATCH (p2:DNA Sequence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 577       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-151 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TATTCTTAATGGCAGTCCGGTTGACACGCTT CGTCCATAGGGTAACCCCGTCCTTCAGTCTAATGGTGCTTGAGTACTCCGTATGCACTAAGCATGTACGTAAAGATGCTT TAGTTCGTCACTGGTCCGTTCGGCCCGCGCTATGAGTCTGTATCGAGAGAGA'}) WITH p1 MATCH (p2:DNASeq uence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 578       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-168 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GTCAGTAATTGCATTAACAGTAGGCCAGGTA ATCCCTCTTGTTAATGTGATGTATTCTCGGTGGTTCGGTGCGAACGACCTAACGAGTGGGAGCTTTCGACTTATTCCATA CTGCGCCCCGGCCGCATTGCATTGCACCGAGCTCTCCCTTTAA'}) WITH p1 MATCH (p2:DNASequence) WH ERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 579       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-121 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GATTCAAGTCCCTTACCAACGGGTTCTATAA CTCGAGCCCCTAACTTACCAGAACTCGACTATAGGCCTCCGTCTGCACATGGGTGAGGTTCTTACAGAACGCCGTCATAG CAAGTTCTAGTACCCGCACCTTTGTCCAAGTTTACGAAGATA'}) WITH p1 MATCH (p2:DNASequence) WHE RE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 580       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-169 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'AATTATTCCGTCCGATTGTGGACTTCTACGA GGCTTAACTTAAATGGCGCTTACGGTGCAAGTTTGGAACCGTAGTGGTAAAGACCGACCATAGAAGGTGAATAAAAGCAA AGCGTCGCGCAGTTTTAACTGCGTGTACCGACTTCCTCAGGATGACAGC'}) WITH p1 MATCH (p2:DNASequen ce) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 581       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-149 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TCCTTGACATGTGGGACAGATTACAAATTGT TAGAATGGTTGACTCTGACAACGGGTTATTTGTGGGTGGACATTGGGAGCGTTGAATAGTAAAGATAGTCATGAAGGTTG ATAGGTACGATCTTTATCGAGAACTAGTTGACACCTAACGA'}) WITH p1 MATCH (p2:DNASequence) WHER E p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 582       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-149 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TCTATATACATCCTATCCAGGTTCGTCGCAG AGTAATAAATTGCCGCTGCGGTTCTTCTCCCTAACGCATTCCTGGTGGCACATGTTGTACTTATAACGTGCTTACCCTTA ATTACCCCACGACAATAAGGCAAGGTAATGAGGCTTCTTGCGATCCGT'}) WITH p1 MATCH (p2:DNASequenc e) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 583       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-156 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TAGTGAGACTAGGACTCTGTTGATTAGTTAA CGTGCACCTGGCCTAACGACAGCGGTGTTCGCTCCGTTCTCGTCAAGAGGCGAATATGACCGTCTTTTTGGTACTTCCGC TGCGAACATTAAGAGTCGCGCAGCCTCAATTTGTCTTTTGTTA'}) WITH p1 MATCH (p2:DNASequence) WH ERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 584       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-172 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TCGCACTTACCTCTGGTCCACCGTAGGTCCA CGGATAATCTTGACAATCTGACAGGTCAGGTGGCCCTAATGCTATCCGGTAGTGTCATGTGTAGCCCATTTTGGGTAAGA GGACAGATATGGAGCTCTGGCGTAGCTAGCTCGACCAGCTTACTGTACTCCGTG'}) WITH p1 MATCH (p2:DNAS equence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 585       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-136 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TTACGTGCGGTATGAAATTTTGCAACAAGTC GCCATCCTTTAGCATGCGCTCAAGCGCGCGGTGCATGCTATGGAGACAGTACTTCAACGCTCACAATAACCTATGGGGCC CGTGCAAGGGGCAAAATAAAGGGTTCGATTATTCTGACCTAACGGCT'}) WITH p1 MATCH (p2:DNASequence ) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 586       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-161 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CTCTTTGTTTTGATTCCAAACGCTGGAAGGG CCGGAATTCCATTCGAATGAGCGCAGTGGGGAAATTGCTCCTACGGGGGAGTCAGGCTGTCTCGGCGCATTCCCCAATTT TGTAACCGCTTAAGTTAGGGTAGATTTCCTTGTCTCCGACTCTACGAAA'}) WITH p1 MATCH (p2:DNASequen ce) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 587       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-146 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GGTCGTATATTGGACAGGAACGCGTATGAAT CCCAGTGCTCAACCTCAACAGGGGATTTAATATAGTAACCGTCAATTAAGCTCCAATCTACTTCCAATTGTACTGTCGGA GTAAAGTGGTTAGTTTCTGGGTGCTACGTGAAGGCTTTGCGATGGGTTC'}) WITH p1 MATCH (p2:DNASequen ce) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 588       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-161 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'ACTCGCTGTACCACCCTGTGGTGAAGGCACG CTCCATATTGGTGGGGTCGTGCTACGGTGTAAGCCGCTATTCGGTCTGGGAGATGACGTGTGACATTTACCGCGTGGGAG ACCCTTCATCCTACATGTCGTAAGACGACACTATGAGACCCAAACTTAT'}) WITH p1 MATCH (p2:DNASequen ce) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 589       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-174 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GCAGGTTCTGATCAAATGCCTCTCGAAGCGG GCACCGTCTATGGCGTGCGCGGTAGCCAGGGCTGTAATCTTGCGACATTAACGAGGACACTGCTAAATGTGCGTTAGTAA GCCCGCGAGGGGGTTCAGTTTCCCGGCGGCAGCTCATCAGGAGGCG'}) WITH p1 MATCH (p2:DNASequence)  WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 590       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-135 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CATCCCCGAAGACTAATAGCGCTTTGTCGAG GGACCCCAAGTGAGTGGCAGCAATCACTAGGGCAGTCGATAGAGCAGGCAGAGCTATTGCCATTCGACTAAAAACCGGGA CAGTCACATATTACTGCATTAGTAAGCAGCGCGTGCGCTATAGGTAGCCGTCTATAGG'}) WITH p1 MATCH (p2: DNASequence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 591       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-160 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GTTAACGGGTGACAACCATACGTTCCGCCCA TCATGTCAAACACTAGTGCAGTGCTAAAGTCGCTATAATCCGTCTGAGGGACTCTTGAGTGATACTTCGGCAGTGTGTGA AACATCTTCCGAATGTTGCTTGCTGGGTGGCCTGGTCCAGGAGAAGATCCT'}) WITH p1 MATCH (p2:DNASequ ence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 592       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-161 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TCTCGTTCAAATCTACGATCGCCAAGCGATA AAACAACAGATTTCGTTATCCGTCCGTAGCGGTGAACTCGCCAAGCCTGTATTTAAATGTTGAGGCTAATATTTCATTCG CCTAGGCGGGTTATATTTACCCCCATCGGCATATTATCGGACAGTGT'}) WITH p1 MATCH (p2:DNASequence ) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 593       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-127 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TACAGCTAATGTCTGGATCATTGCATCCCAG AACTTCAACACCTGGGGAACGATTAGATCTCTTAGTGCGGTGGAAACGAGTGTTGCACCTGCTAGCAAAGAGGCGGACAC GACGTTGATGGGAGACCTTTGTACCATCTTTCACGACGCACGATGA'}) WITH p1 MATCH (p2:DNASequence)  WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 594       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-165 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'ACGACACGTAGTATTGTATCTAATCGAGGGG ACACAAGGTCCACATACAGCCGAGAAGGTCTCAACCACAGTACGATATCGCGGGTCTCGTAAGGCTCTTTTCGTTACCTT TTTTAGACGCGTGTAGGGGTGCTCGAGTAAGAATAAACTTTTCTTGGATCAGCACCTG'}) WITH p1 MATCH (p2: DNASequence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 595       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-166 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CTATATTCGTACCGTGTGGCATCATTCGGGC TCAGTGATACGAAGTTACGGAGAGTTCAAAGGGGTACCGGCGCGATGCTCCGTGGTATACGCGTAGTAAGTGCCGCATAT GCGTGATGCTGGGCCTCTGGGAGGCTGTCAGCAGGTATGGGCTGCGTAACGGT'}) WITH p1 MATCH (p2:DNASe quence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 596       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-180 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GCCAGAGCTCTGACATTGAGAGCGGAAGGTG CCGATCACCTGCCGCTAAGGGCGAGTCGACTACGCTAGATCAATAAGGACACGGATTTCCGCGCGGTAATTTCAGTCCCA GTTTATTGCGGTCACAAATCTTCACCATGTCCTTGCTCAAACATGAGTGTCTGC'}) WITH p1 MATCH (p2:DNAS equence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 597       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-136 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'AGTCCCTCGTGCCATGAAGGTCGCAAGCTCA ATCACACTTGGGGAACACATGATCGATGTCTTACATAGGCGGAGACCTGGTGAACGCGGTTGTCTGTGTAGCACCGCGGT TGCGAGCTCCACTCTCCCTGTACTATCACATATCCGTGAATCCATATCCAAGCCAG'}) WITH p1 MATCH (p2:DN ASequence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 598       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-170 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GTGACGATCACTATCACATCAGGCACTCTTA TTTAATCCACCCTCGTAGGTGTGAAAGCCTAAAATTTATTTTTTTTTTCGTGCATGGCTTCCACACATGATCAAGTTCTG GGCCAGACCGGGAGGAATCGGGTGTACGATCGAGTATGGAGTCAGAATAA'}) WITH p1 MATCH (p2:DNASeque nce) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 599       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-121 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TCCAAATACTTGCGAGGAGCAAACAACACCC TATCAAGACCGTCCTAGATGAATGCCGTTTCGAACCGGATGAAGTTCACCGACAAACGTGTAATGCAGGAGGATGTTTGC TGATACTTTCGAATAACCGCCGCCATGTCATGTATGTTCCGATATCCAGT'}) WITH p1 MATCH (p2:DNASeque nce) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 600       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-147 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'ACGCGAAGATCGCGGTGTTTAAACTGCAAGA GTTCAATTCGCAATACTGGATCGTAAGTACTCGAGTCCATCCAAGTTGTCGTCCAAAAGAATGCGAGCCGCGGTTCTAGT CTAAAGATCGAATCCCTGAGTTTGAGTAGCGGAGCGAGGCTCATGCGAAG'}) WITH p1 MATCH (p2:DNASeque nce) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 601       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-141 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TCATAAGCTCTAACGTAGTATCGTTAATGGT GCTAAGGCTACGCAAGAATTTTTCGGTGAACTGTGCCAGGTTTTTCAACTTAAGCTTCTTACTGATTATGCATTGGTAGT TCACGACAAGCTCGAAGAGGCTGCGCGGGCTGAAGACGGTGTTG'}) WITH p1 MATCH (p2:DNASequence) W HERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 602       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-137 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GGCTATGGGTAGTATAGGGGGACTTTGAACC TAACGTACAAGGCAATAAAAGACAACTTTCCGCTGAATAATAACGGTTGCTATGCCGCCGCCGCGACGTGTTTCAATTTA ACCAATCCACATCTTTTCGCCCATCGGTACACAGTAAACCACCCT'}) WITH p1 MATCH (p2:DNASequence)  WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 603       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-131 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'ATCTATAGGCGCTCATGTTGGATGCCCTCTC CGACTAGACCGACGCTCACATCGATTAATACCGTCGAAGATAACGCGCAACTTGGCGCGCGGCAGCCGCTACACGACTTA GGGGAATACGATTGAGGAGGCCTGAGCAATCAAAGGCCCAGTGT'}) WITH p1 MATCH (p2:DNASequence) W HERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 604       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-153 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'AGGGTCGAGTTGCATCTAATTACGCTCATTT GCTGTAACTATGTCTCATCTTTTCAACTGTGCCGAGAATGCACTTCAATTTATCATGCTATCTCGACTGTCTTTTACCAC CTATAGCGGAAGTCTCTTTGTAGGTTCATACTAGTTGCCCGAGGTAA'}) WITH p1 MATCH (p2:DNASequence ) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 605       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-192 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GCTAAAGCACAACGGCAATTTATCGAACCCC TCTAAACATTGAGCTCCGCATGGCCTTCAGTCCTGCATAGCTTATCAAACGTTACCGTCAAACTCAGAAGAGTTGATGTC GCGAATGTTCCACGATCCAAGTTCGTTTGGTCCGGTCGAATGTTTTGGAATCG'}) WITH p1 MATCH (p2:DNASe quence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 606       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-143 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'AGCTTCAAAGTGGAGGCTATGCCGTAACTAT GATAGCCCCCGTTGATATTAATGCATGGATTGTTACAGAAACTTAGCGGAGAGCAGTACCCAATAACGAATGCACCTCAA TGTCGGCGACGCGGTCTAATTCTCCCTATTGAAACATGTCGCTCCGGCGGCCTACTAA'}) WITH p1 MATCH (p2: DNASequence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 607       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-175 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CATGGCGCCCGGAGTGAAGGGGATCAGTGCT GGCAACCAGGGGTTGCCTCGCATAACTATTGTCCCTATAGCTACGTCCTTCTTAATCTATGCGCAAGCGCAGAAGATGCC TTCTAGATTTGCCGAACTCTACTCTTGCACGTACGTATAAGTGGGGCCTCTT'}) WITH p1 MATCH (p2:DNASeq uence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 608       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-183 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GGTGGAGTTCGGTGAGTCATGGTGGTCAGAA CTGATCTAAAAGAGTGCCGTACGTGTGCGTTGTACGTGTAAGCTTCGGACAATTCCGAGCGGAACGCTCGAGCTCCTCGG TTGTGCTGGGGCTAATTTTAGCTATACCAGACAACACTAGCGGTGGGATGG'}) WITH p1 MATCH (p2:DNASequ ence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 609       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-135 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GTAGAGTGTAGAGCAAATTGGACAACTGTAG GCCCTTGGGTGGAGTGATAGTCCCATTTTAAGAGACGTCGGGCCTAGAATCTGCATTCGGGTCGCACTATGGGACGCAGA GCGGGCTCACCACCCCACCTACCTTTCTTGGGCGTCACTAACCCCACTCGACATTACT'}) WITH p1 MATCH (p2: DNASequence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 610       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-151 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GACTACCCTGCCGCAATAGGATGTTGTACAT TGACTTCTGAAGGCCAAAAAACGCGCTCTCGGACCAGGAACCAAAGAACTTACGTGCAATTTAAAAATTGTCACACTTAC CGATACTTTGAGTGTACGGAAGCAATCGTTTAAACCCCTACCACGTGG'}) WITH p1 MATCH (p2:DNASequenc e) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 611       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-159 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TCTAAAAGCGTGCGAATTACGGTTCCTTTTG CGGATAAACTCACCTTTATATGAGGCAACGCGTGAACAGGGAGACGCTCTATGCGCACCGTTGGGCAGGACCGTATGGGC CTACACTGTAACAACGGTGAGTGTTGCCCTTCCTCAAAAATATTCCTAATCT'}) WITH p1 MATCH (p2:DNASeq uence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 612       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-171 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CCGAGTGGGAAGCATAGTACCCGTCAAAATA GTGATCGCCCGACCAGCCACGCAACTACGACTGGAATATAACTTCGTACCGATCTCTTGTTTGACTGCACAGCTTCGGGG TGCTGCGGAGAATGCGCGCGAATCATATGACAAAGACTGCCTCCGCACATCTCGGGAATGGTCGGC'}) WITH p1 MA TCH (p2:DNASequence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 613       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-140 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GTGGTATTAGCATAGGCTGGAGGGCCAGCGA CTGTCGACTACCCTACGACTTACCGGCGAGATCTCCTTACAACGTCGCTTTGGCGAGGAGACGTTGGCCTGGACGATTCG GGTGGACGAAACACGGGTGAGATGTTGCGACGGAACTCCTCGGAAGAAGGAATGGT'}) WITH p1 MATCH (p2:DN ASequence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 614       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-164 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GGAATATGCCAGCAGCCCTTTCAAAGTCGCC ACTCTCCATTCTGATGCAGTGATCCTGAATGAACTTCATGCTGCGTGTCCCGTCGGCTAGCTTATGGTGCTATACCCCGA ACCCCTACGGCCCTTCCGGGGAACGACGCCGATGTACGGCCGGTCCAGTGT'}) WITH p1 MATCH (p2:DNASequ ence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 615       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-129 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TGCGACTTTGCCCTTATGCAAGAGGAGTGGA TGTAACAACTCGGTTTACTTAATACGCTACTCGAGAAGACCACAGAGCATGCCTTTTCCGGAGGCGGCTCACAACTATCG TAGCCACCACTTCTAGATAGCAAGTCAGAGCAGTAACGTGTAGCCCCAAAGTCGT'}) WITH p1 MATCH (p2:DNA Sequence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 616       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-166 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GCTAGATTATTTCGAAAGCATGTCGCATCAC TTCGCACTCCGCATTGTGGTCATAGCTGGCCACTTGGAATCGATTTCGCGTAACTTCTCGATGTGGACGCATTTGACTTG CGGTATGGTTACAAGAAGCCTTTGGGGGAAGAGGAGCCCTCAAAGCTCAGAACTT'}) WITH p1 MATCH (p2:DNA Sequence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 617       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-152 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CATGTCTATTCCGCCCTTTCTGAAGAATTTG CTTAAAAAACAATGAGCGTACCTCAAACGTGCGCTGATCTCCCTCTAGTATACCGGGACAGAAGGGCAGCCATCTACCGG CCACATAAGATGGCGTTTGAGACAATGCTGTTTAACTGATGGCGCACCTC'}) WITH p1 MATCH (p2:DNASeque nce) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 618       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-184 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CTTAGCCGCGGCACTCCCTGAACAGCATGGG CTGAGTTTACCCGAACGATTTCCAGGACGTCAGACACATGCTACTTAAGGGAGTAGGTATCTTGTATATCTTCGTCGCCC GGTGCCGCAAACAATCGAGAGAGTTATGTTTAGGTCCGATAT'}) WITH p1 MATCH (p2:DNASequence) WHE RE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 619       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-143 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'AAGACACCGTGTGCGTATTCGAGATTGTAAT TGAAAAGTCATATACATATCTCTTGGATTACACCCGAAAATTTTTGGAAACTCAGACCAGGTGTCTTATAAACAGTCCCA TGGTGCGTCGTACACAAACGTCGGGCTTCCAACATAATGCGACAGGGCCT'}) WITH p1 MATCH (p2:DNASeque nce) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 620       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-132 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CACCAATGCTATAATCGTTGAATGTGTGTCT CGGACTTAAATCGGTATGGTATATCTCCAAAGATGAACTAAATGCGGTTATATTTCCGCTTGCAGCAGCTGCTACAACCA GATAAGGGAACGGTAGTCAACCGTCAATTGATTTTATTCGACGCGATACGAACACAGCC'}) WITH p1 MATCH (p2 :DNASequence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 621       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-195 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TGTCCGTTGTAGGGCGCGTCTCGCGCTTTGT CTTGAAACCGTATGCGTGGTACTTCATGTTCTTCGGATGAGCCCCTTCTGGCCACCCCATCCAGACGACAATAAACGGTC TCCGAGGGAAAGATCGCCCTACGCTGTACTTCCCGGGATATGCATCTTG'}) WITH p1 MATCH (p2:DNASequen ce) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 622       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-145 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CGTCTCACAGTAAAAGAATCGATCCCTGGCA CCGTCTATGGTTCTGAGTATCATTGTGGAGAAGCTCTCGGGTGGGAACTCATGCGTATCAACCGGCCGGACTCCGTATAT AATATTAACAGCGGCGTCTTAGGGGCACAAGAGATATACCCTCGATAGGGCTTATTC'}) WITH p1 MATCH (p2:D NASequence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 623       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-163 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'AGCTCAATACTTAGTCTAATTGCCTAACGTG ATGCCACATGTTTGCGACTATAGCGCGATAGAGAACCCTTTTTAATAGTTCGCGCAACCTTATAACTGGCTGGTTTCTAG ACGCGGGAAATGTGGGCTGGTATATAGAGACTACTGACTGCAGTGGCCTCTA'}) WITH p1 MATCH (p2:DNASeq uence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 624       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-155 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TCAACGAGAACCGCAGATAGACCGCCTCGCT GGGCTGCATGCTTAGATTTCCCAAATCGAGCCAGACTAGCTTGCTTAACTGATAGCTCGAGATATACGGGGCCATGGGTC TGGTGCATCGTCATGTGCACAAAAGTAAAAGTCTT'}) WITH p1 MATCH (p2:DNASequence) WHERE p1<> p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 625       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-197 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'AAGTTGCCGGGCAGGCATATCGCACCCGACA GAGCGCTCACTGGGAAGATAACTCGAAAGATTCACGGTTACCGTTTCACTAGATGGGAGTTAGCCCAAATAATCCTACGC TTTGGGTCCTTGCCACGGAAAACATATTTTCTCATTG'}) WITH p1 MATCH (p2:DNASequence) WHERE p1 <>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 626       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-199 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'ACTACGGGATAATTACTGGAAACTATCGCCC TAGCGTATGTAAAACGAGAAACTGAAGCCACCCCTAGTCCGGGCCGGGGTGCGCACTGTCGTCCCCTGATACCTGTCTCT GGGAGCCGTCGTAAAATCGTCTAGCAATTCATAGCGCTACTAGCCA'}) WITH p1 MATCH (p2:DNASequence)  WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 627       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-137 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'AAAGCGTAGCTACCGCCGATGAATTTTATGA ACTAATACCGGACGTAAGATAAGGCATTCAACTTTTGAATGGAGGACGCCATAAGAGGCATTACCGACCTGGCGCAGCTG CTGCGCATCGGGTGAAAAAGAGACTGCCTCAACGGAAATCTCTGCGGCGATGGATCGG'}) WITH p1 MATCH (p2: DNASequence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 628       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-163 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CGTGGGAACCACCCATTACAGTGATGTATAA AAGTTGACGATCATAGATGGGGAACGCGCCTGAATCCCCGATTCAGACCAAGAAATCTGAGCGACCGCTGCGATAACGCT AATAGTCGCGGGGACACCCTCGTGTTGTACATTTCCTGGATGAAAG'}) WITH p1 MATCH (p2:DNASequence)  WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 629       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-145 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TTCATTTGCTCATGTACTACCTGCTCCGACA TCCGCCCTGTTTTATCTGTGGAGTCTGTTCGGCTATGGTCCGTAGTCTGAAAGTAGGGGCGTCAGCCTCCATTAAGTAAA GACTAGCGATTTTCCTCATATCGTCCACGCTTAGTGCCTAGTCGTA'}) WITH p1 MATCH (p2:DNASequence)  WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 630       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-164 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'AAGCCAGTCAGTGCTCAGGGAGCTTCTGCGC TGTATCTAACGTCGAACGCTCCATGATGGCCAGCCGCAAGATCTGTTGCTTTTTCCTATGCTCTTTATTCCTTCCTCCAT GGTGGGACTGGGGCGACAAAGGGAGGTAACATCTTTGGCATCG'}) WITH p1 MATCH (p2:DNASequence) WH ERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 631       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-134 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TATGAGTAGCAATCGATTGGGAGGTATAGCT TAAGTTGTCCATTTCTGATCTTCCCAAGTTATGGTTAGCGATTGTACCCTTCGGCAGGCGTGTGGTGATTAGATATTCAG ACAATGGACCGGTCAGATTGACCGTATGAAGTTCAA'}) WITH p1 MATCH (p2:DNASequence) WHERE p1< >p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 632       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-163 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CGTGGTTTAGCAAGGTATGTCAATAGGAATC CCTCGTTTCGTCGATCAAACAGGCCATATCAAACATGAGCGAGTGGGGTAGCGCTGAACGACTGTACCAGGCCGGAAGGA CGTAATGCACTGAGCGGATTGCATATTTGCTGTGCGTCACTGAATCAGCC'}) WITH p1 MATCH (p2:DNASeque nce) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 633       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-177 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GCAAGCCATCCGGTTCTGTGGCACACATACG TCTCGAAGTATCCTGTTTATGGTGCGAGTTGCTGCGCGGTGCCCTCTGGAGAGGTCCGGTTCAGTTTACCCGAATGTGCA ACGACAAGGGCCGGTTTTAAAATCCCAGATACCTGT'}) WITH p1 MATCH (p2:DNASequence) WHERE p1< >p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 634       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-163 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GGGTGTCGGGCGACTTGTCACAATCTGGTGG GGAGGCGATACCCCCGTGATATGTAGTCGACTGTCGAGGTACACCCGACCCGATAGTCTTCATGGTAATAAAAAGCTACA TGCAGTACGGCGCACATCAATCTCGCCTGGTGGTGACAAACAGTATAAGAT'}) WITH p1 MATCH (p2:DNASequ ence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 635       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-155 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CAGTCCACGCGCGGTTTTCGTTTTGGGGGCA TTCAGGTCCAAGGATCCTCCGGATCTCCGGCTTGGGTTACGGGCAGGGTATATCCCATTTATTGCCGTGCCCTATCAGCG TGGTTCACTAGCATGAGCCCCCGAAATAAACAGCTGTCTAAATTGGTCC'}) WITH p1 MATCH (p2:DNASequen ce) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 636       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-222 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CGCAGACACGCTCCTCACGCCGGTAGTCGCG CTTCAAGTCTAAATGCCTGATATGCCCGCGATTGCTGAATGTTTTGCCATGTTTGTCGGCTGGGTTAGTTAGCAGGAGGC ACTGGCCGAAGCCTTAATCTTTCCCGATCTCCTCCACTATCAATGTG'}) WITH p1 MATCH (p2:DNASequence ) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 637       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-135 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'AGGAAATTTGAAAACCTAGAATGATACTATT CTAGTCTGTGGTAAGACAAACCTTGTCACCACGAACCCTCCCTGTCGCCGGGTACCATGGGCGACCAACACAGATTGGAT ACTGAGTGGGACGTCGCTCATGACGCTGACTGAAACGGCAAAGTAGACT'}) WITH p1 MATCH (p2:DNASequen ce) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 638       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-194 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CTTCGCACCTTGGCTGCTTCGGAGCAGACTA AATGCTCTTAAACTGCCCCACCTTACTAAGACATGACTGGCGGTTTCATCGAAGCCTCTGCAATCTGTTGCTCGGGTCAC TCCCGGTTTCCAAGGGGCTCGCCGATGGCATATCAATTCCGTTGTCTTGGGGTCAG'}) WITH p1 MATCH (p2:DN ASequence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 639       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-175 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CATATGCCATTCAGTTGCGCCACCACTGCGC CTTGACCCAAATAAGTTAATAGCCAATTGCATGGTGTAAAGGAGTCAAAAACGTTCTTGGCAGCGGTCAATAAGTAATGG GCTGCGGACAACCTATTCTATGTCTTAGGCGCCTACGGTTCC'}) WITH p1 MATCH (p2:DNASequence) WHE RE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 640       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-177 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GCCCTTTCTCGGTATTGATCGAGAACGCGTG ATTCTGGAGCCTTAGAAGGGATGTCGGTACAATAAAAGTTCCCACCCGGCTCCTCCCGGTAGAAGGAACAAATGTGCTAG ACACTGTGAGGATAAAATCACTTGTTTGAGCAACAATGGCCATGCC'}) WITH p1 MATCH (p2:DNASequence)  WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 641       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-168 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GTACCACCGCCCAAGATTCCTAATGTGACGC GAAAGATTTTACCGGGCGCAGCCAGACGGAGAGCTCACTCTAGAAAAGGCGTAGGTTTGATACGTTAGCGGATATCTAGG CTATCCAGTGTGTTGGCCATAGAGTAGTGAGCCTTACCCGAC'}) WITH p1 MATCH (p2:DNASequence) WHE RE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 642       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-173 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GGACTGCTCTCCCGCGATAGCTTTAAGTTCT CTTCGACATACGGGGCTACGCATACACCGGGCCTGTGTCGTACTGGTATCCCTCATGAAGGTGCACTCCATTCCTGGTCC GAGGTAGGATTAGCTCTGAAGCCCGCACAGGGGCTAACGACGTGTAAGGGCGTT'}) WITH p1 MATCH (p2:DNAS equence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 643       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-168 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CAGTGCAACCGAGAAGATTCTTAGACTCTGA GGCAAATTCTGCCGCTGTCATCTTCTTTTATAGAGTTACAAGCGCCGCCACTGCCCGGTGTCGCAAAGGGACCGAGGTCA GGCGTCGAAGGAGTGCCGAAAGGCCAATGCATCGACTGGGAGACTT'}) WITH p1 MATCH (p2:DNASequence)  WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 644       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-159 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CCACGGTAAACCATGTGACCGTATCGAACTC AGGGTCCAGCCGCGATGGTTCTTAGGATGTGTTTGTCGTCACCTGTACCCTCTACTGGCCGTATTTCCGAGCTCCTGGCT GAACAGTGATATTCCATTCCTGCAATACCGCAGACCAA'}) WITH p1 MATCH (p2:DNASequence) WHERE p 1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 645       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-153 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CGGTGTCATTTATTACCAACCGCATGCAGAC GTCCCTCTCGCTTTGACGCCAACACCGAATGCTGTTGATGTCAGCGGTCCGATAATTAACACTTACTCCGAGTAAAACCT GGCGGTGGGCTATAGTATTGGGAGTTTATGATGGTTCCCTTTAAGC'}) WITH p1 MATCH (p2:DNASequence)  WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 646       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-156 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TCTGTAAGCCGATGTCTACCTGGATTTTCAC TTTGTCTGCGTGCATCAGGTGACTCCAACGCTACTCGTGGTTTAACACAAACCTTCACCCTAGATTCCTATTGCGATTAT TATCGCATTGCTTATAAAGCCAAGAGTAAACTGTTACAAAGCCTCAGCGGCGA'}) WITH p1 MATCH (p2:DNASe quence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 647       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-142 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GCGGCCAAACGTGTGGCAAGATAGGAATGCG ATTGGCATTATTCGCAAGCATAAGAGGCACGGCCGGCGCTTGAGCCAGGAAGATTTAGTTAAGTAGGACGTCTACGCACT TCAGAAATAAGTGTTTCGTGTCCATTCATTAAAATCGGGT'}) WITH p1 MATCH (p2:DNASequence) WHERE  p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 648       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-159 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GTCTCGCAGAACAAAAAACTCGGATTAAACG GACGTCGACCATAAAGGCGACGTCGCCGATGTATCTATTTCTTTGCTATTCCTCCACACCGTATTGGAGGGGGTTCGAGT ATGTACAGCGGCACCAGAGAGACCGGATAGCATATACGTGAAATGCGATCCAGAGCTA'}) WITH p1 MATCH (p2: DNASequence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 649       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-188 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'AAAGATTGTCGCGAGCACGTCTGTCTGACAG ACGACAAAGTTCCGCACCACTTATTCGGAGCAGGTACGAACTGGAGCTGTGCGAAGAGTCCAAGAGACCCGCCGGTAAGG GCCAGGTTAACAGGGGACCAGCCCCCCGTCGCAGCGACATGGTCCGTCCACTAACG'}) WITH p1 MATCH (p2:DN ASequence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 650       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-157 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CCCTCGACACCTGGGACGGCCACCAAGGGTC AGTGGAACAGCGTCACAACACAGGCTGGTAGACATATCACTGTCGGCGATTCACTTAGACCTAATAGTAGTATGTCGGGT CATGTCCTCTTCTTCGCCGTCAAAGAATTGTATCTTCTTTGCCGCAAGC'}) WITH p1 MATCH (p2:DNASequen ce) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 651       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-176 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CTGCAATAACTCCTAGTTCATAACCGAACCC GAAACTTTATCGGATTTCCCAGGCCAGGAAGCCATAAGACTCTATTCCTCCGACGGGATTAAAAACCCAGTTTTGCACAC AATTGTAGCCTGACCCTGGATGAGTCTAAGTTGGGCAGGTTGAAGGATT'}) WITH p1 MATCH (p2:DNASequen ce) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 652       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-148 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'ATTTTAGCTGGCCAGTCAAGACTGCTACACG GCCATATGCCGCGCACTAATGGATTATATACTTTGGACCTTCCCCAAAAGGGGGGGGTAGCGTTGGCGGGCCTCCAGTAC GGGTTGCAAGGGTGTAGAGTGGGTTTTATGTCCCAGTGCTACTCATG'}) WITH p1 MATCH (p2:DNASequence ) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 653       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-146 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GCTATAGCCTACATCTGAGAGTCAGGAGACA CATAGTAGTTATGATCCGGCTCGAATCGTTAGGGATACAAAAAGTAACATGTTACCCCGGAGACACTTAGGATTGGACCT CGCTTTTGGAAGTGATTCCAAAAAATGCGACGGATAGAATGGC'}) WITH p1 MATCH (p2:DNASequence) WH ERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 654       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-152 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CACCAGGGCTTTCTGTTCTTCTTATTGCATT CTGCAACACAGTCACGTCGCTGTCTCGATGCGCACGATTCTCTGATGGGTTAAAACCTTAACAGTGCGGCGGCGAGCATT GGACTCCAGGCTACTTACCTACTGTACATCACACCGAGGGAGTCCAGCC'}) WITH p1 MATCH (p2:DNASequen ce) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 655       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-192 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CAAGACAATAGAACGCCATTATAGAAAGTCA AGCATCAGCCTGCGTCTTTACGCCGTCAATGCTTCAACGATGTACTTGCAAGTTCTGGTTGCACTGACTACTGATTACCG CACCTCTGGGAGCGAAAGCACAGGTGTACACTGCTGATGCTTGACCATG'}) WITH p1 MATCH (p2:DNASequen ce) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 656       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-160 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'ATAATAGCTGTCTTTGGGCGTGATGGGGAGT CACTTACCCTATTGTTTGGTAGTTGCTGTGATGAGATACCTCCACAATGCCCGCTATAAGTACCTCTTAACAATTGACGG AGTCGGATTGCTTAGATCGTCACTTAAACTTAATACCTCGCCAGTC'}) WITH p1 MATCH (p2:DNASequence)  WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 657       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-141 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TATATCTAGAAATTGGAACTGTGTGGCGAGA CTAATGTTAATCTAATCAAACTACAGCCAGTCGTTAATCGTAGATGGGCTTCATGGGCGTCAACTTTTACGCCGATGACT TAATAAAAGTTGTTCAAAGCTAGCCGCCCCCCTCCTCATTCAAACCTTAGCCGG'}) WITH p1 MATCH (p2:DNAS equence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 658       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-178 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TCAGACGCTAACTGCACGACTTAGTTTACAT AGTAATCATACGACCGCTACGATAGCAACTCTAACCCCAATCTGTGGAGAAGGTCGAGAGTTGCCTATTCCTGAGAATCA GTCCTAAACTTACCGTGACCTTCAACAGGCGCCCATGCTGCCTCTT'}) WITH p1 MATCH (p2:DNASequence)  WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 659       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-170 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CCGGCATGCTGTGTTGTCCGCTTGGAGTCGC AGGGTCTCAAATACGCGGAATCATCAGCGTCTGCACGTATGGTTTTATAACGCGGATGGTCCTCGGGCGAGTTGACGGCG CTTGAAGACCACGGCTAATTGTCCAATCCGGGGAATTACTATTGAG'}) WITH p1 MATCH (p2:DNASequence)  WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 660       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-164 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GCTGTGCAGAGCATTTCCCGGGACGTCGGGG TTCTGTTATCAGCGGAGCTAAAGAGTTTATTGCAGATTATCTGCAGATGATAGAGAGTACATGTCCAAGCTTTAATTAGT GTGTGAACTAATAGGCGTTAGATTTCTCTCCTCTCTTTGTT'}) WITH p1 MATCH (p2:DNASequence) WHER E p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 661       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-141 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GTTATTCATTTCGGTGATGGCCGTCCTATGC ATTGAGCGGAGCCCCCCGTGCTAGTAAGCGAATTAACTGTCCTGGTTTACCAGCTGCGATAGTTCGATTAGGTCGTGGGT GGCGCTTTTCTGACAGCGAGTCGACTTGGTCTCTCGGTTCCACCAG'}) WITH p1 MATCH (p2:DNASequence)  WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 662       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-169 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CAACAAAATATTTGAGCTGTGTCAAAAGCCG GTTTTGCAATTAATCTTTACTTTTACATAAGATTGGGTGTCCGTACTGGCTTCGCGCTTTCAGATGAGAGATACTTCCCA TCCGAGTATGACCTAAAACGCTCCTCAGGGCGGTTACGCACCAGTGTCGG'}) WITH p1 MATCH (p2:DNASeque nce) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 663       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-198 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GGGCTAGTAGCACTTGGGTGTTGAGCCGACC GTATAAAACTCGTGGTCCCGCGAATTATAATTCATTATGGTTAATCGTAGAACTAGTATCAAGGAGGGCGACATATTCAA CATCCGGTACGATAAGTTTCGATTTTGCTACTAGCGTCCTGGCCGCGCTCGC'}) WITH p1 MATCH (p2:DNASeq uence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 664       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-159 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GTAGACGAGACGTCCGAAAGGTCACGCCTGC GCTAATTGGCGCTTACCGCAGTTGTTGACAACAGCTCGGGTTAAGGATACCGCGCATGTATTTAAAAGTGACCCCGAAGC TGGTGCACAGACTCTTCCTACTGCGCTTCCCACACACTTTGACGTCATGTATAAGC'}) WITH p1 MATCH (p2:DN ASequence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 665       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-199 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CCGAAAGTTACGAATCGATCTGCAGGATAAA AAGTCGTCACCTACACTTCGGATGGTCGTACGCACGGAAGAAAAACTACGTACACGTTATCGCTAAATTCAGTTTGCGCT CCAGCGGTACGGCGCATCATTCGACACCTATGCGCGTCCCTATACG'}) WITH p1 MATCH (p2:DNASequence)  WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 666       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-164 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CCCGCAAACGGCTAGCACCATATCTTCCACG TGAATTCACGAAATCTGCTCTCACCAGGGAGTGGTTTGCCGGTGGACAGGCTCATCGAATACAGTGGCGCAGCCGCCCTA GCTTCCGAGCATCTGGAAGAAAAAGTGTTTCCCCACGGGGG'}) WITH p1 MATCH (p2:DNASequence) WHER E p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 667       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-166 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TGGAGGGGCCCTCATACTGATAACCTCCCAG AGGAACTTCCATCTCTGTATCCCGAATTATAGCGTATTAACAGCAATAATCGTCATCAGTGGAACAGACTTGGAAATACA CCGGATGACGTGTTTTACGGTTTATCTTAAAGTCGCCAGCTAGTGGTCAAAT'}) WITH p1 MATCH (p2:DNASeq uence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 668       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-194 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GCAACTCGGCGTATAGAAAGAGTAGAGGAAC ATTTACGATTTTGAAGTACAGATCAGGATATTTAGAAGCGGATACTGATTTCAGTTTCTCATTCGGTAAATCGACGCTGC ACAACCCTAGCGCGTCCTCGCATAACGACCACCCGACTCAATCTCAACAA'}) WITH p1 MATCH (p2:DNASeque nce) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 669       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-193 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TAGAAGAAAGTGATGTCCTGCTTGCGCATTC CTAGTTGGCGCACAGCCATAACCGTTGGCCCAGTTACCCCGCCAGTTCCCTTCCCGTCCATACCACATTTCAACGACCCC CCCGCTAAATACGAGGAACCTCAGGCGACTGTACTGCGA'}) WITH p1 MATCH (p2:DNASequence) WHERE  p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 670       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-175 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GCCCGGTAGTCCGCATTAAAGAGACGCACGC ACGGTCAAGCAAATCAGCTCCACCATTGGCACGGACATGCTAGAATCAAGATTTATAGAGAATTGGTATTGCTCAATTGA CGGTTTATCTTCATAACTTAATTAAGCAAGTCTCGAAGGTTGGTCCGGCGGG'}) WITH p1 MATCH (p2:DNASeq uence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 671       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-176 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TGCGTCCCTTCAGAATGATCTGCGTCCGATA TCCTACAAGAAAAACGGTATGGACAAAAGTCCACCGGATGTGCTGGGGTGACCTGGTAAGCGTCGATGTATAGAGTGTTG CAACGGAGAATAGGAAAGTACCTCCCGAGCGATCTAATTGGTTATTAGATGGGTTC'}) WITH p1 MATCH (p2:DN ASequence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 672       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-161 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GCTGTCCTTTTTTCTCGTTGTTTAGCACTAG TCATTCTTTTAGCAAAATGATCTTCCATAAGTCAAAAGTGGTGATATCTATTAATCAAGCCACATCTGTTCACCAAGGAA ACCAGCGGTCGCAAATGCGTGCAATGTGAACGCACGGCCCAGGTAGAGCAA'}) WITH p1 MATCH (p2:DNASequ ence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 673       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-157 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TTGCACCGGACTAGTCTGACGTCTCTAGGGG AAATGAAAGGTAAGGTATCATTTGATTCCGAAATGTGTCGGTCCGGTATGTTTCGTTGCCGGAGGCTGATTCAAAATACA ATATATTACTGGATGGGCTCGTTAGACACCAAGCGCCGATTC'}) WITH p1 MATCH (p2:DNASequence) WHE RE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 674       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-202 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CTGTGCAAACGCGAGCAATACGGGTCGTCGC GCCGAGGTACCGAGTAGATTTGCAGCTATCTAACTCAATGACTGCAGTACAAGCTCCGGATGAAGTGCACTTAGTTGTCG CCTTTAGTTGGGGACACACTCCGCTAAGTACAAGACACGCACGCCGCA'}) WITH p1 MATCH (p2:DNASequenc e) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 675       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-166 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'AGCCGTACCATGCAGATCTGCTGATAGCCTT AAGGCCCATATGCCAATCCATGGGTTAAGCCATATTAGCTTGACCAACCAGAACGACGTTAGACAAAAGGCTCCAGTCCA AGAAGCTAAAACTTGAAGTTTCTAAAAACGACGTGTGGACTT'}) WITH p1 MATCH (p2:DNASequence) WHE RE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 676       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-149 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TCTGACTCCACGCCAGGACCTTCGCGGCAAG ATTTGTGCGGATTGAGCTCAGCGGGGGATAGACGAACTTGACTCGCCCGCTAATAAGAGCAGTCGGTGAATGAGAATACT CCGACCCTGCATGTCTTTGGTTTGTTCTACTTATGCTTCCACCAA'}) WITH p1 MATCH (p2:DNASequence)  WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 677       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-209 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GAACGGTCCCGAACTTCTAACACGTCCGATT AACATATTGTCATACCCAATACAAAGAGCGACCGTCTGCCCGTCTTGTCTTTGTAAGTACCCTCTGTCCGCCGTCGGGGC ACGAGCCTATCACGAGAATTCCGTCCCAATTATTGAACTTATCGCCGAT'}) WITH p1 MATCH (p2:DNASequen ce) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 678       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-148 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CTTTGTACTAGGTCATGCCGGGTTAGCGTTG GGGATGGTGGCCTTAGTGCCCTTTAGACATCTCCATCCCAAGAGCTTAACAAAATGTACTTTCCGGCTCGGAGGGCGGTC TAGCAAATGCTCCACGAGTCCGTAGCCTTAATATGCATGTGCGGGATC'}) WITH p1 MATCH (p2:DNASequenc e) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 679       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-177 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CATGTGTGAAGACTAGAAGGGATGTGTACGC TTCCGTCAAGTATCGTGTCCAACAAACTCCCAATTGCTCGTGTGCGTCAACTGGTCGTACTGTTGCTCTCCGCTACGAAT CGTGCATCGGGTGTCCGCAGAAAGCGTTGCTAGAGT'}) WITH p1 MATCH (p2:DNASequence) WHERE p1< >p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 680       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-156 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CCGTCTAACGATCGTAGGTGCTTCCGTTGAT ACCGAATGGGGCGGACGACTAGGTTCTCTGTTAGGAAGTCGGGATAGCGCTATGCTCGAGAGCAGCCGAGAGGTTACTAT GGGTGGCTGAACACGGCGCAAGAGAATAGGGCGTAAGAATAA'}) WITH p1 MATCH (p2:DNASequence) WHE RE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 681       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-184 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GAGCAGTTCTCCTTTGCATATGGGCCCAGAC GCCAAAAGCCAGTAAGCTGACTTCCCGGCGAAGCTGCGTTCGGAACTCCCTTGTAATGACGCGTAAAGCTTTCTGTCGGT TTTGACCCCAGCCAGCTTAAGGAGACATAGGGTAGGCTTTCACCAAATCCCCGT'}) WITH p1 MATCH (p2:DNAS equence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 682       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-173 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'AAGTCCAGACTGGTAGGGTACTATCAGTTAC CAGCTACAGCCTTCCCGACGTCCCAGTTCTAGTCCTACCATTCGGTCCCCTACGCTCCTGAACGCCAGCACGCTCTTGGG TGCAGATAGGAACGCCGTAGGTTCCGAAGTATCCCAGAATTCG'}) WITH p1 MATCH (p2:DNASequence) WH ERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 683       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-145 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CAGGGGTTGAGTGCGGTGCGGCCTTAAATGG ATAGCGTGTCGGCTCGAGCTATAATCGGCGATGCAAGCAGGACAAATCGGCTGCGATGCCCCTGTGTCCTAAGATCTTTG CACCTCCGGATGAGCTGCCTGTAGGAACGATGTTCTATACGGTACGTT'}) WITH p1 MATCH (p2:DNASequenc e) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 684       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-195 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GGGGACGACTAGACTAAAAGCGAGCGCGGCG TCTGTATCATTACTTGGCGCTACATCGAATCACAACGTTGAGCGTACATGTGGAAATCTATTCGACTATCGGTCGATACG ATACCTCATCCTATGAGTCCCGCTCCGTCCCTAACATCGAAGA'}) WITH p1 MATCH (p2:DNASequence) WH ERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 685       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-159 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CTTAAGCACGAGCCATGTCTTTTGTGGTTGC AATGACAAGTAAGAATCCATCATACAATGGAGGCGGTGACGAATGACTGATGGAATGGGCCCGAAGGGGGGCTCTAATTG TACCCCCCCGTACTAACCAGAGTGTGATAAAAGCCCGCTCTTCTT'}) WITH p1 MATCH (p2:DNASequence)  WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 686       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-148 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TGATAGCTGAACGATCTGGAACAAAGTCTTC TAACCTTCTTCCACCTGTCGCCCGTTACCCGGTACCCCGAATGAGCCATGAACCGTCCATCCGTATAATGCCGTGCAAAT TCCACACTCGTGGGTTTCTGCGTTTGCGCCGAAGACCGGCCGCATATCT'}) WITH p1 MATCH (p2:DNASequen ce) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 687       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-165 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GTCGTACATTAGGTACAAACAAGTACCACCC GAAGAGACATCCACAAAGATAGTGTTCGGGCTCGCTAGTTCAGTGTGCCGGGACGTAAAACGACCCGTTGCTCAATGTAA AAACCGGAGTGTTGGCTTCCAAAACTTTAATCCTGTTTCCCGAGGGCGGGCGCG'}) WITH p1 MATCH (p2:DNAS equence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 688       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-172 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GGCTTCTGTTACGGAGCCTGGTTACTCATGC TGCGGGGCTAGGACCGTTCCGTAGCACGTGGAAATGGGGATTTAAGTGAAAGCATCTAACGCTACAATGGGTCTGTCCAG GACGATCATCAAGTTGTATGGGTGGAGAAATCACATCCATGTGT'}) WITH p1 MATCH (p2:DNASequence) W HERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 689       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-153 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GCTACCTATTTTAGGTCCCTTAGGTATTCAC GATCCGCGGAAATAGCAGCCAATTCTCGCCACGTCAGTCGGAAACGAAGCACAGCAGCTGTGTATCGTCACACAAATGAA TCTAGTAAAAGGCGCTGCGCACGCAGTCCCGATCTTGTACGGGAACGA'}) WITH p1 MATCH (p2:DNASequenc e) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 690       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-155 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GGATCATTGCCGCCGGATAAGACGATGAATC CAGGGTATGCTTGGCCAAGAGAAAATTCCCTGACGAAGAAAGGCCGCGGTTCCTTCACGGACCAGGTCTCGTCTAGGGCA AATAGCACGTCTAATCTGAATTTATTAACC'}) WITH p1 MATCH (p2:DNASequence) WHERE p1<>p2 CA LL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 691       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-183 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CCTACCCCCCCGAGCGTGCTCTACTCAGATT CGATAAAGGGCGCGTTGCGCTATTCCTTCCTCTCTAAACAAGATTGATCCCCGCGGTTTCAGGCATTGTCTTAGTATGCG GACAAGATATTTGTCCACGCGGATATCGCAGAACAATACGCCTCGTCAGTAATACGATGG'}) WITH p1 MATCH (p 2:DNASequence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 692       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-186 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TACTGGACCGAATTTGTCCTCTATGGGATTT ATTGCCGCTCATTACTAAACGCAACGTCTAGCACGGCCTTGCGTTCTCGAAGTCTGGACGGGAAATGTACTCAGAGTTTT ATCCTAGAATTTGCACCATAAGCCAGCCTTCCGACCTGCTTAAGGCAGCC'}) WITH p1 MATCH (p2:DNASeque nce) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 693       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-156 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'ACTTTCGGGCATCTCGCCACTAATCGCCTCA GTCAGATTTCGACGCTACACCAGGATCACAAAAGACATCAGGGGGAGTGGCGCCCATTCTAAGTTTTAACTGTAAATCCT CCCACGCGATGCTGTTTACAGCGCGTCAGGTATGCATGATACGCAACC'}) WITH p1 MATCH (p2:DNASequenc e) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 694       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-196 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GGACCTTGACCCGGCCTGGACGTGTTTCCTT GTCTCACACCTGGAGTTCTGGAGAGACCAGGTCTCAGCCCAGAGGGCTGGCATAGGATCTGCTTTCAGAAATTTTTGCGC CGCTACTCAAAACTGGAGGTGACACGGCAGTGTGCATGACTAGCATC'}) WITH p1 MATCH (p2:DNASequence ) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 695       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-152 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'AAGTGATACACCCCACTAAGAGGGTTAAACG CGCGGTACATGCTGCTCCCTCCGGAATCTCTAAGATGCCTCCCTGTCACTGACTCAGTGGGTGGTGGCTCTCCTGCCATA TGATAGTCTAGGATTGTAGAGCGGTTTTTTACAGTGTACAGCAAGAACGCAG'}) WITH p1 MATCH (p2:DNASeq uence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 696       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-188 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CGAAGATTCTATCAAAGATGCCTAGACGCTG CGCCATCTACAGACCCGCAAGTCCGTGCTAGGTAAGTCGCAAGTGTCGGTCACGCACCAGGTGCTGGATGACGTTTGACA TTGTGTCCAATGAATTATCTCTAACATCGGCCTTTTTTTCAGTCCACGCTT'}) WITH p1 MATCH (p2:DNASequ ence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 697       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-173 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CGAGTAGGAATTTCGAGACGTCTGCGGACAA TTGAGATATAACAGTAGCGCACGGTTCGGGCCGGGCCTTTTACAAAATCTGTTCATACACTTGTCATATCTATCAATTGA GAGGCAGAACTCCCACGCCGCCTTGGAGCCAAGCTGTCAATT'}) WITH p1 MATCH (p2:DNASequence) WHE RE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 698       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-150 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'AGAAAGCAGAGGCCACTGGGGGAGGATCCGC AACTTTGTTAATCATAAACTTTATCGCTGTACTGTTGAAAGACAGCATTATTAAAATATCTTGAGCCCATCAATACTTAG AGAGGCGAGGAGAGCAACCCCAACAAATGCGGAACAAG'}) WITH p1 MATCH (p2:DNASequence) WHERE p 1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 699       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-206 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TGGATCTAGACAGCCTAGAAGCTAGGACGCG GGAGAGCACCACTGATACAATTCCTACTTCTGCGACGAGCGTGGACCATCCTGTCCCAATGCGATCATATTACCGTTAGA ACATTTCTTTATCGAGTCGTTGTCATAAAGCATTTCTGTAATTCCGAATGTAGCGA'}) WITH p1 MATCH (p2:DN ASequence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 700       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-160 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'ATTGATAAATTCGCGTTGGGGATATCCCTGA AGTGTCGTACGGTGATCGACCCAAGTATTTAGGAGCTTAATGCTTTACGGCCGTCATCCGTAGGGCGATTCTTATCAGTT AGTACTCGATTCCTTAATCGTGTACATGGATTGA'}) WITH p1 MATCH (p2:DNASequence) WHERE p1<>p 2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 701       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-173 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GGTCCTTGCCGCTGTCCCTCGCATCGTATGA CGCATAACCTGTAAGTTTTCTTACGACTAAACTGCCGAACTCCGGGAATGACCTATAAAATGTCTGATAGTATGAACCTG TCCCCACCCAACGGAGAAATAGGTCTGTGTCCCAAGCCCTATTTGG'}) WITH p1 MATCH (p2:DNASequence)  WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 702       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-164 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TCAGCGCCAGAAGGGGCTTCCGCCAGTTACA TTGGGTGGGTTACTTAAGAACAATCTACAGTGCCGACTGTAACCATCTCTGACGAAAGGATTAATCCTCTATATTCGTTA AAGACTGCTTGCGATGACTTAAACGCCATGGGTTTGACAACACTACATGTAG'}) WITH p1 MATCH (p2:DNASeq uence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 703       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-200 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CCAGCTAGTCTCCAACTCCCAGCCTGACTTG TGGGTGCGAGGTACGGTCATCTAAGGAAAAACGCCGACTCCCGTCCGCACCGGAAAGTCCCCCGGAGAGGTGGCTGGAAG ATGGCCCCAAAATAGGGACCATCCGCTGGCTGTTAGTATCTACTT'}) WITH p1 MATCH (p2:DNASequence)  WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 704       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-182 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'AGATCCACTAGGATTCCTGTATGGATAGTAG CCAAGGAACTTCACTAGGCGTTGTAGGGAACGCAGATGACAGTAAATTCACATGCACTCTAGACGTATGGGCGCAGTCGC TTTTACACGCTTTGGCTGTAGTCCGTCAATCCATGAATTCTGTCTGAC'}) WITH p1 MATCH (p2:DNASequenc e) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 705       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-176 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GGACATAATATAACGGATATGTCCGCCTAGG TAACCCTAGGGGAATCATCTCATAATTATTATGAGAACAGATCTACTATCGTTTACCGGGAGTTGTAATCAGGGCGACCA GGTCTGCGTATATCCGGCCGTTATAGAACAGTCTACTTTGCGTCTAGTC'}) WITH p1 MATCH (p2:DNASequen ce) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 706       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-190 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'AGATCTGGCCGTGGTATTTTTTCCAAGACCC CGGTACTTGGACACCCTTGAAATACACCTTGAAATCCAGGACGCTTCCAACACGGAAAATCCCAGATGTTAGACATCGGA AGGCTATTCCCACGAGAGTGCTTTGCCAATCGGAGCGATGCGCCTCGGTTTA'}) WITH p1 MATCH (p2:DNASeq uence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 707       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-163 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TTTTGATCAACCAGGAATTTCATCTCCGGTC TAGGTCTGTAAGCGCAACTGTGCTCATATACCTGCGAGCCTCTTATGAAAACTAACTCTATGTCGAATCACACACGCTCA TACATGCCTAGACCTTATAAGCCGGGTCAACGGACGCGCTGATATGATCGTT'}) WITH p1 MATCH (p2:DNASeq uence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 708       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-188 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CCTGGTCTATGGCAACATCAGTAAACGCAGA ATTCTATGGGCCCTGACCAGAAGTTAAGACTTATCCGTGAACCATTGGGTCATGCAACTTAGTTGGTCGCCTTGACGAAC GGCGGCGTTATTTGCCATATCACTTCTGTCACTCGTCATCAGTATGGGGGGGTCAG'}) WITH p1 MATCH (p2:DN ASequence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 709       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-173 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TTACAGCGTTAGGGTTGCGGTTTCTTAAGTT CAGATTTCCGCGCACCCCTCACTTCGCGAGTCTCTGTTGGACTGGCACTACGTACAAAATAAGTAATGCTGGTGAGCCTC GCCGCTGGATTGCGTCCGTATGCCTACCCGGGT'}) WITH p1 MATCH (p2:DNASequence) WHERE p1<>p2  CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 710       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-152 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'AGTCTTGACCTCCCCATTCGCATGCTAAAGC GCATTCGGTGTCTTTACTACGCTCAATTGATTCAGTAGTACATCACAGCTTCCTACGTGGTTTAAGCCATCATACACATA GGGTCACCTGACATTACATCCCCGCTTGGGGTTGGTACATCCTTTGGA'}) WITH p1 MATCH (p2:DNASequenc e) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 711       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-176 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GTGAGTCTGCTTGAGTAAGCTGAATGTCTCC GATAAATCCTGGGGTTTCACTCGCCCGAACTACTAGGGCGTGTTTGCAGACCTTCAAAAGTGGGAACCTCACGGCTCTTT CGGATCGCATATAGTCTCAAAAGCAAGTAACAGTATGGGT'}) WITH p1 MATCH (p2:DNASequence) WHERE  p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 712       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-184 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'ACACGTTCCAGGCACCGCTAGTTTCCCGTAA CAGACAGCCTCGGCGGGGGGTGCCTTGCGTGTACCTACGTCGCTCACAGAGTCAGTCTCTTTAGGCGCCGGTAAATATTG TGTCACAGGTACTTACAGTTCCAAACAAGCATAAAAGATCAAATATCGG'}) WITH p1 MATCH (p2:DNASequen ce) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 713       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-155 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'AAAATAGAGTGTGGGCCTAAAGTGTATTGAC TGGTCCGCTTTTGGTTTGAAAGGAGGGACCTCCAGAGACTTGGTGGCTCATTGGAAGGGCAGTTTAACTAGGTGTCGTCA GTATAGAACCATCCTGATAGGTTAGCCTTGCGTACCCTCTGCTCTAG'}) WITH p1 MATCH (p2:DNASequence ) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 714       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-156 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CTTGGCTCGTACAAGCTTCATTCGTATATAA TATCTGATGGCGTCTTCTATCGTTCTTTAAAATAGCAGGAGAGCCAGGGAGTTCCTCTCGTCTATACGGGCAAGCTCACT CACGAGTAACCTCCTAAAACTACATGTTGCCCGGGATATCAAA'}) WITH p1 MATCH (p2:DNASequence) WH ERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 715       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-163 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GATACAGGATCTGCTCAGATTGAGGAGCGCT GCCAAGCGCACAGCTGAAAGTAATAAAGGATAACCAATTCGATGGGAAATCACCCAGCCATTCTGTTCATACCTAAAGAA TGCCGATTAATATCCATCGACGAGATCGTCCCGCCCATCCCCAATGGT'}) WITH p1 MATCH (p2:DNASequenc e) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 716       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-159 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CTGACTCTTGCACACGCGTCAGACATGGCAG TTCTTGCAAACCCACGTGAGAGAGCGCGCGCCAAAGCACGCATGTCTTGCAGTGGCCCTAGCAACGAATCCTCCTACCAT AATTGATGGACCCCTCTCATCGCTTGACGACGACAACAG'}) WITH p1 MATCH (p2:DNASequence) WHERE  p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 717       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-183 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CACGTGCTACCGCCTTATTGCGCCAGTTTCC GTACATTGAAAGTCTTTCCGAGAACTACTCTACTCGTTGGTCTATTTCTGGGACGACTCTGTAATACACCTCTGGGGGCA CCGATAACGAGGCTGATAAGACCACATAAAGGCGTTTATACGAGCAAATGTCCCATG'}) WITH p1 MATCH (p2:D NASequence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 718       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-194 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TTAGCCTTACTTCAGCCACGATAAGGAAAGA TCGTACTTGTGTTTGATGGACTACCCTGATAAACATCACTTCTCCATAGTGTAACGAACTACACAGTCAGATAGAACAAC TTGGGTCTTAAAGGATCACTTTTTCGATGGTTCGTACCGGCTAACCCGCTGA'}) WITH p1 MATCH (p2:DNASeq uence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 719       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-181 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TAATCAGGTGCACAGAGGAACCGGATCGCCG CATGTAGCTAGGCCACCCACGAAACGCCATCTGTTATCTTCATATTGCCAGATAGTGAAAAACGTCCAGGAATTCATTCG GCCATTAGCTCCAGCCATTCGACTCCACAGCTGCCAGTAGGGAACACTTCA'}) WITH p1 MATCH (p2:DNASequ ence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 720       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-167 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TTCGTAATGCTTTTCTGTCGATAGCCCCTAA ACTAGCAAGCGACGATGGCACTCAGGTCTACATCGAGAATGCAGCGGACGGGGTCAATAGATCTCCATGAACTCTCCCGA AAACTTTTTCGTAATTGCAATGCTCCGTATGGGCTCCTTGGTGCCC'}) WITH p1 MATCH (p2:DNASequence)  WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 721       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-181 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'AGTCTTCTAAATGGGCCCGGATCGTGCCTTA AATGATCGGCAGTGTCGTGGGCATAACTAAGATCCCCCTACGGTTCAGGTTCAGCTGCCCCATGTACGGGGGGTCTCGCG GAGCAATTATGTGCTGTTACTTGATGAGTCCGCCGACGGTTCAA'}) WITH p1 MATCH (p2:DNASequence) W HERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 722       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-170 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GGGTCTACACACTATGATAGAACGCCGATCA GAATACTGGACGACGACTGGAAAACTACTGTCGCGTACGTTAGTAGATTTAAACACAGTAACAATTTACGCAAGTGGCAG TTGCTGCGAGTCGAAGAGCACTGCCGTCTCTTTTGTCACAGGAGGCATGCAGGAT'}) WITH p1 MATCH (p2:DNA Sequence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 723       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-168 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GCATTATGTAAGTTTTTCGACCGCATCGTGT CACTATCGCATCTAAGATTGCCCATAACAGATAACCATACCGCACTGGTAGTGGAAAAACTCAGCCGTATAGCGGAACTT CTGATGTCCTAAGCATAGGTTAGCAGAACACAATATACATGGACACGT'}) WITH p1 MATCH (p2:DNASequenc e) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 724       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-203 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'AATAAAGGCCATTACGAAAGGTTTCACAGAC CACAGACAAACCGATCCGGGCAGCAACTACGCTACAAATTTATGTATTTGGACTTATCCCTGCCTCCGGTTGTCTTAAAA GGCGGCCGTAGTCTAGGATCGCTTAGTTATAGACCGTAGTATATGTAA'}) WITH p1 MATCH (p2:DNASequenc e) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 725       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-153 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TATACCCGGATATTTCCTAACACAGACAGAA TGACATTCCATCTACGGAGGCCGTAGATGCTCACAAACCTCGGTTTTGACCACAGTAGAGCCGAGGGCGTTTATCTTGCT GAGTGCTCCGGAACAAAGAACTCGTCGTTGTCATGTGGCTTTGGATTGG'}) WITH p1 MATCH (p2:DNASequen ce) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 726       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-207 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TGATAACGCTCTCTGCACGGACTCCGACGGT CAGGGAACGAAGTCCCCCCAGTTGAACAGGGTGTTTGTGTGTATGGCTATCTCCTCAAAGACCGTCAGGTATCAAGACCT TTCCGTCGCCCACAAACCGCGGCCCACACTGGCGTCCTAACGGAACCAATCCGACACCTAA'}) WITH p1 MATCH ( p2:DNASequence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 727       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-156 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CAGTTGTTCGACGCTACACCTCACCAACAAG CCCCAGCACGTCCAACTAAAGCTAGTCAGTCTCTTAAAAAACCGCACAGCAAATCTGGCCCGGCTTTAGTCTCTCCCCAA GACGGTCCGCCATTGTATCAACGGCGCCGAAAGCAAAGACGAGCAGTTAACCGGA'}) WITH p1 MATCH (p2:DNA Sequence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 728       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-178 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GCCGAACAGTGTTCGGACAGACAGCCGCACG TGCCTCATGAAACCCGGAGGGTGCGGCCGCCATAGTGCAAATTCGCGAGACGTTACTTCACGGCTTTACTGAAAACGGAA CCTTCGGCTGCAACGAGCATAGGAAAGTCAATAACGGGTAGAATTTCT'}) WITH p1 MATCH (p2:DNASequenc e) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 729       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-222 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CGTCAACGCCCTCTTCCTCTGAACAACGGCA CGACTGCATGAATCTTAACCTGCCAAGGAACGGGGTAAGTATCGATTCATGGGATAGTACCCTAGGTCATCGAGTTATGG TGGAAAACGTGTAAGGAGTAGCTTTGACGTCCAAGCCATCCGGAGCTC'}) WITH p1 MATCH (p2:DNASequenc e) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 730       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-206 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'AGCCTGGCTCGAGTGAGGATCTAATTCAGGA GCGCCCGAATTGCCTGTCCGCCGCCCTGTTGTCAGTTTTACGTAATCCCTGGTGGCCACATAAATATTGGTCCTGGTGGT TTGCTACTTACCGAATTCCACGGGCAGTCGGCCCGGCACTTTATTATCGTACGACTATTCC'}) WITH p1 MATCH ( p2:DNASequence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 731       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-179 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CTATTGGCTTTGTGCCACAAGCTGTGAATAA AATAAAGCTGGGCTGAGGCCCCTCTGTCACACTGCTCTCCGCTCGCAAGGTTATGCGTTAAATCGCTCGGCGACTCAATC TACACTTAAAGCCTTACCGTAAGATGTGCTACAGACTGAGGGATATCACTAGACC'}) WITH p1 MATCH (p2:DNA Sequence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 732       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-203 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TATGTGATCGAGTCCCAACCTCTAAGGTAAT GGCTTCAAATTGGAGTATCGGGATCCGGTCGGCAACCTATCCACTTACCGGTAGCCTGAAGCGTAAACCTTTACGTATCC TGCACTAGCGGATGTAGTACCAGAATTCTGTATATCTTCATACA'}) WITH p1 MATCH (p2:DNASequence) W HERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 733       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-185 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'AGCAATACTACTTTCTAGGGAGCTACGCGTT GGAGACTGGCATGTAGCGTAGCCTTCGTAAGCTGGCATGACTCGTCAGAACTGTACGAATTTGGTCTTAGGTCAGACGGT AAGTAAGCATTGTCAAGACGAACAGTGTATGTCGTTTTACAGCGGAGCTCG'}) WITH p1 MATCH (p2:DNASequ ence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 734       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-192 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GCGACTCCGGCGTCGAGCGAGGCCATATCCG CTCCTAACATCGAACGGTCTGTTTACCGAGCTCTGTGCGGAAAACCGCGTCGGACTGACATACCCCAGTTTGAATGGTTA GCTCAGAGGTACCGATAAAGTTAATTGTGTCAAATAAATGCGGG'}) WITH p1 MATCH (p2:DNASequence) W HERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 735       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-196 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TTTTGACCGAACCGCCCTCGTTGTTACATCT CGGCTGGCCGCGCTCTGGCATCGCATACGACGTTCCATAAGAGAACGTTGAGCCTGCTGCTACCTATTAATTGCAAGGTG AGGGTGGGCCATAGTCATATGGATTCATTGGTAACCCCATCTCTAG'}) WITH p1 MATCH (p2:DNASequence)  WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 736       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-202 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'AATGTGAGTGCGTCACCCACGAAAGGACCGC GCTGAATTAACCCCTTGTAAGTATGGATGCGAGTGGATGAGTTGACTTACATGACTTATCTACTCGCCTCGTGCTGTGCG GCAAACGTTTACCTACAAAGCTCGGCTCTTATTCGCAGACACCATCGTA'}) WITH p1 MATCH (p2:DNASequen ce) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 737       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-178 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'AAGCAAAGGTTCCCATATGTAGCAATGGGGC CGTGCAGCCTGTGTGCTATCGCAGGCTAACGCTATAGCCGATCATGTCCCTCGCGTTTTGAGCACTGCTTCTTCGGCACC GTCTCGCACTCTACAAGATTCCAAATAAGGTACGCTTGTGAGCG'}) WITH p1 MATCH (p2:DNASequence) W HERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 738       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-160 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'ATCGCGGATGGGCAACAGCGAATACAACCAA ATATTACAACCTGGTTGCGTAGTAGATGACCCTGCTTATGTGAGGACTTCGAGTCAACTGGAAGGAAGGAAAGCTGGTTT CTTGAGGCTGGACACACCTTTTTTCAAATTTTGAGTAGCATATCG'}) WITH p1 MATCH (p2:DNASequence)  WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 739       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-197 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CTGTCAGAGTTCCGCGACGCTATCAGCAAAG TGCCGGTGCCAAACGGGCGCGTAAAACAGCCAGGACACACCTTCACAGGGTCCCCGGTCAATAGCCTCCGAACACGTCGG GACGAACTGTCTGCACCGCTGTCCTCAGCAAAATGCAAGCGCTCCGC'}) WITH p1 MATCH (p2:DNASequence ) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 740       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-180 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GCCGATCAAGCTAGCTATACCCACGAGCTTG AACGGAATACTACAGGCGTGACGGAGCGTAAGTCAAAATAATGCCAAACATGCGGTTTCACGATAATCACCAACGTACGA TCGCAAGCAGTTCCGGCACCAGCAACGCGATAACCATTCGGAAAAGTC'}) WITH p1 MATCH (p2:DNASequenc e) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 741       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-202 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'ATCGAAGATTCCCTAGTCCCACTTTTCTACG GCGTCAACATGTTCTGGTTGCGATACACGCGCGTACGTGAAGATAACCAGAATTCAAGCGAACCCGGCGTCCTCAAGGTT ACAACACGGCAATGCTTCAGGTCATAACTCCAGTAGACAGTCCATTGA'}) WITH p1 MATCH (p2:DNASequenc e) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 742       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-188 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TTGGCTGTGAACAGTCTACGCTAGTGAGCGT ACTCTAGAAGCAGAGGGCGTAGTCTATTATGACAACTAAAAAGGCCAGAAGTAAGGTCCGGATACTGGACTCACGAAGGC ACCTGACAGTTCTCTAGCTATAGTAAAGAACTGATGCTAACTAG'}) WITH p1 MATCH (p2:DNASequence) W HERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 743       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-185 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GTAAGTAAGCGATGACTACTTCATGACCCGC CTTAACGTTCGGGAACTTATCCTTACGGTGATGGGCACAAAGTTGCTATACGCTAGCTTGGCGCAACGCGAGATACATCC CTGGTAGTCAAGCCGCAAATTGGTCACCAATTCGGGATTCTCAGCTG'}) WITH p1 MATCH (p2:DNASequence ) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 744       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-219 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TATGGACAAGTTACAGCCCGTGATAACTCAT CTGCATAATGGCTGCGTGGTTATGACCTAGATAAAGGTGCTGCTGTCGTAAAGATGGAACCTGAAGTCACAAACAAGTCC TGACTTGAAGATCATTTAGGGCCGTATAACTGGCAAACT'}) WITH p1 MATCH (p2:DNASequence) WHERE  p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 745       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-182 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TCCCCACTTGCTCCGGAGTTGCAAAGTGCTA GGTTCGGAAGGAAGTAACCAATATACTGTATTAGAGAGAACTGTTAGGTTCTAAGCCAACAACAGACACTAAATCGTCCG CCACAAGATCAATGGCGGTGGATCTCTTCAAGTAAAAGGAGCTTTAT'}) WITH p1 MATCH (p2:DNASequence ) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 746       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-182 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GAACAGTAGCACAACTCACGAGCTCTTTTGT CATCGGGTATCCCGCTTATAGGAAGGAAAAAGCAGCAGTACGCGATCATCGTGGCAGATTTGGTGGGAGGATTAGTTAAT ACAGCGGTGTCATATTCATTCGGGATGTCAATCTCTATGGAGCACGAGAA'}) WITH p1 MATCH (p2:DNASeque nce) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 747       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-173 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CACATCAGCTTCTTGACAGACCACAAGCGCC AAGTCTAGACCGAACCAAGTATGAGAAGTAATGGAGTGTTTCTGGCTAGTTTTAGCAGTTTTACCCTTTCGGTCGTATAA CATCCACCCTCACCTGTTACGAGGCGAGAGGACGGCATTTGATAACCATAAATG'}) WITH p1 MATCH (p2:DNAS equence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 748       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-191 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GTTGCCCCCAGGCGCGTATATCATCTGGAGG GCCCACCATCATTACGCGGCGCCAGGGAGTCGAAATTGGCATTTGCCATGCTCCTGAATAACAGACGTTGTATTTCATAC GCCGCCATAACGGGGGCTCCCTATACAGTAAAATGCATTAGCTTTCGAAAAC'}) WITH p1 MATCH (p2:DNASeq uence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 749       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-196 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TAGGATAGGATTGGCCCGGGGATCAGTAAGC ATCCCAAGATCCGTGGTTTTGGACACAGCCTATATAAATTGTGTCTCAGGGCTGCGTAGACACTCCGTGACAACATAGCT AGCCGTGCGTGTTTGCTAGAGCGGCTTCACAGCGTTAGGACAGACAGGGA'}) WITH p1 MATCH (p2:DNASeque nce) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 750       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-195 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'AACACTCAACATTTCCAACTCCAAGTGATTT CAACCAGTCTTCTAAGCATTGAACGTAAAGATCGTTTCGACTGCATTTGTGCGTTAACTCTTCTTTCTGAACTAAGTTAC TCTGCAAGCTAACCCTGGAAAGTGCTGTCCCGTACGTAATATGATCCAAT'}) WITH p1 MATCH (p2:DNASeque nce) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 751       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-172 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TGATAGTGCTCACAGGGGGTTTACGTTAGGT TTGCCAATTTGCATCCGCCCTGTAATTAAGACCAAAGAGGAATTGTACAGTAAGCACCATCTAAGAGGATACCATGAGGC ATGGCGGCTCAGTGTTAGGATTCATCCAAACCTTCCTGCGCCGGGTTAA'}) WITH p1 MATCH (p2:DNASequen ce) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 752       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-198 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TACTCCAGAATGCCAGTGCCACACAATTCTC CCAGGGCGAGGTGGCCCCAGCTACCTATAACTCCTATACGTTCTCACATTAAACCGTATCTCTGTGCCAGAGCCCCTGCG GGTTGAAGTGGTCGGACAGAAGTTCAAGATCAGGTAAAATGGCACCTGAA'}) WITH p1 MATCH (p2:DNASeque nce) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 753       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-196 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GTGCTGGAACTCAAGCTTCCGGTTACAGTGA ACTCAGTGGTGCTTGTAATACAATGAGGTCTAGATACCACATTTATTAGAGCGCAGATTAACTCGGGTGAAGCGCATCGC CCGATCTGTTAGGTTAAGGTATGCCGGATTTAGCGTCCGTGATTATATGAATGT'}) WITH p1 MATCH (p2:DNAS equence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 754       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-205 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GTGATCATATGTAAAGACGGTTACCGTTACG CCGTGCACTGAAAGCTCGGACTCACGATCCCTCACCCTAGCTAACGTATAGGAGAAGTACTCTGAAGCCAGTTTTGAAAC CAGATGTTTACAACGAGCCGTAACGGGGCTTGAACTCACAGGGTTAGAGCGCGACGG'}) WITH p1 MATCH (p2:D NASequence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 755       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-207 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TTGCGCTCAAGATGTAACGCGACCCTCTCAA CTGTCTGGCGAGGCACACCCACAATTTTCTGAACGTCAACTATCCGTCCAGGTTTAAACTGCAGATCGTGGACGGTCGAA AGACCTAGCTGGAAACGTTAAACGGTTGCAAACAAATCAGCTCG'}) WITH p1 MATCH (p2:DNASequence) W HERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 756       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-191 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TCATAGTTTGCGCTGGATACCATCAATCACT TTTGAAAATATAACTCCCCTGGTGCTATCTTGATACTTGGGATAGAGGGCCTGGTTATCCTGTCATAGTGGAGACCGAAG TATGCGCCGGAACCACCTCTATTCAAGCTCGCGCGAGTTCGAGGGCCAAACAATTC'}) WITH p1 MATCH (p2:DN ASequence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 757       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-185 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'AGGTCAAGGAGCTAGCTGGAACCCCCTGACA GCCCAACCCCTTTGTTAGGGACCATGTTGTAGTCACTCTTCAGTCCGGGACGTCCCATGGAACTCTTGAAGCGTTCACCA TTATTAAGCACGGAAAGCGGTTCTCGTCTAATTAAAGATCGCATCGTCGCGTCGAG'}) WITH p1 MATCH (p2:DN ASequence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 758       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-177 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'ATATATAGAAGTGTGATCCGCGAGGGCGTTA ATTTTTCATGTGTTTGGGTCTAGCAAGATGGAACTCGGTCTTAAAACACGTAGTGCGCGCGTTTCTACTAGCAGCCGCTA ATGAAACCTTGGCGAGGACACAGCCGTATAGCGCGGGTTCCA'}) WITH p1 MATCH (p2:DNASequence) WHE RE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 759       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-190 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CGTATAAGTGAGTAAATCTCCATTACGGCTA GCTCGTAATATATGACCGCTTTCGCTGTGCTGTAAGGCCTAAGAATGACAAACCTACCCGTAGCAAAATATCTATCTTAC CATACCCATGCTGCGCTGATGAGGGTAGCTACGCCGTTAGAGTCCGTGGATT'}) WITH p1 MATCH (p2:DNASeq uence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 760       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-199 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CCGCCTGAATATGACAATGCGGCAAGTCATC CGTGTCATACTGCAGTTAAGACTAGTCAAGGGTCTATAGAGGTTCGTTCAGCCCAGAGCGTTCGTTCTGACCATACAATG CTAGCAGTATGCCCACTGGCGTTTTATTCCCGTAAGGGTGCGCC'}) WITH p1 MATCH (p2:DNASequence) W HERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 761       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-206 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GTTGAAAGTCTAGTGGCGAGTTGGCCCATAT GCCCTAAATTTCGTGGGAGAGGTGTATCCTAACTGAAGATTGCTAACGGATTAGATTAACTGGCCCGGTTCCCGTCGGGT TATGCCAGTGCCGCTCGGGATATATCGGAACATAGATCGAGGGT'}) WITH p1 MATCH (p2:DNASequence) W HERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 762       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-183 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'ACTATGTGAGCGCCACGTGGCCTATGTTACA CCATAATCCTCAAGCAAGGATTCACTGAATGTCCCCTACCAGCCACCCCTCATTATATAGGTGTAGGTCGATGTCAAAAT ATGTGTCCAGACCTTGACAACGATCGACGCCGGTTGGTCGCGTCAGGGCG'}) WITH p1 MATCH (p2:DNASeque nce) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 763       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-189 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TTCTAAGAATCACCATGGAGGACGTTTATTG CGGAACATTTTACCGCGCACCTTATAGCTCGCGTGGTTACGCGACCTTATCGCACGTATAGCTGGCATCTCGTTATGTTC CGCAGATGTCCTCTTCATTTGACCGTTATCCTCGGTGGGTTAATAGCA'}) WITH p1 MATCH (p2:DNASequenc e) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 764       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-178 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'AGAGGGGAGCACAGTTTGCGGCCCGTAGCAA ACTCCGGCACGACGTTATCAAGACCACCTGGGACCGCAACAAACGCTAAATTTAACTGATTCCAGATCAGCCTCTTATAG GCCCTGTCCAGGCAACTACGAGCGGCATATCTCTAAGCAACTCTGTCACGCCCCAATTA'}) WITH p1 MATCH (p2 :DNASequence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 765       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-182 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CAGTTCAGTGGAGACAGTTAAAGCGAACTGT ACCGAGGATCTAGGCAAGATTTACAGTCAGTATCTGCACGATGAATGCTCAGCTCCCTGGTGGAGAATTTGTAAGTGCCT CATGACGTAAAGGATCTGGTATTGTAAAAGAGCT'}) WITH p1 MATCH (p2:DNASequence) WHERE p1<>p 2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 766       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-186 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TAGCTAAAACGCGCACTTCCATGTGTCGCTG GGGCAGGTAAAACGACTATCTTGAGACTAGAACCCTCCAGGCATTGGGCAGCAGTTCTTTGGTCCCCATTATCAGGGGAT CGTGACCTGGAGCATAGTCGCCCTATACCCTTCCGCCCTCCTTTGCCCCAAATTAAG'}) WITH p1 MATCH (p2:D NASequence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 767       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-184 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CTGGTTTGATATGAATTCGGTATGTAAAAAC CTTACACTATCTAGTAATGATGCGTGGGCGGACGAAATACCACTTGTGAGGATGTCTCTGGTTCGAACAATTTATTACGC AACAAATTGTGCAGATATGAAGTCACGTTACGACAATGACTATGCAA'}) WITH p1 MATCH (p2:DNASequence ) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 768       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-217 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GGCCAATGACGATGGCGATATGAATATATAG TCGAGGCTTCGTGGCATAAAGGTCCTAAGTTATTACGTAAACAACGCTGTGGCTGAGTAGTGTTTTACATCCACACTGAG ACCTAATAGTCCGCCTCTGGATAGTCAGAAGTTACTTGACGCGTCGACTACT'}) WITH p1 MATCH (p2:DNASeq uence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 769       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-236 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GCTTGTGAGTTTATCTCAGACAAGGCCATCC CTCTAAAAGAAACATACAGTTACACGACTGGCTATGTTCACTCATAGCCCACTTCCCCTTGTACCTTGAAAAATGGATAT GAGTCCCACCTAAGTCACGCCGGTCCGTATGATGATATAGCA'}) WITH p1 MATCH (p2:DNASequence) WHE RE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 770       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-208 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TGGCGTAAGCTTTAAATCCTGTAATACCAAT ACAATCATAACCAGTGTGATTTGCGGACCGAGTGTGCGGCGATCCCAAAGGTGTCATTCGAGACTTCGGGTTTCGTAGGA TTTAGGGAATCCATTGTATAGCATTCGTAACCTCCCG'}) WITH p1 MATCH (p2:DNASequence) WHERE p1 <>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 771       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-200 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GCATTAGCTTCACCATACATCCCGATAACTA TCCTTTTATGTACGGGCCCGATGTAGATCAACTATAGTATTATGCTAGTTCATGCCAGAAATCCCGTCTTCCATATTATC GTTCTCCTTGAAGTCGCCGCCCGTCAAAATTTTCTGTGTAAAA'}) WITH p1 MATCH (p2:DNASequence) WH ERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 772       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-254 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GTACTGGTACGTTTTTTTGAAAGACTGGCCC GCTTTCGCATGTCGTGGTAAAACAATGTGACATCGTTAGTGGCCCTTTAGTGGTCACTCACCAGAGCGTTGACCCGCGAT TTGAGTCGAATGTATCATAAGCCCACATGAACGGGCT'}) WITH p1 MATCH (p2:DNASequence) WHERE p1 <>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 773       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-243 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GCCCGGGTTCCAAGTTCATTTACTATTTTGG TGGGACATATCAATTGCGCTCTCTAGCAGTTTTGTCGGTTAACTGATTAGCCTGGTTCGCATTGCTAAAGGCTGTATTGG ACTCGAAGCATTTTCCAACAGATCTAGTCGTACAGGTGGTCCAAGT'}) WITH p1 MATCH (p2:DNASequence)  WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 774       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-208 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GCCTAAAACTAGATCAGAAGTCTGCCAAATT TATCACGGGCTGCGTGGGACCGGTAGTGACGCTGGCGGATTCCTGCACAGTTACGTTGCTATTCCTTCGAAGAGTCTATC TGAGAATAGTATCTAGAAACATAAGGCCTTTATCAGATTGCGTCGTGGGGCTTCCACC'}) WITH p1 MATCH (p2: DNASequence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 775       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-205 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GCACTGCCGGATTAGGAAATCGCGTACCGTG TGCTCTCTATAAAGGAGCATGCAGCTACCAGTAACACGGCCTTACCATTGGTTACGGTGCCCCATTACCGTGAAGACAAA TCCCATCTTGAGCCCATGGGTTATAATGAGCGTTGTAATAACCGAGA'}) WITH p1 MATCH (p2:DNASequence ) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 776       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-213 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'ACGCCCAATTTGCAGACGGATACTTTACGGC TCTTACTAACCATCTGACTTTTCGACACTTGGGAGGTCAATGCGCCGTGCTACGGAAATTAGAGTCCCTAATAGTGTCGG AGTGATCGATTGTAATTGGTGTCTTGGTCCGGACA'}) WITH p1 MATCH (p2:DNASequence) WHERE p1<> p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 777       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-196 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CTGACGCCGGGCCCAACATGGATCCAGCCCA AGCAATGGCGTGCAAGTTCATCACAGAGTGATAGAATCAATACCTGAGCTAGGACGCCTGGTCCAGTCAATACGAATGTT TTGCTGAGGCTTGCATTAATGTGCCGATTGAAACCCATCCATTGTTCTTTACAA'}) WITH p1 MATCH (p2:DNAS equence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 778       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-185 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GCCTGGATGATCACTATGATTCAAACTAAAG ATTTCACCAGGGAACCACGTGCGCTCGACGCTAACCTAGTGCAGAGCCTAATGCTTTCGCCAGGCAATCCCGATTTGCAT AGGACTGGCTGTCCACGAGTACATCTACAGTCTGAAGGAACTCCGATGGTGC'}) WITH p1 MATCH (p2:DNASeq uence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 779       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-211 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CGTTACTATCGATCTTCCAGTAACATATGTA TGCTGACGCTTCCCACCCGTTGAGATGCTCCCCCCTTCACAGGTTCTAGTGTCCATCCCGTACTGGCCAGTGCCTAAATC TTTGTTGGATCAGTCAGTGTAGAAGAATCTAAGTATGTA'}) WITH p1 MATCH (p2:DNASequence) WHERE  p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 780       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-190 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'ACTGCTCGGGGGCTGGAGGCTCGCTTCAGGG TTTTGGTAGGCTCGCGCTCGGGTACATATGGTGGGGGAGTACTTCTACGCAATCATGAATCCTGGGAACTGCCAGTCCGA GCCAATCCTTGCCGTCGTAAACGATAAACCGAATGGGGTGAAGGAGC'}) WITH p1 MATCH (p2:DNASequence ) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 781       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-208 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TATCTGAAGGGTATGCAAGATGCAGGAGTAT ATGGGCTGCCGCACCTGTTGTATCAACATCGCCCTATATTGATTAACACACAAGGGCCACTCGTTCGTCGCCCTTGAATA TCTGGGCAGGTCAGGGATGTTTGTACTTGCGCTTCCACAACAAGGAGATAGG'}) WITH p1 MATCH (p2:DNASeq uence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 782       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-182 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'AATAGACGCAGTCCTGGAACGTATTGGTTAT GACAGTGGACGTACCGTGTGCTCGCTAAAAATGGCTTTTCCTCCTTCCTTACTCATAAGTTTTTCAAGCTCTAGTGTACT CACCATCACAGCTTGTACGCCATGTACGGGAGGCGCCCGAGCAAGCTATCAT'}) WITH p1 MATCH (p2:DNASeq uence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 783       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-173 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CTTTCCGAATAGCACTTACGCCTGCCCTAAT TCATCTGGCTCAATTTCTCCTCAAAGTGGCCCTGATTCGGTAAGATATTTATGGTATTTAGGATGTATAGACGAGTGGCT ATGCGTGTAGTTTAGACTCGTACGGTGGAGTACAGATGCTCTTCACTGGTAAGT'}) WITH p1 MATCH (p2:DNAS equence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 784       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-199 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'AGTCTCGCTCATGCGCTCATATAGATCCGGG GGGATGCAAAATTACTATCGATAATGAGGCACCCTATTAGCCGTGGACCGATTCCCAACTTGGTATCTAACAAATAATGC ACAGCCAATCAACCAAAACTATTCACCTCGGCGACTAGGAGGGCGACAGAAGTTC'}) WITH p1 MATCH (p2:DNA Sequence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 785       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-208 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TAGCGCGGTTCGGGACCACTGGCTTATAGCG GTTAGTCTTGGCTCCATAACGCGGTAATCAAGACAACCATTAAGTAATTCGAGGGCTCTATAGCTGGCTACAACCATGTG GTGAGAAACCTCAACTGCCACTGAAGTGGCCCCCCTGGCGTACTGCCT'}) WITH p1 MATCH (p2:DNASequenc e) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 786       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-175 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'AGTTTACGAATAATAGCTACCCGCTTGCGAG TAGGAAATAGAAGGTAGTGTTATGGTACACTACCGTAAATTAGCCGCCCGTAACGCATATATGGGCAATTTGGGTCTTAG CTGTGGCAAGGGCTGTCCAGGGACGCGAAGTTAGACAATGAGAC'}) WITH p1 MATCH (p2:DNASequence) W HERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 787       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-199 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CACTCACTACCCAACATCGTACCATGTTACC TAGGACACAAGTTATCAATTTAATAACGAAATGCAATGAATTCGTTACCGTTTTCTGATTTATTCCAATCGTAGTGGTTT CTTAGCAAGTCTTGAACATAGCGAGCGCTACTAGTGCACCAGAAGGCCTATCCATC'}) WITH p1 MATCH (p2:DN ASequence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 788       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-214 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GATTCGGTCAAATGGCTTGAGTATGTTGATG GTCTATGACTTGGATATTTTTTTACCTGAGAGCTGTAACTTATCTTGCTACTCTCCGTGAAAGCTGGGGTGGCTAGCTAC TCTCGCTCATCCGCCTTAGGGTGGCCGATTAGCATAGAAGAGGTCCTACATCA'}) WITH p1 MATCH (p2:DNASe quence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 789       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-174 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TGCGATAACGTGCAGGACGTCTCTTTACGTT TACTGGATCCTTCGGATTATACCCGGGTAAACCCCGAAAGAGCCAATGTCAATATGATCTTCGCTACCGGGGGCGATTTA GAGTGAGAGCCTTAAAACTGTCTGTCGCGTGTTTAGCAAGAGCCCTC'}) WITH p1 MATCH (p2:DNASequence ) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 790       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-208 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TTAAAAGGTCGACCCCCTTTCCTCACGCACC TTTGGAACCATTGTCTCACAGGGGAACGTATCCCTGGTAGCCCCGAACCTCACCGGCTCGAGCATACGCATAGCCCCCGC CCTCAATAACTGTCCTGGCTGAGGTACGACCAACCCAA'}) WITH p1 MATCH (p2:DNASequence) WHERE p 1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 791       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-210 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'GTGAATCCTCTAGTAAGCAACATGTTGCCGG AGATTGCCTGATTCAGCGGTGTCATATAATAACAAAAATTAATGTTCCCTCACGGTTTGCTGTCTAGGCGACAACTTAAT TGATAGGACGGGGTGCGTCAGCCCCCTTGACCAACTGTCGGGCGTCT'}) WITH p1 MATCH (p2:DNASequence ) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 792       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-235 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CCCTGCCTACGTAACAGCGTATTTAATACTT CGTCATCTTGCGATCACCACGGACCACAGGTTCATACGTGCCAACTGCCGTTAGATGATGTGTTCGTACCGCGTCACGGG CTGAATAACCTGGGACGGATCATGCAATGTCATTTACCTTACGGTGTTTATTT'}) WITH p1 MATCH (p2:DNASe quence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 793       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-217 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CAACAGCCCCGGTTTTCTAATATTCCAGCGT TCACCTCCTCGTGTAATCCCTCCGAATCACGCATATCAGATGATGATAGGATTTAAAATTGGATTAATATCATCACCGTT CTTTTGGATTAGATGGAGAGCCATTTTGCTTACCTTAGGCATTCC'}) WITH p1 MATCH (p2:DNASequence)  WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 794       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-205 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CAGATCAAAATACCGGGAGAAATTAGTCACC TCGCATCGCTGGTTGTACATCACTCCTCCATAGACGGGGTAAGATCTGGCCCGGAGTCTGGGTAAGAGCTTTGCTGTCTC CAAGGCGCAAGTGTCGCCTTTCCAAAAGTAATACCTGAATTGGCTATCGGTAGGT'}) WITH p1 MATCH (p2:DNA Sequence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 795       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-209 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'ACGGTATTCGATTTAGACTTGGAGGGTGCGG CAACGCACATGGATAACCACCCAGGGCTTGAGAGAGTCTGGACCTTTATATTAGCAACTGTGCGAATCGCGGCACCTAGG ATCGGGAGACGTATTAATGATTAGTTTCTGAGTTCCGGAGTAT'}) WITH p1 MATCH (p2:DNASequence) WH ERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 796       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-186 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'CGAGGGAGGCTTGGACAGCTATCCGTTGTGA GGACGCTGACCAATGTCCCACAAATGCCTATAACGGGACGCCGTCGGACGCACATGAGGACAGCGGGTAGCGTGGACAGA CGAATCTCCACTCTACCTACACACCCGTGATGCCCGGTCTCTTATGGCAGAGATT'}) WITH p1 MATCH (p2:DNA Sequence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 797       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-184 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'AGACCTGCCTATTTAAAAACCAACAAAAGCA CTTAAGACCTCACTGAGTGCTCACAGTGGTAGTACTTGGGAGAGACGTGAAGGCAGAGCGTGACAAATGCGAATCCCTTT ATTAAGGGAGAAGCCACCCTAGTCGTTAGTCGACGCGAATGAGTTTTGGCTC'}) WITH p1 MATCH (p2:DNASeq uence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 798       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-198 ms
-neo4j-sh (?)$ CREATE(p1:DNASequence{nucleotides:'TTTAGGGAAGGATCATAGGTTGTATAGCAAT TTCATCTCTAAGTTGCACGACAACAACAGTCGGAGCACTACATGAGCCGTAACGTTATAGTACGATGATCGCGCATGGCT TTGCGGTTTGACAGCGAGGCCTGTTCCTTAAAATGGTTATCTGCACAGTATC'}) WITH p1 MATCH (p2:DNASeq uence) WHERE p1<>p2 CALL bio.swexec(p1, p2) return count(p1);
-+-----------+
-| count(p1) |
-+-----------+
-| 799       |
-+-----------+
-1 row
-Nodes created: 1
-Properties set: 1
-Labels added: 1
-222 ms
-neo4j-sh (?)$ 

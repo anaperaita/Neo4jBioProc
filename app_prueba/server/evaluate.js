@@ -207,8 +207,8 @@ self.generateProteins = function(){
 //Setea el nodo de info para todos los nodos 
   self.setDataOfADN=function(adn, infoId){
     session 
-      .run( "MATCH (p1:DNASequence), (i1:Info) WHERE p1.nucleotides in {seq} AND ID(i1) = {infoId}" +
-            "CREATE UNIQUE (p1) -[:INFO]-> (i1),(i1) -[:INFO]-> (p1) ",{seq:adn, infoId:infoId})
+      .run( "MATCH (p1:DNASequence), (i1:Info) WHERE p1.nucleotides =~ {seq} AND ID(i1) = "+infoId+" " +
+            "CREATE UNIQUE (p1) -[:INFO]-> (i1),(i1) -[:INFO]-> (p1) ",{seq:adn, infoId:parseInt(infoId)})
       .then( function( result ) {
         session.close();
         driver.close();
@@ -356,8 +356,8 @@ self.generateProteins = function(){
           if (err) {
             return console.log(err);
           }
-          data.split(">.*\n").forEach( x =>{
-            salida=x.replace(/(\r?\n|\r|[^ATGC])/gm, '')
+          data.split(">").forEach( x =>{
+            salida=x.replace(/(\n|\r|[^ATGC])/gm, '')
             self.addAndAllign(salida, infoId);
             
             
